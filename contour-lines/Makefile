@@ -27,4 +27,5 @@ contour-lines-video: contour-lines-video.cc Makefile
 	  -DOVERSAMPLE_TEMPORAL=$(OVERSAMPLE_TEMPORAL) \
 	  -DFRAMERATE=$(FRAMERATE) \
 	  -DFRAME_COUNT=$(FRAME_COUNT) \
-	  -lnoise
+	  -lnoise \
+	  -pthread
