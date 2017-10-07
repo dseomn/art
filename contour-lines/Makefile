@@ -2,8 +2,8 @@ WIDTH = 3840
 HEIGHT = 2160
 OVERSAMPLE_SPATIAL = 1
 OVERSAMPLE_TEMPORAL = 1
-FRAMERATE = 30
-FRAME_COUNT = 30
+FRAMERATE = 60
+FRAME_COUNT = 900
 
 contour-lines.webm: contour-lines-video Makefile
 	./contour-lines-video | \
