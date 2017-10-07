@@ -146,7 +146,7 @@ class ContourLines {
     } else {
       y /= ASPECT_RATIO;
     }
-    double elevation = 0.5 * perlin_.GetValue(x * 1.0, y * 1.0, t * 0.02) + 0.5;
+    double elevation = 0.5 * perlin_.GetValue(x * 1.7, y * 1.7, t * 0.03) + 0.5;
     if (elevation < 0.0) {
       elevation = 0.0;
     }
