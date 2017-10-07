@@ -1,5 +1,5 @@
-WIDTH = 1920
-HEIGHT = 1080
+WIDTH = 3840
+HEIGHT = 2160
 OVERSAMPLE_SPATIAL = 1
 OVERSAMPLE_TEMPORAL = 1
 FRAMERATE = 30
@@ -14,7 +14,11 @@ contour-lines.webm: contour-lines-video Makefile
 	    -framerate $(FRAMERATE) \
 	    -i pipe:0 \
 	    -codec:v libvpx-vp9 \
-	    -lossless 1 \
+	    -pix_fmt yuv420p \
+	    -b:v 0 -crf 10 \
+	    -tile-columns 4 \
+	    -frame-parallel 1 \
+	    -threads 6 \
 	    "$@"
 
 contour-lines-video: contour-lines-video.cc Makefile
