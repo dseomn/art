@@ -4,16 +4,16 @@
 #include <string>
 #include <vector>
 
-constexpr int kSampleRate = 48000;
+constexpr int kSampleRate = 44100;
 constexpr int kInputChannels = 1;
 constexpr int kOutputChannels = 2;
 
 // How many samples to wait before starting each new vuvuzela.
-constexpr int kStartDelta = 64;
+constexpr int kStartDelta = 53;
 
 // How many samples to wait between ending one vuvuzela and replacing it with
 // another.
-constexpr int kInterDelta = 24000;
+constexpr int kInterDelta = 22050;
 
 // Quantization for how much one output channel is emphasized relative to the
 // others, per vuvuzela.
