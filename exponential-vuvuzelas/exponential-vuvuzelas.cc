@@ -30,10 +30,10 @@ class ExponentialVuvuzelas {
  public:
   void LoadInputAudio() {
     const char* const files[] = {
-      "vuvuzela-1.f32le",
-      "vuvuzela-2.f32le",
-      "vuvuzela-3.f32le",
-      "vuvuzela-4.f32le",
+      "vuvuzela-1.f64le",
+      "vuvuzela-2.f64le",
+      "vuvuzela-3.f64le",
+      "vuvuzela-4.f64le",
     };
     for (const char* file : files) {
       int ret;
@@ -45,14 +45,14 @@ class ExponentialVuvuzelas {
       assert(ret == 0);
       long int length = ftell(fh);
       assert(length >= 0L);
-      assert(length % (sizeof(float) * kInputChannels) == 0);
+      assert(length % (sizeof(double) * kInputChannels) == 0);
       rewind(fh);
 
-      auto raw_audio = ::std::make_unique<float[]>(length / sizeof(float));
+      auto raw_audio = ::std::make_unique<double[]>(length / sizeof(double));
       size_t read_count =
-          fread(raw_audio.get(), sizeof(float) * kInputChannels,
-                length / (sizeof(float) * kInputChannels), fh);
-      assert(read_count == length / (sizeof(float) * kInputChannels));
+          fread(raw_audio.get(), sizeof(double) * kInputChannels,
+                length / (sizeof(double) * kInputChannels), fh);
+      assert(read_count == length / (sizeof(double) * kInputChannels));
 
       input_audio_.emplace_back(read_count, ::std::move(raw_audio));
 
@@ -69,18 +69,18 @@ class ExponentialVuvuzelas {
 
     int silent_samples = 0;
     while (in_play_.size() < 1ULL << exponent_) {
-      float mix[kOutputChannels];
-      const float emphasized_channel_min = 1.0f / kOutputChannels;
+      double mix[kOutputChannels];
+      const double emphasized_channel_min = 1.0 / kOutputChannels;
       for (int channel = 0; channel < kOutputChannels; ++channel) {
-        const float emphasized_channel =
+        const double emphasized_channel =
             emphasized_channel_min +
-            (1.0f - emphasized_channel_min) *
+            (1.0 - emphasized_channel_min) *
             (in_play_.size() % kChannelEmphasisSteps) /
-            (kChannelEmphasisSteps - 1.0f);
+            (kChannelEmphasisSteps - 1.0);
         if (in_play_.size() % kOutputChannels == (size_t)channel) {
           mix[channel] = emphasized_channel;
         } else {
-          mix[channel] = (1.0f - emphasized_channel) / (kOutputChannels - 1);
+          mix[channel] = (1.0 - emphasized_channel) / (kOutputChannels - 1);
         }
       }
 
@@ -99,14 +99,14 @@ class ExponentialVuvuzelas {
   // Advance by the given number of samples, and return the generated audio.
   // Pass -1 to disable re-creating vuvuzelas as they finish, and advance until
   // all existing ones finish.
-  ::std::vector<float> Advance(int samples) {
-    ::std::vector<float> audio;
+  ::std::vector<double> Advance(int samples) {
+    ::std::vector<double> audio;
 
     for (int sample_number = 0;
          samples < 0 || sample_number < samples;
          ++sample_number) {
       bool anything_in_play = false;
-      float sample[kOutputChannels] = {};
+      double sample[kOutputChannels] = {};
 
       for (Vuvuzela& vuvuzela : in_play_) {
         // Re-fill the audio/silence if needed.
@@ -134,7 +134,7 @@ class ExponentialVuvuzelas {
         }
 
         assert(kInputChannels == 1);
-        float input_sample = input_audio_[vuvuzela.input].second[
+        double input_sample = input_audio_[vuvuzela.input].second[
             input_audio_[vuvuzela.input].first - vuvuzela.samples_remaining];
         for (int channel = 0; channel < kOutputChannels; ++channel) {
           sample[channel] += vuvuzela.mix[channel] * input_sample;
@@ -143,8 +143,8 @@ class ExponentialVuvuzelas {
       }
 
       if (anything_in_play) {
-        for (const float& s : sample) {
-          audio.push_back(s * GetGainFactor((float)sample_number / samples));
+        for (const double& s : sample) {
+          audio.push_back(s * GetGainFactor((double)sample_number / samples));
         }
       } else {
         break;
@@ -158,43 +158,43 @@ class ExponentialVuvuzelas {
   // Get a multiplier for all output channels, given a progress in [0, 1)
   // within the track. This is based on a model of linearly increasing distance
   // from the virtual audio sources.
-  float GetGainFactor(float progress) {
-    constexpr float kInitialDistance = 1.0f;
-    constexpr float kDistancePerExponent = 1.0f;
+  double GetGainFactor(double progress) {
+    constexpr double kInitialDistance = 1.0;
+    constexpr double kDistancePerExponent = 1.0;
 
     // Values when the sum of all mixes is maximal.
-    constexpr float factor_at_max_sum = 1.0f / (1ULL << kMaxExponent);
-    constexpr float distance_at_max_sum =
+    constexpr double factor_at_max_sum = 1.0 / (1ULL << kMaxExponent);
+    constexpr double distance_at_max_sum =
         kMaxExponent * kDistancePerExponent + kInitialDistance;
 
     // Additional factor for computations, to ensure that the factor at the end
     // is factor_at_max_sum.
-    constexpr float normalization_factor =
+    constexpr double normalization_factor =
         factor_at_max_sum * distance_at_max_sum * distance_at_max_sum;
 
     if (exponent_ == kMaxExponent) {
       return factor_at_max_sum;
     }
 
-    float distance =
+    double distance =
         (exponent_ + progress) * kDistancePerExponent + kInitialDistance;
-    assert(distance > 0.0f);
+    assert(distance > 0.0);
     assert(distance <= distance_at_max_sum);
 
-    float factor = normalization_factor / (distance * distance);
-    assert(factor > 0.0f);
-    assert(factor <= 1.0f);
+    double factor = normalization_factor / (distance * distance);
+    assert(factor > 0.0);
+    assert(factor <= 1.0);
 
     return factor;
   }
 
   // (number of samples, raw data)
-  ::std::vector<::std::pair<int, ::std::unique_ptr<float[]>>> input_audio_;
+  ::std::vector<::std::pair<int, ::std::unique_ptr<double[]>>> input_audio_;
 
   struct Vuvuzela {
     int input;  // Index into input_audio_, or -1 for silence.
     int samples_remaining;
-    float mix[kOutputChannels];
+    double mix[kOutputChannels];
   };
   ::std::vector<Vuvuzela> in_play_;
 
@@ -204,10 +204,10 @@ class ExponentialVuvuzelas {
 };
 
 void WriteAudio(
-    const ::std::string& filename, const ::std::vector<float>& audio) {
+    const ::std::string& filename, const ::std::vector<double>& audio) {
   FILE* fh = fopen(filename.c_str(), "wb");
   assert(fh != nullptr);
-  for (const float& sample : audio) {
+  for (const double& sample : audio) {
     size_t written = fwrite(&sample, sizeof(sample), 1, fh);
     assert(written == 1);
   }
@@ -222,11 +222,11 @@ int main() {
   for (int exponent = 0; exponent <= kMaxExponent; ++exponent) {
     exponential_vuvuzelas.IncrementExponent();
     WriteAudio(
-        ::std::string("exponent-") + ::std::to_string(exponent) + ".f32le",
+        ::std::string("exponent-") + ::std::to_string(exponent) + ".f64le",
         exponential_vuvuzelas.Advance(kTrackSamples));
   }
 
-  WriteAudio("fade-out.f32le", exponential_vuvuzelas.Advance(-1));
+  WriteAudio("fade-out.f64le", exponential_vuvuzelas.Advance(-1));
 
   return 0;
 }
