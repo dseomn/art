@@ -29,9 +29,15 @@ step-4: exponential-vuvuzelas
 step-5:
 	mkdir "$(DATADIR)/step-5-final-audio"
 	cd "$(DATADIR)/step-4-code-output" && \
+	split_cmd="sox -p -b 16 ../step-5-final-audio/track-%2n.flac" && \
+	newfile= && \
 	for f in track-*.flac; do \
-	  sox "$$f" -b 16 "../step-5-final-audio/$$f" gain -0.001 || exit 1; \
-	done
+	  test -n "$$newfile" && split_cmd="$$split_cmd : newfile :"; \
+	  newfile=yes; \
+	  samples="$$(soxi -s "$$f")" || exit 1; \
+	  split_cmd="$$split_cmd trim 0 $${samples}s"; \
+	done && \
+	sox track-*.flac -p gain -0.001 treble -10 2.5k 1s | $$split_cmd
 	sox -n -r 44100 -c 2 -b 16 "$(DATADIR)/step-5-final-audio/track-13.flac" trim 0.0 60.0
 	sox "$(DATADIR)/step-3-one-blow-per-file-processed/vuvuzela-*.flac" -c 2 -b 16 "$(DATADIR)/step-5-final-audio/track-14.flac" gain -0.001
 
