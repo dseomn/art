@@ -193,7 +193,7 @@ class ExponentialVuvuzelas {
   // from the virtual audio sources.
   double GetGainFactor(double progress) {
     constexpr double kInitialDistance = 1.0;
-    constexpr double kDistancePerExponent = 1.0;
+    constexpr double kDistancePerExponent = 0.5;
 
     // Values when the sum of all mixes is maximal.
     constexpr double factor_at_max_sum = 1.0 / (1ULL << kMaxExponent);
