@@ -1,4 +1,5 @@
 #include <cassert>
+#include <cmath>
 #include <cstdio>
 #include <memory>
 #include <string>
@@ -30,43 +31,43 @@ class ExponentialVuvuzelas {
  public:
   void LoadInputAudio() {
     const char* const files[] = {
-      "vuvuzela-01.flac.f64le",
-      "vuvuzela-02.flac.f64le",
-      "vuvuzela-03.flac.f64le",
-      "vuvuzela-04.flac.f64le",
-      "vuvuzela-05.flac.f64le",
-      "vuvuzela-06.flac.f64le",
-      "vuvuzela-07.flac.f64le",
-      "vuvuzela-08.flac.f64le",
-      "vuvuzela-09.flac.f64le",
-      "vuvuzela-10.flac.f64le",
-      "vuvuzela-11.flac.f64le",
-      "vuvuzela-12.flac.f64le",
-      "vuvuzela-13.flac.f64le",
-      "vuvuzela-14.flac.f64le",
-      "vuvuzela-15.flac.f64le",
-      "vuvuzela-17.flac.f64le",
-      "vuvuzela-18.flac.f64le",
-      "vuvuzela-19.flac.f64le",
-      "vuvuzela-20.flac.f64le",
-      "vuvuzela-21.flac.f64le",
-      "vuvuzela-22.flac.f64le",
-      "vuvuzela-23.flac.f64le",
-      "vuvuzela-24.flac.f64le",
-      "vuvuzela-25.flac.f64le",
-      "vuvuzela-26.flac.f64le",
-      "vuvuzela-27.flac.f64le",
-      "vuvuzela-28.flac.f64le",
-      "vuvuzela-29.flac.f64le",
-      "vuvuzela-30.flac.f64le",
-      "vuvuzela-31.flac.f64le",
-      "vuvuzela-32.flac.f64le",
-      "vuvuzela-33.flac.f64le",
-      "vuvuzela-34.flac.f64le",
-      "vuvuzela-35.flac.f64le",
-      "vuvuzela-36.flac.f64le",
-      "vuvuzela-37.flac.f64le",
-      "vuvuzela-38.flac.f64le",
+      "vuvuzela-01.flac.f32le",
+      "vuvuzela-02.flac.f32le",
+      "vuvuzela-03.flac.f32le",
+      "vuvuzela-04.flac.f32le",
+      "vuvuzela-05.flac.f32le",
+      "vuvuzela-06.flac.f32le",
+      "vuvuzela-07.flac.f32le",
+      "vuvuzela-08.flac.f32le",
+      "vuvuzela-09.flac.f32le",
+      "vuvuzela-10.flac.f32le",
+      "vuvuzela-11.flac.f32le",
+      "vuvuzela-12.flac.f32le",
+      "vuvuzela-13.flac.f32le",
+      "vuvuzela-14.flac.f32le",
+      "vuvuzela-15.flac.f32le",
+      "vuvuzela-17.flac.f32le",
+      "vuvuzela-18.flac.f32le",
+      "vuvuzela-19.flac.f32le",
+      "vuvuzela-20.flac.f32le",
+      "vuvuzela-21.flac.f32le",
+      "vuvuzela-22.flac.f32le",
+      "vuvuzela-23.flac.f32le",
+      "vuvuzela-24.flac.f32le",
+      "vuvuzela-25.flac.f32le",
+      "vuvuzela-26.flac.f32le",
+      "vuvuzela-27.flac.f32le",
+      "vuvuzela-28.flac.f32le",
+      "vuvuzela-29.flac.f32le",
+      "vuvuzela-30.flac.f32le",
+      "vuvuzela-31.flac.f32le",
+      "vuvuzela-32.flac.f32le",
+      "vuvuzela-33.flac.f32le",
+      "vuvuzela-34.flac.f32le",
+      "vuvuzela-35.flac.f32le",
+      "vuvuzela-36.flac.f32le",
+      "vuvuzela-37.flac.f32le",
+      "vuvuzela-38.flac.f32le",
     };
     for (const char* file : files) {
       int ret;
@@ -78,14 +79,14 @@ class ExponentialVuvuzelas {
       assert(ret == 0);
       long int length = ftell(fh);
       assert(length >= 0L);
-      assert(length % (sizeof(double) * kInputChannels) == 0);
+      assert(length % (sizeof(float) * kInputChannels) == 0);
       rewind(fh);
 
-      auto raw_audio = ::std::make_unique<double[]>(length / sizeof(double));
+      auto raw_audio = ::std::make_unique<float[]>(length / sizeof(float));
       size_t read_count =
-          fread(raw_audio.get(), sizeof(double) * kInputChannels,
-                length / (sizeof(double) * kInputChannels), fh);
-      assert(read_count == length / (sizeof(double) * kInputChannels));
+          fread(raw_audio.get(), sizeof(float) * kInputChannels,
+                length / (sizeof(float) * kInputChannels), fh);
+      assert(read_count == length / (sizeof(float) * kInputChannels));
 
       input_audio_.emplace_back(read_count, ::std::move(raw_audio));
 
@@ -222,7 +223,7 @@ class ExponentialVuvuzelas {
   }
 
   // (number of samples, raw data)
-  ::std::vector<::std::pair<int, ::std::unique_ptr<double[]>>> input_audio_;
+  ::std::vector<::std::pair<int, ::std::unique_ptr<float[]>>> input_audio_;
 
   struct Vuvuzela {
     int input;  // Index into input_audio_, or -1 for silence.
@@ -236,30 +237,49 @@ class ExponentialVuvuzelas {
   int next_input_ = 0;
 };
 
-void WriteAudio(
-    const ::std::string& filename, const ::std::vector<double>& audio) {
-  FILE* fh = fopen(filename.c_str(), "wb");
-  assert(fh != nullptr);
-  for (const double& sample : audio) {
-    size_t written = fwrite(&sample, sizeof(sample), 1, fh);
-    assert(written == 1);
-  }
-  int ret = fclose(fh);
-  assert(ret == 0);
-}
-
 int main() {
   ExponentialVuvuzelas exponential_vuvuzelas;
   exponential_vuvuzelas.LoadInputAudio();
 
+  ::std::vector<::std::vector<double>> output_tracks;
   for (int exponent = 0; exponent <= kMaxExponent; ++exponent) {
     exponential_vuvuzelas.IncrementExponent();
-    WriteAudio(
-        ::std::string("exponent-") + ::std::to_string(exponent) + ".f64le",
-        exponential_vuvuzelas.Advance(kTrackSamples));
+    output_tracks.push_back(exponential_vuvuzelas.Advance(kTrackSamples));
+    printf("Generated exponent %d\n", exponent);
   }
+  output_tracks.push_back(exponential_vuvuzelas.Advance(-1));
+  printf("Generated fade-out\n");
 
-  WriteAudio("fade-out.f64le", exponential_vuvuzelas.Advance(-1));
+  double peak = 0.0;
+  for (const ::std::vector<double>& track : output_tracks) {
+    for (const double& sample : track) {
+      const double sample_abs = fabs(sample);
+      if (sample_abs > peak) {
+        peak = sample_abs;
+      }
+    }
+  }
+  assert(peak > 0.0);
+  printf("Peak: %lf\n", peak);
+
+  for (size_t i = 0; i < output_tracks.size(); ++i) {
+    ::std::string pad = i+1 < 10 ? "0" : "";
+    ::std::string filename =
+        ::std::string("track-") + pad + ::std::to_string(i+1) + ".f32le";
+    FILE* fh = fopen(filename.c_str(), "wb");
+    assert(fh != nullptr);
+    for (const double& sample : output_tracks[i]) {
+      float sample_normalized = (float)(sample / peak);
+      assert(sample_normalized >= -1.0f);
+      assert(sample_normalized <= 1.0f);
+      size_t written =
+          fwrite(&sample_normalized, sizeof(sample_normalized), 1, fh);
+      assert(written == 1);
+    }
+    int ret = fclose(fh);
+    assert(ret == 0);
+    printf("Wrote %s\n", filename.c_str());
+  }
 
   return 0;
 }
