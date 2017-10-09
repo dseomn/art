@@ -16,6 +16,10 @@ constexpr int kStartDelta = 53;
 // another.
 constexpr int kInterDelta = 22050;
 
+// To avoid interference, drop or double samples occasionally. The period
+// starts at kAlterEveryNBase, and goes up from there.
+constexpr int kAlterEveryNBase = 1000;
+
 // Quantization for how much one output channel is emphasized relative to the
 // others, per vuvuzela.
 constexpr int kChannelEmphasisSteps = 11;
@@ -124,6 +128,14 @@ class ExponentialVuvuzelas {
       for (int i = 0; i < kOutputChannels; ++i) {
         v.mix[i] = mix[i];
       }
+      if (in_play_.size() % 2 == 0) {
+        v.extra_every_n = kAlterEveryNBase + in_play_.size() / 2;
+        v.drop_every_n = 0;
+      } else {
+        v.extra_every_n = 0;
+        v.drop_every_n = kAlterEveryNBase + in_play_.size() / 2;
+      }
+      v.repeat_previous_sample = false;
       in_play_.push_back(v);
 
       silent_samples += kStartDelta;
@@ -143,6 +155,18 @@ class ExponentialVuvuzelas {
       double sample[kOutputChannels] = {};
 
       for (Vuvuzela& vuvuzela : in_play_) {
+        if (vuvuzela.repeat_previous_sample) {
+          vuvuzela.repeat_previous_sample = false;
+        } else if (
+            vuvuzela.extra_every_n > 0 &&
+            vuvuzela.samples_remaining % vuvuzela.extra_every_n == 0) {
+          vuvuzela.repeat_previous_sample = true;
+        } else if (
+            vuvuzela.drop_every_n > 0 &&
+            vuvuzela.samples_remaining % vuvuzela.drop_every_n == 0) {
+          --vuvuzela.samples_remaining;
+        }
+
         // Re-fill the audio/silence if needed.
         while (vuvuzela.samples_remaining <= 0 && samples >= 0) {
           if (vuvuzela.input < 0) {
@@ -173,7 +197,9 @@ class ExponentialVuvuzelas {
         for (int channel = 0; channel < kOutputChannels; ++channel) {
           sample[channel] += vuvuzela.mix[channel] * input_sample;
         }
-        --vuvuzela.samples_remaining;
+        if (!vuvuzela.repeat_previous_sample) {
+          --vuvuzela.samples_remaining;
+        }
       }
 
       if (anything_in_play) {
@@ -229,6 +255,9 @@ class ExponentialVuvuzelas {
     int input;  // Index into input_audio_, or -1 for silence.
     int samples_remaining;
     double mix[kOutputChannels];
+    int extra_every_n;
+    int drop_every_n;
+    bool repeat_previous_sample;
   };
   ::std::vector<Vuvuzela> in_play_;
 
