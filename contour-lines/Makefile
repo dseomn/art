@@ -9,8 +9,9 @@ SEED = 0
 # For controlling output.
 DSTDIR = .
 TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
+VIDEO_FILENAME = contour-lines-$(TAG).webm
 
-$(DSTDIR)/contour-lines-$(TAG).webm: $(DSTDIR)/contour-lines-$(TAG).gen-video Makefile
+$(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video Makefile
 	$(DSTDIR)/contour-lines-$(TAG).gen-video | \
 	  ffmpeg -y \
 	    -f rawvideo \
