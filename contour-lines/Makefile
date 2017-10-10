@@ -5,8 +5,12 @@ OVERSAMPLE_TEMPORAL = 1
 FRAMERATE = 60
 FRAME_COUNT = 900
 
-contour-lines.webm: contour-lines-video Makefile
-	./contour-lines-video | \
+# For controlling output.
+DSTDIR = .
+TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)
+
+$(DSTDIR)/contour-lines-$(TAG).webm: $(DSTDIR)/contour-lines-video-$(TAG) Makefile
+	$(DSTDIR)/contour-lines-video-$(TAG) | \
 	  ffmpeg -y \
 	    -f rawvideo \
 	    -pixel_format rgb24 \
@@ -21,7 +25,7 @@ contour-lines.webm: contour-lines-video Makefile
 	    -threads 6 \
 	    "$@"
 
-contour-lines-video: contour-lines-video.cc Makefile
+$(DSTDIR)/contour-lines-video-$(TAG): contour-lines-video.cc Makefile
 	g++ -o "$@" contour-lines-video.cc \
 	  -Wall -Werror \
 	  -std=c++14 \
