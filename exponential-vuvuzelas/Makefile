@@ -41,4 +41,8 @@ step-5:
 	sox -n -r 44100 -c 2 -b 16 "$(DATADIR)/step-5-final-audio/track-13.flac" trim 0.0 60.0
 	sox "$(DATADIR)/step-3-one-blow-per-file-processed/vuvuzela-*.flac" -c 2 -b 16 "$(DATADIR)/step-5-final-audio/track-14.flac" gain -0.001
 
+
+$(DATADIR)/cover-art/vuvuzelas.png: exponential-vuvuzelas.pov
+	povray +A +AM2 +J +H2048 +W4096 +UA +O"$@" exponential-vuvuzelas.pov
+
 .PHONY: all step-3 step-4 step-5
