@@ -9,8 +9,8 @@ FRAME_COUNT = 900
 DSTDIR = .
 TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)
 
-$(DSTDIR)/contour-lines-$(TAG).webm: $(DSTDIR)/contour-lines-video-$(TAG) Makefile
-	$(DSTDIR)/contour-lines-video-$(TAG) | \
+$(DSTDIR)/contour-lines-$(TAG).webm: $(DSTDIR)/contour-lines-$(TAG).gen-video Makefile
+	$(DSTDIR)/contour-lines-$(TAG).gen-video | \
 	  ffmpeg -y \
 	    -f rawvideo \
 	    -pixel_format rgb24 \
@@ -25,7 +25,7 @@ $(DSTDIR)/contour-lines-$(TAG).webm: $(DSTDIR)/contour-lines-video-$(TAG) Makefi
 	    -threads 6 \
 	    "$@"
 
-$(DSTDIR)/contour-lines-video-$(TAG): contour-lines-video.cc Makefile
+$(DSTDIR)/contour-lines-$(TAG).gen-video: contour-lines-video.cc Makefile
 	g++ -o "$@" contour-lines-video.cc \
 	  -Wall -Werror \
 	  -std=c++14 \
