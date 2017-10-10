@@ -92,7 +92,7 @@ class ContourLines {
     perlin_.SetOctaveCount(1);
     perlin_.SetFrequency(1.0);
     perlin_.SetNoiseQuality(::noise::QUALITY_BEST);
-    perlin_.SetSeed(0);  // Chosen by fair roll of a d1.
+    perlin_.SetSeed(SEED);
   }
 
   // Fill a buffer of length FRAME_LENGTH with data for one frame.

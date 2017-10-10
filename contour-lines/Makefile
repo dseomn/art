@@ -4,10 +4,11 @@ OVERSAMPLE_SPATIAL = 1
 OVERSAMPLE_TEMPORAL = 1
 FRAMERATE = 60
 FRAME_COUNT = 900
+SEED = 0
 
 # For controlling output.
 DSTDIR = .
-TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)
+TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
 
 $(DSTDIR)/contour-lines-$(TAG).webm: $(DSTDIR)/contour-lines-$(TAG).gen-video Makefile
 	$(DSTDIR)/contour-lines-$(TAG).gen-video | \
@@ -35,5 +36,6 @@ $(DSTDIR)/contour-lines-$(TAG).gen-video: contour-lines-video.cc Makefile
 	  -DOVERSAMPLE_TEMPORAL=$(OVERSAMPLE_TEMPORAL) \
 	  -DFRAMERATE=$(FRAMERATE) \
 	  -DFRAME_COUNT=$(FRAME_COUNT) \
+	  -DSEED=$(SEED) \
 	  -lnoise \
 	  -pthread
