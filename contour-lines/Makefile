@@ -1,3 +1,4 @@
+# Video parameters.
 WIDTH = 3840
 HEIGHT = 2160
 OVERSAMPLE_SPATIAL = 1
