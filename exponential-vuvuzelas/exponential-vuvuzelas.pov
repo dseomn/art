@@ -1,3 +1,9 @@
+#version 3.7;
+
+global_settings {
+  assumed_gamma 1.0
+}
+
 camera {
   right 2*x
   location <0, 0, -10>
