@@ -41,8 +41,29 @@ step-5:
 	sox -n -r 44100 -c 2 -b 16 "$(DATADIR)/step-5-final-audio/track-13.flac" trim 0.0 60.0
 	sox "$(DATADIR)/step-3-one-blow-per-file-processed/vuvuzela-*.flac" -c 2 -b 16 "$(DATADIR)/step-5-final-audio/track-14.flac" gain -0.001
 
+step-6:
+	mkdir "$(DATADIR)/step-6-music-videos"
+	sox "$(DATADIR)/step-5-final-audio/"track-{01,02,03,04,05,06,07,08,09,10,11,12,13}.flac -t vorbis -C 10 "$(DATADIR)/step-6-music-videos/exponential-vuvuzelas.vorbis"
+	sox "$(DATADIR)/step-5-final-audio/track-14.flac" -t vorbis -C 10 "$(DATADIR)/step-6-music-videos/all-37-samples.vorbis"
+	$(MAKE) -C ../contour-lines \
+	    DSTDIR="$(DATADIR)/step-6-music-videos" \
+	    TAG=exponential-vuvuzelas \
+	    AUDIO_FILE="$(DATADIR)/step-6-music-videos/exponential-vuvuzelas.vorbis" \
+	    WIDTH=3840 \
+	    HEIGHT=2160 \
+	    FRAMERATE=60 \
+	    SEED=0
+	$(MAKE) -C ../contour-lines \
+	    DSTDIR="$(DATADIR)/step-6-music-videos" \
+	    TAG=all-37-samples \
+	    AUDIO_FILE="$(DATADIR)/step-6-music-videos/all-37-samples.vorbis" \
+	    WIDTH=3840 \
+	    HEIGHT=2160 \
+	    FRAMERATE=60 \
+	    SEED=1
+
 
 $(DATADIR)/cover-art/vuvuzelas.png: exponential-vuvuzelas.pov
 	povray +A +AM2 +J +H2048 +W4096 +UA +O"$@" exponential-vuvuzelas.pov
 
-.PHONY: all step-3 step-4 step-5
+.PHONY: all step-3 step-4 step-5 step-6
