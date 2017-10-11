@@ -30,7 +30,7 @@ light_source { <5, 20, -10>, color rgb 1 }
   sturm
 
   translate -2*y
-  scale 0.9
+  scale 0.95
   rotate 90*z
 };
 
