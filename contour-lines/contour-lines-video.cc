@@ -111,8 +111,8 @@ class ContourLines {
             for (int sub_frame = 0;
                 sub_frame < OVERSAMPLE_TEMPORAL;
                 ++sub_frame) {
-              float real_t =
-                  (frame_number + (float)sub_frame / OVERSAMPLE_TEMPORAL) /
+              double real_t =
+                  (frame_number + (double)sub_frame / OVERSAMPLE_TEMPORAL) /
                   FRAMERATE;
               assert(value_count < VALUES_PER_PIXEL);
               values[value_count++] = PointValue(real_x, real_y, real_t);
@@ -140,7 +140,7 @@ class ContourLines {
  private:
   // Get the value at a single point. (x, y) are spatial coordinates in the range
   // [-1, 1]. t is the number of seconds into the video.
-  Rgb PointValue(float x, float y, float t) {
+  Rgb PointValue(float x, float y, double t) {
     if (ASPECT_RATIO > 1.0f) {
       x *= ASPECT_RATIO;
     } else {
