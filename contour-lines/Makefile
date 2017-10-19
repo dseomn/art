@@ -37,7 +37,6 @@ $(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video $(AUDIO_FI
 	    -pix_fmt yuv420p \
 	    -b:v 0 -crf $(QUALITY_VP9) \
 	    -tile-columns 4 \
-	    -frame-parallel 1 \
 	    -threads 6 \
 	    "$@"
 
