@@ -10,6 +10,7 @@ SEED = 0
 # Encoding parameters.
 QUALITY_VP9 = 10
 TILE_COLUMNS_VP9 = 4
+KEYFRAME_INTERVAL_MAX_VP9 = 240
 
 # By default, there's no audio. If you specify a filename here, the audio will
 # be included. Additionally, FRAME_COUNT will be ignored, and the video length
@@ -19,7 +20,7 @@ AUDIO_FILE =
 # For controlling output.
 DSTDIR = .
 TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
-VIDEO_FILENAME = contour-lines-$(TAG)-q$(QUALITY_VP9)tc$(TILE_COLUMNS_VP9).webm
+VIDEO_FILENAME = contour-lines-$(TAG)-q$(QUALITY_VP9)tc$(TILE_COLUMNS_VP9)ki$(KEYFRAME_INTERVAL_MAX_VP9).webm
 
 $(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video $(AUDIO_FILE) Makefile
 	audio_args=""; \
@@ -37,6 +38,7 @@ $(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video $(AUDIO_FI
 	    -codec:v libvpx-vp9 \
 	    -pix_fmt yuv420p \
 	    -b:v 0 -crf $(QUALITY_VP9) \
+	    -g $(KEYFRAME_INTERVAL_MAX_VP9) \
 	    -tile-columns $(TILE_COLUMNS_VP9) \
 	    -threads 6 \
 	    "$@"
