@@ -51,7 +51,7 @@ Rgb HslToRgb(Hsl hsl) {
       hsl.lightness;
   float chroma = (1.0f - fabs(2.0f * l - 1.0)) * hsl.saturation;
   float h_prime = 3.0f * h / PI;
-  float x = chroma * (1.0f - fabs(fmod(h_prime, 2.0f - 1.0f)));
+  float x = chroma * (1.0f - fabs(fmod(h_prime, 2.0f) - 1.0f));
   float r1, g1, b1;
   if (h_prime < 0.0f) {
     assert(false);
