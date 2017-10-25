@@ -22,6 +22,7 @@ DSTDIR = .
 TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
 VIDEO_FILENAME = contour-lines-$(TAG)-q$(QUALITY_VP9)tc$(TILE_COLUMNS_VP9)ki$(KEYFRAME_INTERVAL_MAX_VP9).webm
 
+video-vp9: $(DSTDIR)/$(VIDEO_FILENAME)
 $(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video $(AUDIO_FILE) Makefile
 	audio_args=""; \
 	if test -n "$(AUDIO_FILE)"; then \
@@ -43,6 +44,7 @@ $(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video $(AUDIO_FI
 	    -threads 6 \
 	    "$@"
 
+gen-video: $(DSTDIR)/contour-lines-$(TAG).gen-video
 $(DSTDIR)/contour-lines-$(TAG).gen-video: contour-lines-video.cc $(AUDIO_FILE) Makefile
 	frame_count=$(FRAME_COUNT); \
 	if test -n "$(AUDIO_FILE)"; then \
@@ -60,3 +62,5 @@ $(DSTDIR)/contour-lines-$(TAG).gen-video: contour-lines-video.cc $(AUDIO_FILE) M
 	  -DSEED=$(SEED) \
 	  -lnoise \
 	  -pthread
+
+.PHONY: video-vp9 gen-video
