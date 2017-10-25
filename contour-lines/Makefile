@@ -47,12 +47,12 @@ $(DSTDIR)/$(VIDEO_FILENAME_VP9): $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video 
 	    "$@"
 
 gen-video: $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video
-$(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video: contour-lines-video.cc $(AUDIO_FILE) Makefile
+$(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video: contour-lines.cc $(AUDIO_FILE) Makefile
 	frame_count=$(FRAME_COUNT); \
 	if test -n "$(AUDIO_FILE)"; then \
 	  frame_count="$$(soxi -T -D "$(AUDIO_FILE)" | awk '{print 1+int($(FRAMERATE)*$$1)}')" || exit 1; \
 	fi; \
-	g++ -o "$@" contour-lines-video.cc \
+	g++ -o "$@" contour-lines.cc \
 	  -Wall -Werror \
 	  -std=c++14 \
 	  -DWIDTH=$(WIDTH) \
