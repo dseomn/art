@@ -13,6 +13,9 @@ FRAME_COUNT = 900
 QUALITY_VP9 = 10
 TILE_COLUMNS_VP9 = 4
 KEYFRAME_INTERVAL_MAX_VP9 = 240
+QUALITY_H264 = 18
+PROFILE_H264 = high
+KEYFRAME_INTERVAL_MAX_H264 = 240
 
 # By default, there's no audio. If you specify a filename here, the audio will
 # be included. Additionally, FRAME_COUNT will be ignored, and the video length
@@ -25,6 +28,8 @@ DSTDIR = .
 VIDEO_TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
 VIDEO_TAG_VP9 = q$(QUALITY_VP9)tc$(TILE_COLUMNS_VP9)ki$(KEYFRAME_INTERVAL_MAX_VP9)
 VIDEO_FILENAME_VP9 = contour-lines-$(VIDEO_TAG)-$(VIDEO_TAG_VP9).webm
+VIDEO_TAG_H264 = q$(QUALITY_H264)p$(PROFILE_H264)ki$(KEYFRAME_INTERVAL_MAX_H264)
+VIDEO_FILENAME_H264 = contour-lines-$(VIDEO_TAG)-$(VIDEO_TAG_H264).mp4
 IMAGE_TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)s$(SEED)
 IMAGE_FILENAME_PNG = contour-lines-$(IMAGE_TAG).png
 
@@ -48,6 +53,27 @@ $(DSTDIR)/$(VIDEO_FILENAME_VP9): $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video 
 	    -g $(KEYFRAME_INTERVAL_MAX_VP9) \
 	    -tile-columns $(TILE_COLUMNS_VP9) \
 	    -threads 6 \
+	    "$@"
+
+video-h264: $(DSTDIR)/$(VIDEO_FILENAME_H264)
+$(DSTDIR)/$(VIDEO_FILENAME_H264): $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video $(AUDIO_FILE) Makefile
+	audio_args=""; \
+	if test -n "$(AUDIO_FILE)"; then \
+	  audio_args="-i $(AUDIO_FILE) -codec:a copy -shortest"; \
+	fi; \
+	$(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video | \
+	  ffmpeg -y \
+	    -f rawvideo \
+	    -pixel_format rgb24 \
+	    -video_size $(WIDTH)x$(HEIGHT) \
+	    -framerate $(FRAMERATE) \
+	    -i pipe:0 \
+	    $$audio_args \
+	    -codec:v libx264 \
+	    -pix_fmt yuv420p \
+	    -profile:v $(PROFILE_H264) \
+	    -crf $(QUALITY_H264) \
+	    -g $(KEYFRAME_INTERVAL_MAX_H264) \
 	    "$@"
 
 image-png: $(DSTDIR)/$(IMAGE_FILENAME_PNG)
@@ -95,4 +121,4 @@ $(DSTDIR)/contour-lines-$(IMAGE_TAG).gen-image: contour-lines.cc Makefile
 	  -lnoise \
 	  -pthread
 
-.PHONY: video-vp9 image-png gen-video gen-image
+.PHONY: video-vp9 video-h264 image-png gen-video gen-image
