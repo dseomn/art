@@ -14,21 +14,23 @@ KEYFRAME_INTERVAL_MAX_VP9 = 240
 
 # By default, there's no audio. If you specify a filename here, the audio will
 # be included. Additionally, FRAME_COUNT will be ignored, and the video length
-# will match the audio. If you specify a file here, also change the TAG below.
+# will match the audio. If you specify a file here, also change the VIDEO_TAG
+# below.
 AUDIO_FILE =
 
 # For controlling output.
 DSTDIR = .
-TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
-VIDEO_FILENAME = contour-lines-$(TAG)-q$(QUALITY_VP9)tc$(TILE_COLUMNS_VP9)ki$(KEYFRAME_INTERVAL_MAX_VP9).webm
+VIDEO_TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
+VIDEO_TAG_VP9 = q$(QUALITY_VP9)tc$(TILE_COLUMNS_VP9)ki$(KEYFRAME_INTERVAL_MAX_VP9)
+VIDEO_FILENAME_VP9 = contour-lines-$(VIDEO_TAG)-$(VIDEO_TAG_VP9).webm
 
-video-vp9: $(DSTDIR)/$(VIDEO_FILENAME)
-$(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video $(AUDIO_FILE) Makefile
+video-vp9: $(DSTDIR)/$(VIDEO_FILENAME_VP9)
+$(DSTDIR)/$(VIDEO_FILENAME_VP9): $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video $(AUDIO_FILE) Makefile
 	audio_args=""; \
 	if test -n "$(AUDIO_FILE)"; then \
 	  audio_args="-i $(AUDIO_FILE) -codec:a copy -shortest"; \
 	fi; \
-	$(DSTDIR)/contour-lines-$(TAG).gen-video | \
+	$(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video | \
 	  ffmpeg -y \
 	    -f rawvideo \
 	    -pixel_format rgb24 \
@@ -44,8 +46,8 @@ $(DSTDIR)/$(VIDEO_FILENAME): $(DSTDIR)/contour-lines-$(TAG).gen-video $(AUDIO_FI
 	    -threads 6 \
 	    "$@"
 
-gen-video: $(DSTDIR)/contour-lines-$(TAG).gen-video
-$(DSTDIR)/contour-lines-$(TAG).gen-video: contour-lines-video.cc $(AUDIO_FILE) Makefile
+gen-video: $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video
+$(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video: contour-lines-video.cc $(AUDIO_FILE) Makefile
 	frame_count=$(FRAME_COUNT); \
 	if test -n "$(AUDIO_FILE)"; then \
 	  frame_count="$$(soxi -T -D "$(AUDIO_FILE)" | awk '{print 1+int($(FRAMERATE)*$$1)}')" || exit 1; \
