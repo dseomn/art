@@ -1,11 +1,13 @@
-# Video parameters.
+# Parameters common to videos and images.
 WIDTH = 3840
 HEIGHT = 2160
 OVERSAMPLE_SPATIAL = 1
+SEED = 0
+
+# Video parameters.
 OVERSAMPLE_TEMPORAL = 1
 FRAMERATE = 60
 FRAME_COUNT = 900
-SEED = 0
 
 # Encoding parameters.
 QUALITY_VP9 = 10
@@ -23,6 +25,8 @@ DSTDIR = .
 VIDEO_TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)s$(SEED)
 VIDEO_TAG_VP9 = q$(QUALITY_VP9)tc$(TILE_COLUMNS_VP9)ki$(KEYFRAME_INTERVAL_MAX_VP9)
 VIDEO_FILENAME_VP9 = contour-lines-$(VIDEO_TAG)-$(VIDEO_TAG_VP9).webm
+IMAGE_TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)s$(SEED)
+IMAGE_FILENAME_PNG = contour-lines-$(IMAGE_TAG).png
 
 video-vp9: $(DSTDIR)/$(VIDEO_FILENAME_VP9)
 $(DSTDIR)/$(VIDEO_FILENAME_VP9): $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video $(AUDIO_FILE) Makefile
@@ -46,6 +50,17 @@ $(DSTDIR)/$(VIDEO_FILENAME_VP9): $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video 
 	    -threads 6 \
 	    "$@"
 
+image-png: $(DSTDIR)/$(IMAGE_FILENAME_PNG)
+$(DSTDIR)/$(IMAGE_FILENAME_PNG): $(DSTDIR)/contour-lines-$(IMAGE_TAG).gen-image Makefile
+	$(DSTDIR)/contour-lines-$(IMAGE_TAG).gen-image | \
+	  ffmpeg -y \
+	    -f rawvideo \
+	    -pixel_format rgb24 \
+	    -video_size $(WIDTH)x$(HEIGHT) \
+	    -framerate 1 \
+	    -i pipe:0 \
+	    "$@"
+
 gen-video: $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video
 $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video: contour-lines.cc $(AUDIO_FILE) Makefile
 	frame_count=$(FRAME_COUNT); \
@@ -65,4 +80,19 @@ $(DSTDIR)/contour-lines-$(VIDEO_TAG).gen-video: contour-lines.cc $(AUDIO_FILE) M
 	  -lnoise \
 	  -pthread
 
-.PHONY: video-vp9 gen-video
+gen-image: $(DSTDIR)/contour-lines-$(IMAGE_TAG).gen-image
+$(DSTDIR)/contour-lines-$(IMAGE_TAG).gen-image: contour-lines.cc Makefile
+	g++ -o "$@" contour-lines.cc \
+	  -Wall -Werror \
+	  -std=c++14 \
+	  -DWIDTH=$(WIDTH) \
+	  -DHEIGHT=$(HEIGHT) \
+	  -DOVERSAMPLE_SPATIAL=$(OVERSAMPLE_SPATIAL) \
+	  -DOVERSAMPLE_TEMPORAL=1 \
+	  -DFRAMERATE=1 \
+	  -DFRAME_COUNT=1 \
+	  -DSEED=$(SEED) \
+	  -lnoise \
+	  -pthread
+
+.PHONY: video-vp9 image-png gen-video gen-image
