@@ -8,6 +8,25 @@
 
 #define ASPECT_RATIO ((float)(WIDTH)/(float)(HEIGHT))
 
+float GetFactor(double d, double period) {
+  float x = fmod(fabs(d), period) / period;
+  if (x < 0.0f) {
+    assert(false);
+  } else if (x < 1.0f/8.0f) {
+    return 1.0f;
+  } else if (x < 3.0f/8.0f) {
+    return 1.0f - 4.0f * (x - 1.0f/8.0f);
+  } else if (x < 5.0f/8.0f) {
+    return 0.0f;
+  } else if (x < 7.0f/8.0f) {
+    return 4.0f * (x - 5.0f/8.0f);
+  } else if (x <= 1.0f) {
+    return 1.0f;
+  } else {
+    assert(false);
+  }
+}
+
 int main() {
   ::noise::module::Perlin perlin;
   perlin.SetOctaveCount(1);
@@ -48,7 +67,7 @@ int main() {
         float luma = 1.0f;
         for (int factor_number = 0; factor_number < FACTOR_COUNT; ++factor_number) {
           double d = real_x * unit_x[factor_number] + real_y * unit_y[factor_number];
-          luma *= 0.5 * sin(d / period[factor_number]) + 0.5;
+          luma *= GetFactor(d, period[factor_number]);
         }
 
         float pixel = luma * 256.0f;
