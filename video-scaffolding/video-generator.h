@@ -98,7 +98,8 @@ class VideoGenerator : public VideoGeneratorInterface {
   }
 
   // Override this if the per-point-in-time state shouldn't be null.
-  virtual ::std::unique_ptr<TimeState> GetTimeState(double t) {
+  virtual ::std::unique_ptr<TimeState> GetTimeState(
+      const ThreadState* thread_state, double t) {
     return nullptr;
   }
 
@@ -111,7 +112,8 @@ class VideoGenerator : public VideoGeneratorInterface {
     for (int sub_frame = 0; sub_frame < OVERSAMPLE_TEMPORAL; ++sub_frame) {
       subframe_times[sub_frame] =
           (frame_number + (double)sub_frame / OVERSAMPLE_TEMPORAL) / FRAMERATE;
-      time_states[sub_frame] = GetTimeState(subframe_times[sub_frame]);
+      time_states[sub_frame] =
+          GetTimeState(thread_state, subframe_times[sub_frame]);
     }
 
     int buf_len = 0;
