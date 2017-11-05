@@ -12,9 +12,12 @@ struct MoirePatternsThreadState {
 };
 
 struct MoirePatternsTimeState {
-  double unit_x[FACTOR_COUNT];
-  double unit_y[FACTOR_COUNT];
-  double period[FACTOR_COUNT];
+  double unit_x[LAYER_COUNT];
+  double unit_y[LAYER_COUNT];
+  double offset[LAYER_COUNT];
+  double period[LAYER_COUNT];
+
+  float hue;
 };
 
 class MoirePatterns :
@@ -25,14 +28,17 @@ class MoirePatterns :
       const MoirePatternsTimeState* time_state,
       float x, float y, double t)
       override {
-    float luma = 1.0f;
-    for (int factor_number = 0; factor_number < FACTOR_COUNT; ++factor_number) {
+    float alpha = 1.0f;
+    for (int layer_num = 0; layer_num < LAYER_COUNT; ++layer_num) {
       double d =
-          x * time_state->unit_x[factor_number] +
-          y * time_state->unit_y[factor_number];
-      luma *= GetFactor(d, time_state->period[factor_number]);
+          x * time_state->unit_x[layer_num] + y * time_state->unit_y[layer_num];
+      alpha *= GetAlpha(
+          d,
+          time_state->offset[layer_num],
+          time_state->period[layer_num]);
     }
-    return {luma, luma, luma};
+
+    return HslToRgb({time_state->hue, 1.0f, alpha});
   }
 
   ::std::unique_ptr<MoirePatternsThreadState> GetThreadState() override {
@@ -50,25 +56,32 @@ class MoirePatterns :
       const MoirePatternsThreadState* thread_state, double t) override {
     auto state = ::std::make_unique<MoirePatternsTimeState>();
 
-    for (int factor_number = 0; factor_number < FACTOR_COUNT; ++factor_number) {
+    for (int layer_num = 0; layer_num < LAYER_COUNT; ++layer_num) {
       double theta =
-          PI * thread_state->perlin.GetValue(factor_number, 0.0, 0.05 * t);
-      state->unit_x[factor_number] = cos(theta);
-      state->unit_y[factor_number] = sin(theta);
+          PI * thread_state->perlin.GetValue(0.0, 10 * layer_num, 0.05 * t);
+      state->unit_x[layer_num] = cos(theta);
+      state->unit_y[layer_num] = sin(theta);
 
-      state->period[factor_number] =
-          0.5 * thread_state->perlin.GetValue(factor_number, 1.0, 0.05 * t) +
-          0.5;
-      state->period[factor_number] =
-          ::std::max(0.01, state->period[factor_number]);
+      state->offset[layer_num] =
+          thread_state->perlin.GetValue(10.0, 10 * layer_num, 0.05 * t);
+
+      state->period[layer_num] =
+          ::std::max(
+              0.01,
+              0.3 + 0.3 * thread_state->perlin.GetValue(
+                  20.0, 10 * layer_num, 0.05 * t));
     }
+
+    state->hue =
+        10.0f * (float)PI *
+        (float)thread_state->perlin.GetValue(30.0, 0.0, 0.05 * t);
 
     return state;
   }
 
  private:
-  float GetFactor(double d, double period) {
-    float x = fmod(fabs(d), period) / period;
+  float GetAlpha(double d, double offset, double period) {
+    float x = fmod(fabs(d + offset), period) / period;
     if (x < 0.0f) {
       assert(false);
     } else if (x < 1.0f/8.0f) {
@@ -85,7 +98,6 @@ class MoirePatterns :
       assert(false);
     }
   }
-
 };
 
 ::std::unique_ptr<VideoGeneratorInterface>
