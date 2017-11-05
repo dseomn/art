@@ -18,14 +18,14 @@ DSTDIR = $(SRCDIR)
 PROJECT_FLAGS =
 
 # Parameters common to videos and images.
-WIDTH = 3840
-HEIGHT = 2160
+WIDTH = 1280
+HEIGHT = 720
 OVERSAMPLE_SPATIAL = 1
 
 # Video parameters.
 OVERSAMPLE_TEMPORAL = 1
-FRAMERATE = 60
-FRAME_COUNT = 900
+FRAMERATE = 30
+FRAME_COUNT = 300
 
 # By default, there's no audio. If you specify a filename AUDIO_FILE, the audio
 # will be included in videos. Additionally, FRAME_COUNT will be ignored, and
