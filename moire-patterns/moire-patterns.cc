@@ -54,6 +54,9 @@ class MoirePatterns :
 
   ::std::unique_ptr<MoirePatternsTimeState> GetTimeState(
       const MoirePatternsThreadState* thread_state, double t) override {
+    // Work around perlin weirdness around t=0.0.
+    t += 1.0;
+
     auto state = ::std::make_unique<MoirePatternsTimeState>();
 
     for (int layer_num = 0; layer_num < LAYER_COUNT; ++layer_num) {
