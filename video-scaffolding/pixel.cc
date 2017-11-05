@@ -5,6 +5,18 @@
 
 #define PI 3.141592653589793
 
+Rgb operator+(Rgb a, Rgb b) {
+  return {a.red + b.red, a.green + b.green, a.blue + b.blue};
+}
+
+Rgb operator*(Rgb a, float b) {
+  return {a.red * b, a.green * b, a.blue * b};
+}
+
+Rgb operator*(float a, Rgb b) {
+  return b * a;
+}
+
 uint8_t SubpixelToUint8(float subpixel) {
   subpixel *= 256.0f;
   if (subpixel < 0.0f) {

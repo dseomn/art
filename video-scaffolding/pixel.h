@@ -20,6 +20,12 @@ struct Rgb {
   float blue;
 };
 
+Rgb operator+(Rgb a, Rgb b);
+
+Rgb operator*(Rgb a, float b);
+
+Rgb operator*(float a, Rgb b);
+
 // Convert a nominally-in-[0,1] subpixel to uint8_t, clamping to the min and
 // max values of a uint8_t if needed.
 uint8_t SubpixelToUint8(float subpixel);
