@@ -54,30 +54,30 @@ class MoirePatterns :
 
   ::std::unique_ptr<MoirePatternsTimeState> GetTimeState(
       const MoirePatternsThreadState* thread_state, double t) override {
-    // Work around perlin weirdness around t=0.0.
-    t += 1.0;
+    constexpr double kSeparation = 9.1;
 
     auto state = ::std::make_unique<MoirePatternsTimeState>();
 
     for (int layer_num = 0; layer_num < LAYER_COUNT; ++layer_num) {
       double theta =
-          PI * thread_state->perlin.GetValue(0.0, 10 * layer_num, 0.05 * t);
+          PI * thread_state->perlin.GetValue(
+              0.0, kSeparation * layer_num, 0.05 * t);
       state->unit_x[layer_num] = cos(theta);
       state->unit_y[layer_num] = sin(theta);
 
-      state->offset[layer_num] =
-          thread_state->perlin.GetValue(10.0, 10 * layer_num, 0.05 * t);
+      state->offset[layer_num] = thread_state->perlin.GetValue(
+          kSeparation, kSeparation * layer_num, 0.05 * t);
 
       state->period[layer_num] =
           ::std::max(
               0.01,
               0.3 + 0.3 * thread_state->perlin.GetValue(
-                  20.0, 10 * layer_num, 0.05 * t));
+                  2 * kSeparation, kSeparation * layer_num, 0.05 * t));
     }
 
     state->hue =
         10.0f * (float)PI *
-        (float)thread_state->perlin.GetValue(30.0, 0.0, 0.05 * t);
+        (float)thread_state->perlin.GetValue(3 * kSeparation, 0.0, 0.05 * t);
 
     return state;
   }
