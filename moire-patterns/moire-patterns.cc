@@ -61,23 +61,24 @@ class MoirePatterns :
     for (int layer_num = 0; layer_num < LAYER_COUNT; ++layer_num) {
       double theta =
           PI * thread_state->perlin.GetValue(
-              0.0, kSeparation * layer_num, 0.05 * t);
+              0.0, kSeparation * layer_num, ROTATION_SPEED * t);
       state->unit_x[layer_num] = cos(theta);
       state->unit_y[layer_num] = sin(theta);
 
       state->offset[layer_num] = thread_state->perlin.GetValue(
-          kSeparation, kSeparation * layer_num, 0.05 * t);
+          kSeparation, kSeparation * layer_num, TRANSLATION_SPEED * t);
 
       state->period[layer_num] =
           ::std::max(
               0.01,
               0.3 + 0.3 * thread_state->perlin.GetValue(
-                  2 * kSeparation, kSeparation * layer_num, 0.05 * t));
+                  2 * kSeparation, kSeparation * layer_num, SCALE_SPEED * t));
     }
 
     state->hue =
         10.0f * (float)PI *
-        (float)thread_state->perlin.GetValue(3 * kSeparation, 0.0, 0.05 * t);
+        (float)thread_state->perlin.GetValue(
+            3 * kSeparation, 0.0, HUE_SPEED * t);
 
     return state;
   }
