@@ -5,8 +5,8 @@ FACTOR_COUNT = 3
 FRAMERATE = 60
 FRAME_COUNT = 900
 
-trig-moire.webm: trig-moire Makefile
-	./trig-moire | \
+moire-patterns.webm: moire-patterns Makefile
+	./moire-patterns | \
 	  ffmpeg -y \
 	    -f rawvideo \
 	    -pixel_format gray \
@@ -20,8 +20,8 @@ trig-moire.webm: trig-moire Makefile
 	    -threads 6 \
 	    "$@"
 
-trig-moire: trig-moire.cc Makefile
-	g++ -o "$@" trig-moire.cc \
+moire-patterns: moire-patterns.cc Makefile
+	g++ -o "$@" moire-patterns.cc \
 	  -Wall -Werror \
 	  -std=c++14 \
 	  -DWIDTH=$(WIDTH) \
