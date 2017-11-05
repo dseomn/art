@@ -51,7 +51,7 @@ ENC_VP9_TAG = q$(ENC_VP9_QUALITY)tc$(ENC_VP9_TILE_COLUMNS)ki$(ENC_VP9_KEYFRAME_I
 ENC_H264_TAG = q$(ENC_H264_QUALITY)p$(ENC_H264_PROFILE)ki$(ENC_H264_KEYFRAME_INTERVAL_MAX)
 ENC_PNG_TAG = default
 
-CXXFLAGS = -Wall -Werror -std=c++14 -pthread
+CXXFLAGS = -Wall -Werror -std=c++14 -pthread -O3
 
 GET_PROJECT_FLAGS = \
   cat "$(SRCDIR)/$(PROJECT).defaults" && \
