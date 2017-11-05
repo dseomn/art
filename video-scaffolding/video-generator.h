@@ -69,7 +69,7 @@ class VideoGenerator : public VideoGeneratorInterface {
     next_frame_to_generate_ = 0;
   }
 
-  virtual void GenerateAndPrint() {
+  void GenerateAndPrint() override {
     ::std::vector<::std::thread> generate_threads;
     for (unsigned i = 0; i < thread_count_; ++i) {
       generate_threads.emplace_back(

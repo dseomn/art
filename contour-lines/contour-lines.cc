@@ -10,9 +10,10 @@ struct ContourLinesThreadState {
 
 class ContourLines : public VideoGenerator<ContourLinesThreadState> {
  protected:
-  virtual Rgb PointValue(
+  Rgb PointValue(
       const ContourLinesThreadState* thread_state, const NullState* time_state,
-      float x, float y, double t) {
+      float x, float y, double t)
+      override {
     double elevation =
         0.5 * thread_state->perlin.GetValue(x * 1.7, y * 1.7, t * 0.03) + 0.5;
     if (elevation < 0.0) {
@@ -26,7 +27,7 @@ class ContourLines : public VideoGenerator<ContourLinesThreadState> {
          (float)pow(256.0, -2.0 * NUM_LINES * distance_to_line)});
   }
 
-  virtual ::std::unique_ptr<ContourLinesThreadState> GetThreadState() {
+  ::std::unique_ptr<ContourLinesThreadState> GetThreadState() override {
     auto state = ::std::make_unique<ContourLinesThreadState>();
     state->perlin.SetOctaveCount(1);
     state->perlin.SetFrequency(1.0);
