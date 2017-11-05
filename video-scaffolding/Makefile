@@ -44,8 +44,8 @@ ENC_H264_KEYFRAME_INTERVAL_MAX = 240
 # Filename tags. These are used so that an output filename can identify the
 # parameters used to generate it, and also so that it's easy to test different
 # combinations of parameters without overwriting files.
-VIDEO_TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)
-IMAGE_TAG = $(WIDTH)x$(HEIGHT)os$(OVERSAMPLE_SPATIAL)
+VIDEO_TAG = w$(WIDTH)h$(HEIGHT)os$(OVERSAMPLE_SPATIAL)ot$(OVERSAMPLE_TEMPORAL)fr$(FRAMERATE)fc$(FRAME_COUNT)
+IMAGE_TAG = w$(WIDTH)h$(HEIGHT)os$(OVERSAMPLE_SPATIAL)
 AUDIO_TAG = silent
 ENC_VP9_TAG = q$(ENC_VP9_QUALITY)tc$(ENC_VP9_TILE_COLUMNS)ki$(ENC_VP9_KEYFRAME_INTERVAL_MAX)
 ENC_H264_TAG = q$(ENC_H264_QUALITY)p$(ENC_H264_PROFILE)ki$(ENC_H264_KEYFRAME_INTERVAL_MAX)
