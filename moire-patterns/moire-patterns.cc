@@ -29,7 +29,9 @@ class MoirePatterns :
       float x, float y, double t)
       override {
     float alpha = 1.0f;
-    for (int layer_num = 0; layer_num < LAYER_COUNT; ++layer_num) {
+    for (int layer_num = 0;
+         layer_num < LAYER_COUNT && alpha > 0.0f;
+         ++layer_num) {
       double d =
           x * time_state->unit_x[layer_num] + y * time_state->unit_y[layer_num];
       alpha *= GetAlpha(
