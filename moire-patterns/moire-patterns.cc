@@ -54,36 +54,62 @@ class MoirePatterns :
 
   ::std::unique_ptr<MoirePatternsTimeState> GetTimeState(
       const MoirePatternsThreadState* thread_state, double t) override {
-    constexpr double kSeparation = 9.1;
-
     auto state = ::std::make_unique<MoirePatternsTimeState>();
+
+    int noise_track = 0;
 
     for (int layer_num = 0; layer_num < LAYER_COUNT; ++layer_num) {
       double theta =
-          PI * thread_state->perlin.GetValue(
-              0.0, kSeparation * layer_num, ROTATION_SPEED * t);
+          PI * GetNoiseValue(thread_state, noise_track++, ROTATION_SPEED, t);
       state->unit_x[layer_num] = cos(theta);
       state->unit_y[layer_num] = sin(theta);
 
-      state->offset[layer_num] = thread_state->perlin.GetValue(
-          kSeparation, kSeparation * layer_num, TRANSLATION_SPEED * t);
+      state->offset[layer_num] =
+          GetNoiseValue(thread_state, noise_track++, TRANSLATION_SPEED, t);
 
       state->period[layer_num] =
-          ::std::max(
-              0.01,
-              0.3 + 0.3 * thread_state->perlin.GetValue(
-                  2 * kSeparation, kSeparation * layer_num, SCALE_SPEED * t));
+          0.05 + 0.6 * pow(
+              NoiseValueToRange(
+                  0.0, 1.0,
+                  GetNoiseValue(thread_state, noise_track++, SCALE_SPEED, t)),
+              SCALE_EXP);
     }
 
     state->hue =
         10.0f * (float)PI *
-        (float)thread_state->perlin.GetValue(
-            3 * kSeparation, 0.0, HUE_SPEED * t);
+        (float)GetNoiseValue(thread_state, noise_track++, HUE_SPEED, t);
 
     return state;
   }
 
  private:
+  double GetNoiseValue(
+      const MoirePatternsThreadState* thread_state,
+      int noise_track,
+      double speed,
+      double t) {
+    constexpr double kTrackSeparation = 9.45;
+
+    double displacement =
+        TIME_DISPLACEMENT_AMPLITUDE *
+        thread_state->perlin.GetValue(
+            2 * noise_track * kTrackSeparation,
+            0.0,
+            TIME_DISPLACEMENT_FREQ * t);
+
+    return thread_state->perlin.GetValue(
+        (2 * noise_track + 1) * kTrackSeparation,
+        0.0,
+        speed * t + displacement);
+  }
+
+  // Given a value returned by GetNoiseValue, return a value in the range
+  // [lower, upper].
+  double NoiseValueToRange(double lower, double upper, double val) {
+    val = lower + (0.5 + 0.5 * val) * (upper - lower);
+    return ::std::max(lower, ::std::min(upper, val));
+  }
+
   float GetAlpha(double d, double offset, double period) {
     float x = fmod(fabs(d + offset), period) / period;
     if (x < 0.0f) {
