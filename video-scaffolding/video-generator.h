@@ -12,6 +12,7 @@
 // HEIGHT
 // OVERSAMPLE_SPATIAL
 // OVERSAMPLE_TEMPORAL
+// OVERSAMPLE_TEMPORAL_WIDTH
 // FRAMERATE
 // FRAME_COUNT
 
@@ -111,7 +112,10 @@ class VideoGenerator : public VideoGeneratorInterface {
     ::std::unique_ptr<TimeState> time_states[OVERSAMPLE_TEMPORAL];
     for (int sub_frame = 0; sub_frame < OVERSAMPLE_TEMPORAL; ++sub_frame) {
       subframe_times[sub_frame] =
-          (frame_number + (double)sub_frame / OVERSAMPLE_TEMPORAL) / FRAMERATE;
+          (
+              frame_number +
+              (OVERSAMPLE_TEMPORAL_WIDTH * sub_frame) / OVERSAMPLE_TEMPORAL
+          ) / FRAMERATE;
       time_states[sub_frame] =
           GetTimeState(thread_state, subframe_times[sub_frame]);
     }
