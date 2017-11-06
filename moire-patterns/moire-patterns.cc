@@ -88,14 +88,14 @@ class MoirePatterns :
     float x = fmod(fabs(d + offset), period) / period;
     if (x < 0.0f) {
       assert(false);
-    } else if (x < 1.0f/8.0f) {
+    } else if (x < 3.0f/16.0f) {
       return 1.0f;
-    } else if (x < 3.0f/8.0f) {
-      return 1.0f - 4.0f * (x - 1.0f/8.0f);
-    } else if (x < 5.0f/8.0f) {
+    } else if (x < 5.0f/16.0f) {
+      return 1.0f - 8.0f * (x - 3.0f/16.0f);
+    } else if (x < 11.0f/16.0f) {
       return 0.0f;
-    } else if (x < 7.0f/8.0f) {
-      return 4.0f * (x - 5.0f/8.0f);
+    } else if (x < 13.0f/16.0f) {
+      return 8.0f * (x - 11.0f/16.0f);
     } else if (x <= 1.0f) {
       return 1.0f;
     } else {
