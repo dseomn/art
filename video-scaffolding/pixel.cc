@@ -64,7 +64,7 @@ Rgb HslToRgb(Hsl hsl) {
     r1 = x;
     g1 = 0.0f;
     b1 = chroma;
-  } else if (h_prime < 6.0f) {
+  } else if (h_prime <= 6.0f) {
     r1 = chroma;
     g1 = 0.0f;
     b1 = x;
