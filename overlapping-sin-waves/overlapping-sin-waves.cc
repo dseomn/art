@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cassert>
 #include <cmath>
 #include <cstdio>
@@ -89,8 +90,12 @@ int main() {
   ::std::uniform_int_distribution<int> note_count_dist(
       MIN_NOTE_COUNT, MAX_NOTE_COUNT);
 
+  ::std::vector<float> audio;
   for (int64_t n = 0; n >= 0; ++n) {
     double time = (double)n / SAMPLE_RATE;
+    if (time > DURATION) {
+      break;
+    }
 
     if (time >= adjust_notes_at) {
       int note_count = 0;
@@ -129,11 +134,22 @@ int main() {
     for (Note& note : notes) {
       float note_sample[2];
       note.GetSample(time, note_sample);
-      sample[0] += note_sample[0] / MAX_NOTE_COUNT;
-      sample[1] += note_sample[1] / MAX_NOTE_COUNT;
+      sample[0] += note_sample[0];
+      sample[1] += note_sample[1];
     }
 
-    size_t written = fwrite(&sample, sizeof(sample[0]), 2, stdout);
-    assert(written == 2);
+    audio.push_back(sample[0]);
+    audio.push_back(sample[1]);
+  }
+
+  float peak = 0.0f;
+  for (float sample : audio) {
+    peak = ::std::max(peak, ::std::abs(sample));
+  }
+
+  for (float sample : audio) {
+    sample /= peak;
+    size_t written = fwrite(&sample, sizeof(sample), 1, stdout);
+    assert(written == 1);
   }
 }

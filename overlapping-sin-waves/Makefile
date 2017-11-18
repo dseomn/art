@@ -3,7 +3,6 @@ SEED = 0
 
 overlapping-sin-waves.flac: overlapping-sin-waves Makefile
 	./overlapping-sin-waves | \
-	  head -c $$(($(SAMPLE_RATE) * 2 * 4 * 60)) | \
 	  ffmpeg -y \
 	    -f f32le \
 	    -ac 2 \
@@ -17,6 +16,7 @@ overlapping-sin-waves: overlapping-sin-waves.cc Makefile
 	  -std=c++14 \
 	  -DSAMPLE_RATE=$(SAMPLE_RATE) \
 	  -DSEED=$(SEED) \
+	  -DDURATION=60.0 \
 	  -DMIN_NOTE_COUNT=1 \
 	  -DMAX_NOTE_COUNT=64 \
 	  -DMIN_NOTE_ADJUST_INTERVAL=1.0 \
