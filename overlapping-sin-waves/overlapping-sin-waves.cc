@@ -11,7 +11,8 @@ class Note {
   Note(unsigned seed) :
       random_(seed),
       duration_dist_(0.0, 1.0),
-      frequency_dist_(0.0, 1.0) {}
+      frequency_dist_(0.0, 1.0),
+      volume_dist_(0.0f, 1.0f) {}
 
   float GetSample(double t) {
     if (t > stop_) {
@@ -22,6 +23,7 @@ class Note {
       } else {
         frequency_ = 20.0 + 256.0 * frequency_dist_(random_);
       }
+      volume_ = volume_dist_(random_);
     }
 
     if (frequency_ <= 0.0) {
@@ -29,6 +31,8 @@ class Note {
     }
 
     float sample = sin((t - start_) * frequency_ * 2.0 * PI);
+
+    sample *= volume_;
 
     if (t - start_ < 0.01) {
       sample *= (t - start_) / 0.01;
@@ -44,10 +48,12 @@ class Note {
   double start_ = -1.0;
   double stop_ = -1.0;
   double frequency_ = -1.0;
+  float volume_ = 0.0f;
 
   ::std::mt19937 random_;
   ::std::lognormal_distribution<double> duration_dist_;
   ::std::lognormal_distribution<double> frequency_dist_;
+  ::std::uniform_real_distribution<float> volume_dist_;
 };
 
 int main() {
