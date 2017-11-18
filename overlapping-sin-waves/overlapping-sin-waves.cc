@@ -87,8 +87,7 @@ int main() {
   double adjust_notes_at = -1.0;
   ::std::uniform_real_distribution<double> adjust_notes_dist(
       MIN_NOTE_ADJUST_INTERVAL, MAX_NOTE_ADJUST_INTERVAL);
-  ::std::uniform_int_distribution<int> note_count_dist(
-      MIN_NOTE_COUNT, MAX_NOTE_COUNT);
+  ::std::poisson_distribution<int> note_count_dist(MEAN_NOTE_COUNT);
 
   ::std::vector<float> audio;
   for (int64_t n = 0; n >= 0; ++n) {
