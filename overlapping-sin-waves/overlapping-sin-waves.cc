@@ -41,7 +41,14 @@ class Note {
       return;
     }
 
-    float sample = sin((t - start_) * frequency_ * 2.0 * PI);
+    float sample = 0.0f;
+    float harmonic_factor = 1.0f;
+    for (int harmonic = 1; harmonic_factor >= HARMONIC_THRESHOLD; ++harmonic) {
+      sample +=
+          harmonic_factor *
+          sin(harmonic * (t - start_) * frequency_ * 2.0 * PI);
+      harmonic_factor *= HARMONIC_FACTOR;
+    }
 
     sample *= volume_;
 
