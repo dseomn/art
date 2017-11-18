@@ -1,12 +1,17 @@
 #include <video-scaffolding/video-generator.h>
 
+#include <libnoise/module/cache.h>
 #include <libnoise/module/perlin.h>
-#include <libnoise/module/turbulence.h>
-#include <libnoise/module/voronoi.h>
+
+#include <cmath>
 
 struct TurbulentCellsThreadState {
-  ::noise::module::Voronoi cells;
-  ::noise::module::Turbulence cells_turb;
+  ::noise::module::Perlin turbulence_dx;
+  ::noise::module::Perlin turbulence_dy;
+  ::noise::module::Perlin turbulence_dz;
+
+  ::noise::module::Perlin cell_lightness;
+  ::noise::module::Cache cell_lightness_cache;
 
   ::noise::module::Perlin hue;
 };
@@ -26,11 +31,24 @@ class TurbulentCells :
       override {
     Hsl hsl;
 
+    double cell_x = GetCellCenter(
+        VIEWPORT_FACTOR * x,
+        thread_state->turbulence_dx, TURBULENCE_POWER,
+        x, y, t);
+    double cell_y = GetCellCenter(
+        VIEWPORT_FACTOR * y,
+        thread_state->turbulence_dy, TURBULENCE_POWER,
+        x, y, t);
+    double cell_z = GetCellCenter(
+        CELL_SPEED * t,
+        thread_state->turbulence_dz, TURBULENCE_POWER_T,
+        x, y, t);
+
     hsl.lightness =
         (float)LIGHTNESS_MIDPOINT +
         (float)LIGHTNESS_DELTA *
-        (float)thread_state->cells_turb.GetValue(
-            VIEWPORT_FACTOR * x, VIEWPORT_FACTOR * y, CELL_SPEED * t);
+        (float)thread_state->cell_lightness_cache.GetValue(
+            cell_x, cell_y, cell_z);
     if (hsl.lightness < 0.0f) hsl.lightness = 0.0f;
     if (hsl.lightness > 1.0f) hsl.lightness = 1.0f;
 
@@ -46,13 +64,17 @@ class TurbulentCells :
 
     int seed = SEED;
 
-    state->cells.SetFrequency(1.0);
-    state->cells.SetDisplacement(1.0);
-    state->cells.SetSeed(seed++);
-    state->cells_turb.SetSourceModule(0, state->cells);
-    state->cells_turb.SetRoughness(TURBULENCE_ROUGHNESS);
-    state->cells_turb.SetFrequency(TURBULENCE_FREQUENCY);
-    state->cells_turb.SetPower(TURBULENCE_POWER);
+    for (::noise::module::Perlin* turbulence :
+        {&state->turbulence_dx, &state->turbulence_dy, &state->turbulence_dz}) {
+      turbulence->SetOctaveCount(TURBULENCE_ROUGHNESS);
+      turbulence->SetFrequency(TURBULENCE_FREQUENCY);
+      turbulence->SetSeed(seed++);
+    }
+
+    state->cell_lightness.SetOctaveCount(1);
+    state->cell_lightness.SetFrequency(1.0);
+    state->cell_lightness.SetSeed(seed++);
+    state->cell_lightness_cache.SetSourceModule(0, state->cell_lightness);
 
     state->hue.SetOctaveCount(1);
     state->hue.SetFrequency(1.0);
@@ -70,6 +92,16 @@ class TurbulentCells :
         30.0f * (float)thread_state->hue.GetValue(0.0, 0.0, HUE_SPEED * t);
 
     return state;
+  }
+
+ private:
+  double GetCellCenter(
+      double initial,
+      const ::noise::module::Perlin& turbulence, double power,
+      float x, float y, double t) {
+    double offset = power * turbulence.GetValue(
+        VIEWPORT_FACTOR * x, VIEWPORT_FACTOR * y, CELL_SPEED * t);
+    return 0.5 + floor(initial + offset);
   }
 };
 
