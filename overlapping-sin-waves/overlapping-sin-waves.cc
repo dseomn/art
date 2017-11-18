@@ -34,11 +34,11 @@ class Note {
 
     sample *= volume_;
 
-    if (t - start_ < 0.01) {
-      sample *= (t - start_) / 0.01;
+    if (t - start_ < 0.02) {
+      sample *= (t - start_) / 0.02;
     }
-    if (stop_ - t < 0.01) {
-      sample *= (stop_ -t) / 0.01;
+    if (stop_ - t < 0.02) {
+      sample *= (stop_ - t) / 0.02;
     }
 
     return sample;
