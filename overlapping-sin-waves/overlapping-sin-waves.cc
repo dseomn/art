@@ -26,11 +26,16 @@ class Note {
 
       start_ = t;
       stop_ = start_ + duration_dist_(random_);
+      if (stop_ > DURATION) {
+        stop_ = DURATION;
+      }
+
       if (frequency_ > 0.0) {
         frequency_ = -1.0;
       } else {
         frequency_ = 20.0 + 256.0 * frequency_dist_(random_);
       }
+
       volume_ = volume_dist_(random_);
       pan_ = pan_dist_(random_);
     }
