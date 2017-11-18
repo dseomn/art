@@ -17,6 +17,12 @@ class Note {
 
   void GetSample(double t, float out[2]) {
     if (t > stop_) {
+      if (!respawn_) {
+        out[0] = 0.0f;
+        out[1] = 0.0f;
+        return;
+      }
+
       start_ = t;
       stop_ = start_ + duration_dist_(random_);
       if (frequency_ > 0.0) {
@@ -50,7 +56,16 @@ class Note {
     return;
   }
 
+  void StopGracefully() {
+    respawn_ = false;
+  }
+
+  bool IsInUse(double t) {
+    return respawn_ || t <= stop_;
+  }
+
  private:
+  bool respawn_ = true;
   double start_ = -1.0;
   double stop_ = -1.0;
   double frequency_ = -1.0;
@@ -65,20 +80,57 @@ class Note {
 };
 
 int main() {
+  ::std::mt19937 random(SEED);
+
   ::std::vector<Note> notes;
-  for (int i = 0; i < 10; ++i) {
-    notes.emplace_back(SEED + i);
-  }
+  double adjust_notes_at = -1.0;
+  ::std::uniform_real_distribution<double> adjust_notes_dist(
+      MIN_NOTE_ADJUST_INTERVAL, MAX_NOTE_ADJUST_INTERVAL);
+  ::std::uniform_int_distribution<int> note_count_dist(
+      MIN_NOTE_COUNT, MAX_NOTE_COUNT);
 
   for (int64_t n = 0; n >= 0; ++n) {
     double time = (double)n / SAMPLE_RATE;
+
+    if (time >= adjust_notes_at) {
+      int note_count = 0;
+      for (Note& note : notes) {
+        if (note.IsInUse(time)) {
+          ++note_count;
+        }
+      }
+
+      int note_count_next = note_count_dist(random);
+      for (Note& note : notes) {
+        if (note_count == note_count_next) {
+          break;
+        } else if (note_count > note_count_next) {
+          if (note.IsInUse(time)) {
+            note.StopGracefully();
+            --note_count;
+          }
+        } else {
+          if (!note.IsInUse(time)) {
+            note = Note(random());
+            ++note_count;
+          }
+        }
+      }
+      while (note_count < note_count_next) {
+        notes.emplace_back(random());
+        ++note_count;
+      }
+
+      adjust_notes_at = time + adjust_notes_dist(random);
+    }
+
     float sample[2] = {0.0f, 0.0f};
 
     for (Note& note : notes) {
       float note_sample[2];
       note.GetSample(time, note_sample);
-      sample[0] += note_sample[0] / notes.size();
-      sample[1] += note_sample[1] / notes.size();
+      sample[0] += note_sample[0] / MAX_NOTE_COUNT;
+      sample[1] += note_sample[1] / MAX_NOTE_COUNT;
     }
 
     size_t written = fwrite(&sample, sizeof(sample[0]), 2, stdout);
