@@ -116,7 +116,7 @@ int main() {
   ::std::vector<float> audio;
   for (int64_t n = 0; n >= 0; ++n) {
     double time = (double)n / SAMPLE_RATE;
-    if (time > DURATION) {
+    if (time >= DURATION) {
       break;
     }
 
