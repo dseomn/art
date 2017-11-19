@@ -52,6 +52,18 @@ class Note {
       sample +=
           harmonic_factor *
           sin(harmonic * (t - start_) * frequency_ * 2.0 * PI);
+
+      float spread_factor = 1.0f;
+      for (int spread = 1; spread < FREQ_SPREAD_COUNT; ++spread) {
+          spread_factor *= FREQ_SPREAD_FACTOR;
+          sample +=
+              harmonic_factor *
+              sin(harmonic * (t - start_) * frequency_ * 2.0 * PI * spread_factor);
+          sample +=
+              harmonic_factor *
+              sin(harmonic * (t - start_) * frequency_ * 2.0 * PI / spread_factor);
+      }
+
       harmonic_factor *= HARMONIC_FACTOR;
     }
 
