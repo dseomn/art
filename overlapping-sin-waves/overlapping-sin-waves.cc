@@ -170,9 +170,18 @@ int main() {
     peak = ::std::max(peak, ::std::abs(sample));
   }
 
+  float silent[2] = {0.0f, 0.0f};
+  for (int64_t n = 0; (double)n / SAMPLE_RATE < SILENCE_PRE; ++n) {
+    size_t written = fwrite(&silent, sizeof(silent[0]), 2, stdout);
+    assert(written == 2);
+  }
   for (float sample : audio) {
     sample /= peak;
     size_t written = fwrite(&sample, sizeof(sample), 1, stdout);
     assert(written == 1);
+  }
+  for (int64_t n = 0; (double)n / SAMPLE_RATE < SILENCE_POST; ++n) {
+    size_t written = fwrite(&silent, sizeof(silent[0]), 2, stdout);
+    assert(written == 2);
   }
 }

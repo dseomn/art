@@ -17,6 +17,8 @@ overlapping-sin-waves: overlapping-sin-waves.cc Makefile
 	  -DSAMPLE_RATE=$(SAMPLE_RATE) \
 	  -DSEED=$(SEED) \
 	  -DDURATION=60.0 \
+	  -DSILENCE_PRE=0.0 \
+	  -DSILENCE_POST=2.0 \
 	  -DMEAN_NOTE_COUNT=12.0 \
 	  -DMIN_NOTE_ADJUST_INTERVAL=1.0 \
 	  -DMAX_NOTE_ADJUST_INTERVAL=15.0 \
