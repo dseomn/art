@@ -11,7 +11,7 @@ class Note {
  public:
   Note(unsigned seed) :
       random_(seed),
-      duration_dist_(0.0, 1.0),
+      duration_dist_(NOTE_DURATION_LOGMEAN, NOTE_DURATION_LOGSIGMA),
       frequency_dist_(0.0, 1.0),
       volume_dist_(0.0f, 1.0f),
       pan_dist_(0.0f, 1.0f) {}
