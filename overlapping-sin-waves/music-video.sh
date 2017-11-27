@@ -9,22 +9,25 @@ try() { "$@" || fatal "Command failed: $*"; }
 try_v() { log "Running command: $*"; try "$@"; }
 
 for f in final/track-??-*.flac; do
+  tag="${f#final/}"
+  tag="${tag%.flac}"
   try_v ffmpeg -y \
-    -i "$f" \
+    -f image2 -loop 1 -framerate 60 -i "video/${tag}.background.png" \
+    -i "final/${tag}.flac" \
     -filter_complex '
-        [0:a] pan=1c|c0=c0 [left];
-        [0:a] pan=1c|c0=c1 [right];
-        [left] showspectrum=size=1820x465:slide=scroll:color=intensity, pad=w=1920:h=540:x=50:y=50:color=0x1f1f1f [vleft];
-        [right] showspectrum=size=1820x465:slide=scroll:color=intensity, pad=w=1920:h=540:x=50:y=25:color=0x1f1f1f [vright];
-        [vleft][vright] vstack [video]
+        [1:a] showspectrum=size=1193x1363:slide=scroll:color=channel:mode=combined, fps=fps=60, scale=size=2386x1363 [spectrum];
+        [1:a] showwaves=size=1600x1600:mode=p2p:rate=60:split_channels=1, dilation, dilation, dilation, dilation, scale=size=1024x1024 [waves];
+        [0:v][spectrum] overlay=x=1408:y=742:shortest=1 [tmpa];
+        [tmpa][waves] overlay=x=43:y=1082 [video]
         ' \
     -c:a libvorbis \
     -q:a 10 \
     -c:v libvpx-vp9 \
-    -pix_fmt yuv444p \
+    -pix_fmt yuv420p \
     -b:v 0 -crf 10 \
     -g 240 \
-    -tile-columns 2 \
+    -tile-columns 4 \
     -threads 6 \
-    -map '[video]' -map 0:a "${f}.webm"
+    -map '[video]' -map 1:a "video/${tag}.webm"
+  try_v ln -s "../video/${tag}.webm" final/
 done
