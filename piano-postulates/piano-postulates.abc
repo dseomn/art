@@ -14,35 +14,35 @@ K:C
 X:2
 T:Piano Postulate no. 2: ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
 C:David Mandelberg
-M:7/8
+M:12/8
 L:1/8
 Q:"Allegro"
 V:T clef=treble
 V:B clef=bass
 %%score {T B}
 K:C
-%%MIDI beatstring mmmmmmm
+%%MIDI beatstring mmmmmmmmmmmm
 [V:T] Z |\
-[V:B] C,,,,, D,,,,, E,,,,, F,,,,, G,,,,, A,,,,, B,,,,, |\
+[V:B] C,,,,, ^C,,,,, D,,,,, ^D,,,,, E,,,,, F,,,,, ^F,,,,, G,,,,, ^G,,,,, A,,,,, ^A,,,,, B,,,,, |\
 [V:T] Z |\
-[V:B] C,,,, D,,,, E,,,, F,,,, G,,,, A,,,, B,,,, |\
+[V:B] C,,,, ^C,,,, D,,,, ^D,,,, E,,,, F,,,, ^F,,,, G,,,, ^G,,,, A,,,, ^A,,,, B,,,, |\
 [V:T] Z |\
-[V:B] C,,, D,,, E,,, F,,, G,,, A,,, B,,, |\
+[V:B] C,,, ^C,,, D,,, ^D,,, E,,, F,,, ^F,,, G,,, ^G,,, A,,, ^A,,, B,,, |\
 [V:T] Z |\
-[V:B] C,, D,, E,, F,, G,, A,, B,, |\
+[V:B] C,, ^C,, D,, ^D,, E,, F,, ^F,, G,, ^G,, A,, ^A,, B,, |\
 [V:T] Z |\
-[V:B] C, D, E, F, G, A, B, |\
-[V:T] C D E F G A B |\
+[V:B] C, ^C, D, ^D, E, F, ^F, G, ^G, A, ^A, B, |\
+[V:T] C ^C D ^D E F ^F G ^G A ^A B |\
 [V:B] Z |\
-[V:T] c d e f g a b |\
+[V:T] c ^c d ^d e f ^f g ^g a ^a b |\
 [V:B] Z |\
-[V:T] c' d' e' f' g' a' b' |\
+[V:T] c' ^c' d' ^d' e' f' ^f' g' ^g' a' ^a' b' |\
 [V:B] Z |\
-[V:T] c'' d'' e'' f'' g'' a'' b'' |\
+[V:T] c'' ^c'' d'' ^d'' e'' f'' ^f'' g'' ^g'' a'' ^a'' b'' |\
 [V:B] Z |\
-[V:T] c''' d''' e''' f''' g''' a''' b''' |\
+[V:T] c''' ^c''' d''' ^d''' e''' f''' ^f''' g''' ^g''' a''' ^a''' b''' |\
 [V:B] Z |\
-[V:T] c'''' d'''' e'''' f'''' g'''' z2  |]
+[V:T] c'''' ^c'''' d'''' ^d'''' e'''' f'''' ^f'''' g'''' ^g'''' z3  |]
 [V:B] Z |]
 
 X:3
@@ -55,8 +55,8 @@ V:T clef=treble
 V:B clef=bass
 %%score {T B}
 K:C
-[V:T] c d z | Z       | d e z | Z       |]
-[V:B] Z     | C, D, z | Z     | D, E, z |]
+[V:T] c ^c z | Z        | d ^d z | Z        |]
+[V:B] Z      | C, ^C, z | Z      | D, ^D, z |]
 
 X:4
 T:Piano Postulate no. 4: ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
@@ -68,8 +68,8 @@ V:T clef=treble
 V:B clef=bass
 %%score {T B}
 K:C
-[V:T] FG FG GG FF | de de ee dd | Z                   |]
-[V:B] Z           | Z           | C,D, C,D, D,D, C,C, |]
+[V:T] F^F =F^F FF =FF | ^de de ee dd | Z                    |]
+[V:B] Z               | Z            | ^C,D, C,D, D,D, C,C, |]
 
 X:5
 T:Piano Postulate no. 5: ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ S ⊇ ℕ)
@@ -77,13 +77,45 @@ C:David Mandelberg
 M:2/4
 L:1/8
 Q:"Andante"
-V:T clef=treble
-V:B clef=bass
-%%score {T B}
+V:T1 clef=treble
+V:B1 clef=bass
+V:T2 clef=treble
+V:B2 clef=bass
+V:T3 clef=treble
+V:B3 clef=bass
+V:T4 clef=treble
+V:B4 clef=bass
+V:T5 clef=treble
+V:B5 clef=bass
+%%score [{T1 B1} {T2 B2} {T3 B3} {T4 B4} {T5 B5}]
 K:C
-[V:T] ga ab | GA AB | z2   EF |\
-[V:B] Z     | Z     | C,D, z2 |\
-[V:T] Z |\
-[V:B] Z |\
-[V:T] [CDEFGAB] z3 & [cdefgab] z3 & [c'd'e'f'g'a'b'] z3 |]
-[V:B] [C,,,D,,,E,,,F,,,G,,,A,,,B,,,] z3 & [C,,D,,E,,F,,G,,A,,B,,] z3 & [C,D,E,F,G,A,B,] z3 |]
+[V:T1] g^g ga | G^G GA | z2    EF |\
+[V:B1] Z      | Z      | ^C,D, z2 |\
+[V:T2] Z      | Z      | Z        |\
+[V:B2] Z      | Z      | Z        |\
+[V:T3] Z      | Z      | Z        |\
+[V:B3] Z      | Z      | Z        |\
+[V:T4] Z      | Z      | Z        |\
+[V:B4] Z      | Z      | Z        |\
+[V:T5] Z      | Z      | Z        |\
+[V:B5] Z      | Z      | Z        |\
+[V:T1] Z |\
+[V:B1] Z |\
+[V:T2] Z |\
+[V:B2] Z |\
+[V:T3] Z |\
+[V:B3] Z |\
+[V:T4] Z |\
+[V:B4] Z |\
+[V:T5] Z |\
+[V:B5] Z |\
+[V:T1] [CFBead'g'] z3 |]
+[V:B1] [C,,,F,,,B,,,E,,A,,D,G,] z3 |]
+[V:T2] [DGcfbe'a'] z3 |]
+[V:B2] [D,,,G,,,C,,F,,B,,E,A,] z3 |]
+[V:T3] [EAdgc'f'b'] z3 |]
+[V:B3] [E,,,A,,,D,,G,,C,F,B,] z3 |]
+[V:T4] [^C^G^d^f^a^c'^g'] z3 |]
+[V:B4] [^C,,,^G,,,^D,,^F,,^A,,^C,^G,] z3 |]
+[V:T5] [^D^F^A^c^g^d'^f'^a'] z3 |]
+[V:B5] [^D,,,^F,,,^A,,,^C,,^G,,^D,^F,^A,] z3 |]
