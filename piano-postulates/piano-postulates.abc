@@ -1,0 +1,89 @@
+X:1
+T:Piano Postulate no. 1: ∃0(0 ∈ ℕ)
+C:David Mandelberg
+M:1/1
+L:1/1
+Q:"Adagio"
+V:T clef=treble
+V:B clef=bass
+%%score {T B}
+K:C
+[V:T] Z |]
+[V:B] Z |]
+
+X:2
+T:Piano Postulate no. 2: ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
+C:David Mandelberg
+M:7/8
+L:1/8
+Q:"Allegro"
+V:T clef=treble
+V:B clef=bass
+%%score {T B}
+K:C
+%%MIDI beatstring mmmmmmm
+[V:T] Z |\
+[V:B] C,,,,, D,,,,, E,,,,, F,,,,, G,,,,, A,,,,, B,,,,, |\
+[V:T] Z |\
+[V:B] C,,,, D,,,, E,,,, F,,,, G,,,, A,,,, B,,,, |\
+[V:T] Z |\
+[V:B] C,,, D,,, E,,, F,,, G,,, A,,, B,,, |\
+[V:T] Z |\
+[V:B] C,, D,, E,, F,, G,, A,, B,, |\
+[V:T] Z |\
+[V:B] C, D, E, F, G, A, B, |\
+[V:T] C D E F G A B |\
+[V:B] Z |\
+[V:T] c d e f g a b |\
+[V:B] Z |\
+[V:T] c' d' e' f' g' a' b' |\
+[V:B] Z |\
+[V:T] c'' d'' e'' f'' g'' a'' b'' |\
+[V:B] Z |\
+[V:T] c''' d''' e''' f''' g''' a''' b''' |\
+[V:B] Z |\
+[V:T] c'''' d'''' e'''' f'''' g'''' z2  |]
+[V:B] Z |]
+
+X:3
+T:Piano Postulate no. 3: ∀a(a ∈ ℕ ⇒ S(a) ≠ 0)
+C:David Mandelberg
+M:3/4
+L:1/4
+Q:"Presto"
+V:T clef=treble
+V:B clef=bass
+%%score {T B}
+K:C
+[V:T] c d z | Z       | d e z | Z       |]
+[V:B] Z     | C, D, z | Z     | D, E, z |]
+
+X:4
+T:Piano Postulate no. 4: ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
+C:David Mandelberg
+M:4/4
+L:1/8
+Q:"Vivace"
+V:T clef=treble
+V:B clef=bass
+%%score {T B}
+K:C
+[V:T] FG FG GG FF | de de ee dd | Z                   |]
+[V:B] Z           | Z           | C,D, C,D, D,D, C,C, |]
+
+X:5
+T:Piano Postulate no. 5: ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ S ⊇ ℕ)
+C:David Mandelberg
+M:2/4
+L:1/8
+Q:"Andante"
+V:T clef=treble
+V:B clef=bass
+%%score {T B}
+K:C
+[V:T] ga ab | GA AB | z2   EF |\
+[V:B] Z     | Z     | C,D, z2 |\
+[V:T] Z |\
+[V:B] Z |\
+[V:T] [CDEFGAB] z3 & [cdefgab] z3 & [c'd'e'f'g'a'b'] z3 |]
+[V:B] [C,,,D,,,E,,,F,,,G,,,A,,,B,,,] z3 & [C,,D,,E,,F,,G,,A,,B,,] z3 & [C,D,E,F,G,A,B,] z3 |]
