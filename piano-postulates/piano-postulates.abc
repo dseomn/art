@@ -89,16 +89,16 @@ V:T5 clef=treble
 V:B5 clef=bass
 %%score [{T1 B1} {T2 B2} {T3 B3} {T4 B4} {T5 B5}]
 K:C
-[V:T1] g^g ga | G^G GA | z2    EF |\
-[V:B1] Z      | Z      | ^C,D, z2 |\
-[V:T2] Z      | Z      | Z        |\
-[V:B2] Z      | Z      | Z        |\
-[V:T3] Z      | Z      | Z        |\
-[V:B3] Z      | Z      | Z        |\
-[V:T4] Z      | Z      | Z        |\
-[V:B4] Z      | Z      | Z        |\
-[V:T5] Z      | Z      | Z        |\
-[V:B5] Z      | Z      | Z        |\
+[V:T1] !mp! g^g ga | G^G GA | z2    EF |\
+[V:B1] !mp! Z      | Z      | ^C,D, z2 |\
+[V:T2] !mp! Z      | Z      | Z        |\
+[V:B2] !mp! Z      | Z      | Z        |\
+[V:T3] !mp! Z      | Z      | Z        |\
+[V:B3] !mp! Z      | Z      | Z        |\
+[V:T4] !mp! Z      | Z      | Z        |\
+[V:B4] !mp! Z      | Z      | Z        |\
+[V:T5] !mp! Z      | Z      | Z        |\
+[V:B5] !mp! Z      | Z      | Z        |\
 [V:T1] Z |\
 [V:B1] Z |\
 [V:T2] Z |\
@@ -109,13 +109,13 @@ K:C
 [V:B4] Z |\
 [V:T5] Z |\
 [V:B5] Z |\
-[V:T1] [CFBead'g'] z3 |]
-[V:B1] [C,,,F,,,B,,,E,,A,,D,G,] z3 |]
-[V:T2] [DGcfbe'a'] z3 |]
-[V:B2] [D,,,G,,,C,,F,,B,,E,A,] z3 |]
-[V:T3] [EAdgc'f'b'] z3 |]
-[V:B3] [E,,,A,,,D,,G,,C,F,B,] z3 |]
-[V:T4] [^C^G^d^f^a^c'^g'] z3 |]
-[V:B4] [^C,,,^G,,,^D,,^F,,^A,,^C,^G,] z3 |]
-[V:T5] [^D^F^A^c^g^d'^f'^a'] z3 |]
-[V:B5] [^D,,,^F,,,^A,,,^C,,^G,,^D,^F,^A,] z3 |]
+[V:T1] !fff! [CFBead'g'] z3 |]
+[V:B1] !fff! [C,,,F,,,B,,,E,,A,,D,G,] z3 |]
+[V:T2] !fff! [DGcfbe'a'] z3 |]
+[V:B2] !fff! [D,,,G,,,C,,F,,B,,E,A,] z3 |]
+[V:T3] !fff! [EAdgc'f'b'] z3 |]
+[V:B3] !fff! [E,,,A,,,D,,G,,C,F,B,] z3 |]
+[V:T4] !fff! [^C^G^d^f^a^c'^g'] z3 |]
+[V:B4] !fff! [^C,,,^G,,,^D,,^F,,^A,,^C,^G,] z3 |]
+[V:T5] !fff! [^D^F^A^c^g^d'^f'^a'] z3 |]
+[V:B5] !fff! [^D,,,^F,,,^A,,,^C,,^G,,^D,^F,^A,] z3 |]
