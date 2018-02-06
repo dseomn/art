@@ -9,6 +9,15 @@ midi:
 svg:
 	abcm2ps -v "$(BASE).abc" -O "$(BASE)-.svg"
 
+$(BASE).pdf: svg
+	for page in "$(BASE)"-*.svg; do \
+	  $(MAKE) "$${page%.svg}.pdf" || exit 1; \
+	done
+	pdftk "$(BASE)"-*.pdf cat output "$(BASE).pdf"
+
+.svg.pdf:
+	inkscape --export-pdf="$@" "$<"
+
 wave: midi
 	for ref in $(REFS); do \
 	  $(MAKE) "$(BASE)-$$ref.wav" || exit 1; \
@@ -19,5 +28,5 @@ wave: midi
 	fluidsynth -F "$@" -O s24 /usr/share/sounds/sf2/FluidR3_GM.sf2 "$<"
 
 
-.SUFFIXES: .abc .mid .ps .svg .wav
+.SUFFIXES: .abc .mid .pdf .ps .svg .wav
 .PHONY: midi svg wave
