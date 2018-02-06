@@ -8,8 +8,8 @@ V:T clef=treble
 V:B clef=bass
 %%score {T B}
 K:C
-[V:T] Z |]
-[V:B] Z |]
+[V:T] !fermata! !ffff! Z |]
+[V:B] !fermata! !ffff! Z |]
 
 X:2
 T:Piano Postulate no. 2: ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
