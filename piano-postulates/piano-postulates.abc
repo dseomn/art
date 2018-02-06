@@ -72,7 +72,7 @@ K:C
 [V:B] Z               | Z            | ^C,D, C,D, D,D, C,C, |]
 
 X:5
-T:Piano Postulate no. 5: ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ S ⊇ ℕ)
+T:Piano Postulate no. 5: ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ A ⊇ ℕ)
 C:David Mandelberg
 M:2/4
 L:1/8
