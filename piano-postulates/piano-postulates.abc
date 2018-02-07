@@ -55,8 +55,214 @@ V:T clef=treble
 V:B clef=bass
 %%score {T B}
 K:C
-[V:T] c ^c z | Z        | d ^d z | Z        |]
-[V:B] Z      | C, ^C, z | Z      | D, ^D, z |]
+[V:T] !mp! ^D E z |\
+[V:B] !mp! Z |\
+[V:T] ^a b z |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] ^G, A, z |\
+[V:T] B c z |\
+[V:B] Z |\
+[V:T] !f! E/F/ z/ E/F/ z/ |\
+[V:B] !f! E, F, z |\
+[V:T] D/^D/ z/ =D/^D/ z/ |\
+[V:B] D, ^D, z |\
+[V:T] C/^C/ z/  =C/^C/ z/ |\
+[V:B] C, ^C, z |\
+[V:T] !mp! ^f/g/ z/ f/g/ z/ & ^F G z|\
+[V:B] !mp! Z |\
+[V:T] ^a/b/ z/ a/b/ z/ & ^A B z|\
+[V:B] Z |\
+[V:T] ^f/g/ z/ f/g/ z/ & ^F G z |\
+[V:B] Z |\
+[V:T] !mf! ^c/d/ z/ c/d/ z/ & ^C D z |\
+[V:B] !mf! Z |\
+[V:T] A/^A/ z/ =A/^A/ z/ |\
+[V:B] A, ^A, z |\
+[V:T] D ^D z |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] A, ^A, z |\
+[V:T] a ^a z |\
+[V:B] Z |\
+[V:T] c ^c z |\
+[V:B] Z |\
+[V:T] C ^C z |\
+[V:B] C,3 |\
+[V:T] ^C D z |\
+[V:B] ^C,3 |\
+[V:T] D ^D z |\
+[V:B] Z |\
+[V:T] !mp! G ^G z |\
+[V:B] !mp! G,3 |\
+[V:T] ^G A z |\
+[V:B] ^G,3 |\
+[V:T] A ^A z |\
+[V:B] Z |\
+[V:T] !p! F ^F z |\
+[V:B] !p! F,3 |\
+[V:T] ^F G z |\
+[V:B] ^F,3 |\
+[V:T] G ^G z |\
+[V:B] Z |\
+[V:T] !f! ^d/e/ z/ d/e/ z/ & ^D E z |\
+[V:B] !f! Z |\
+[V:T] ^c/d/ z/ c/d/ z/ & ^C D z |\
+[V:B] Z |\
+[V:T] e/f/ z/ e/f/ z/ & E F z |\
+[V:B] Z |\
+[V:T] ^G/A/ z/ G/A/ z/ |\
+[V:B] ^G, A, z |\
+[V:T] B c z |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] ^F, G, z |\
+[V:T] Z |\
+[V:B] D, ^D, z |\
+[V:T] ^G A z |\
+[V:B] ^G,3 |\
+[V:T] A ^A z |\
+[V:B] A,3 |\
+[V:T] ^A B z |\
+[V:B] Z |\
+[V:T] E F z |\
+[V:B] E,3 |\
+[V:T] F ^F z |\
+[V:B] F,3 |\
+[V:T] ^F G z |\
+[V:B] Z |\
+[V:T] d ^d z & D3 |\
+[V:B] Z |\
+[V:T] ^d e z & ^D3 |\
+[V:B] Z |\
+[V:T] e f z |\
+[V:B] Z |\
+[V:T] ^A/B/ z/ A/B/ z/ |\
+[V:B] ^A, B, z |\
+[V:T] ^a b z |\
+[V:B] Z |\
+[V:T] d ^d z |\
+[V:B] Z |\
+[V:T] D ^D z |\
+[V:B] Z |\
+[V:T] A//^A// z// =A//^A// z// =A//^A// z// =A//^A// z// |\
+[V:B] A,/^A,/ z/ =A,/^A,/ z/ &  A,, ^A,, z |\
+[V:T] ^C/D/ z/ C/D/ z/ |\
+[V:B] ^C, D, z |\
+[V:T] F//^F// z// =F//^F// z// =F//^F// z// =F//^F// z// |\
+[V:B] F,/^F,/ z/ =F,/^F,/ z/ & F,, ^F,, z |\
+[V:T] Z |\
+[V:B] ^A, B, z |\
+[V:T] ^G A z |\
+[V:B] Z |\
+[V:T] ^a b z |\
+[V:B] Z |\
+[V:T] !mf! ^F/G/ z/ F/G/ z/ |\
+[V:B] !mf! ^F, G, z |\
+[V:T] !mp! ^C//D// z// C//D// z// C//D// z// C//D// z// |\
+[V:B] !mp! ^C,/D,/ z/ C,/D,/ z/ & ^C,, D,, z |\
+[V:T] !pp! F ^F z |\
+[V:B] !p! F,3 |\
+[V:T] F ^F z |\
+[V:B] ^F,3 |\
+[V:T] F ^F z |\
+[V:B] Z |\
+[V:T] !p! ^f g z |\
+[V:B] !p! Z |\
+[V:T] ^f g z |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] F, ^F, z |\
+[V:T] !fff! ^A B z  & ^a b z |\
+[V:B] !fff! ^A, B, z & ^A,, B,, z |\
+[V:T] !mf! Z |\
+[V:B] !mf! E, F, z |\
+[V:T] !fff! D ^D z & d ^d z |\
+[V:B] !fff! D, ^D, z & D,, ^D,, z |\
+[V:T] !mf! Z |\
+[V:B] !mf! A, ^A, z |\
+[V:T] Z |\
+[V:B] E, F, z |\
+[V:T] Z |\
+[V:B] ^C, D, z |\
+[V:T] !fff! ^F G z & ^f g z & ^f' g' z |\
+[V:B] !fff! ^F, G, z |\
+[V:T] !mf! ^d e z |\
+[V:B] !mf! Z |\
+[V:T] d ^d z |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] G, ^G, z |\
+[V:T] !fff! D ^D z & d ^d z |\
+[V:B] !fff! D, ^D, z & D,, ^D,, z|\
+[V:T] !mf! Z |\
+[V:B] !mf! D, ^D, z |\
+[V:T] !ff! C ^C z & c ^c z & c' ^c' z |\
+[V:B] !ff! C, ^C, z |\
+[V:T] !mp! A ^A z |\
+[V:B] !mp! Z |\
+[V:T] !f! F ^F z & f ^f z |\
+[V:B] !f! F, ^F, z & F,, ^F,, z |\
+[V:T] !mp! ^g a z |\
+[V:B] !mp! Z |\
+[V:T] Z |\
+[V:B] D, ^D, z |\
+[V:T] G ^G z |\
+[V:B] Z |\
+[V:T] !f! ^D E z & ^d e z |\
+[V:B] !f! ^D, E, z & ^D,, E,, z |\
+[V:T] !mp! Z |\
+[V:B] !mp! C, ^C, z |\
+[V:T] Z |\
+[V:B] E, F, z |\
+[V:T] Z |\
+[V:B] ^F, G, z |\
+[V:T] !f! ^A B z & ^a b z & ^a' b' z|\
+[V:B] !f! ^A, B, z |\
+[V:T] !mp! Z |\
+[V:B] !mp! D, ^D, z |\
+[V:T] !f! C ^C z & c ^c z |\
+[V:B] !f! C, ^C, z & C,, ^C,, z |\
+[V:T] !mp! d ^d z |\
+[V:B] !mp! Z |\
+[V:T] ^F/G/ z/ F/G/ z/ |\
+[V:B] ^F, G, z |\
+[V:T] E/F/ z/ E/F/ z/ |\
+[V:B] E, F, z |\
+[V:T] Z |\
+[V:B] A,/^A,/ z/ =A,/^A,/ z/ & A,, ^A,, z |\
+[V:T] Z |\
+[V:B] D, ^D, z |\
+[V:T] A ^A z |\
+[V:B] Z |\
+[V:T] ^G A z |\
+[V:B] Z |\
+[V:T] B/c/ z/ B/c/ z/ & z C z |\
+[V:B] B, z z |\
+[V:T] Z |\
+[V:B] ^G,/A,/ z/ G,/A,/ z/ & ^G,, A,, z |\
+[V:T] c/^c/ z/ =c/^c/ z/ & C ^C z |\
+[V:B] Z |\
+[V:T] c ^c z |]
+[V:B] Z |]
+[V:T] ^f g z |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] E, F, z |\
+[V:T] C ^C z |\
+[V:B] C,3 |\
+[V:T] ^C D z |\
+[V:B] ^C,3 |\
+[V:T] D ^D z |\
+[V:B] Z |\
+[V:T] f3 |\
+[V:B] Z |\
+[V:T] ^f3 |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] Z |\
+[V:T] !f! ^F G z & ^f g z & ^f' g' z|\
+[V:B] !f! ^F, G, z |\
 
 X:4
 T:Piano Postulate no. 4: ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
