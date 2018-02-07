@@ -82,3 +82,25 @@ for measure in range(99):
         note_strs[1] if not notes[note_idx+1][2] else 'z',
         ))
 print()
+
+print("#4")
+r = random.Random(4)
+for measure in range(64):
+  note_idx = r.randint(0, len(notes) - 2)
+  note_strs = note_str([
+      notes[note_idx],
+      notes[note_idx+1],
+      notes[note_idx],
+      notes[note_idx+1],
+      notes[note_idx+1],
+      notes[note_idx+1],
+      notes[note_idx],
+      notes[note_idx],
+      ])
+  if notes[note_idx][2]:
+    print("[V:T] %s%s %s%s %s%s %s%s |\\" % tuple(note_strs))
+    print("[V:B] Z |\\")
+  else:
+    print("[V:T] Z |\\")
+    print("[V:B] %s%s %s%s %s%s %s%s |\\" % tuple(note_strs))
+print()
