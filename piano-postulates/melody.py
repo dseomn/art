@@ -56,6 +56,7 @@ def note_str(measure):
       ret.append('^' + note[0])
     else:
       ret.append('=' + note[0])
+    is_sharp[note[0]] = note[1]
 
   return ret
 
