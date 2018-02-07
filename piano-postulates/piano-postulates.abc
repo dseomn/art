@@ -274,8 +274,134 @@ V:T clef=treble
 V:B clef=bass
 %%score {T B}
 K:C
-[V:T] F^F =F^F FF =FF | ^de de ee dd | Z                    |]
-[V:B] Z               | Z            | ^C,D, C,D, D,D, C,C, |]
+[V:T] !mf! ^DE DE EE DD |\
+[V:B] !mf! Z |\
+[V:T] G^G =G^G GG =GG |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] ^F,G, F,G, G,G, F,F, |\
+[V:T] ^cd cd dd cc |\
+[V:B] Z |\
+[V:T] ^fg fg gg ff & G4 ^F4|\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] A,^A, =A,^A, A,A, =A,A, & ^A,,4 =A,,4 |\
+[V:T] Z |\
+[V:B] F,^F, =F,^F, F,F, =F,F, & ^F,,4 =F,,4 |\
+[V:T] Z |\
+[V:B] E,F, E,F, F,F, E,E, & F,,4 E,,4 |\
+[V:T] Z | Z |\
+[V:B] ^C,2 D,2 C,2 D,2 & D,,8 | D,2 D,2 ^C,2 C,2 & ^C,,8 |\
+[V:T] ^c2 d2 c2 d2 & D8 | d2 d2 ^c2 c2 & ^C8 |\
+[V:B] Z | Z |\
+[V:T] ^FG FG GG FF |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] ^D,E, D,E, E,E, D,D, |\
+[V:T] D^D =D^D DD =DD |\
+[V:B] Z |\
+[V:T] a^a =a^a aa =aa |\
+[V:B] Z |\
+[V:T] ^a2 b2 a2 b2 & B8 | b2 b2 ^a2 a2 & ^A8 |\
+[V:B] Z | Z |\
+[V:T] B2 c2 B2 c2 & C8 | c2 c2 B2 B2 |\
+[V:B] Z | B,8 |\
+[V:T] F^F =F^F FF =FF |\
+[V:B] ^F,2 F,2 =F,2 F,2 |\
+[V:T] Z |\
+[V:B] B,C B,C CC B,B, & C,2 C,2 B,,2 B,,2 |\
+[V:T] Z |\
+[V:B] ^F,G, F,G, G,G, F,F, & G,,2 G,,2 ^F,,2 F,,2 |\
+[V:T] EF EF FF EE |\
+[V:B] F,2 F,2 E,2 E,2 |\
+[V:T] ^C2 D2 C2 D2 | D2 D2 ^C2 C2 |\
+[V:B] D,8 | ^C,8 |\
+[V:T] Z | Z |\
+[V:B] ^C,2 D,2 C,2 D,2 & D,,8 | D,2 D,2 ^C,2 C,2 & ^C,,8 |\
+[V:T] EF EF FF EE |\
+[V:B] F,2 F,2 E,2 E,2 |\
+[V:T] F^F =F^F FF =FF |\
+[V:B] ^F,2 F,2 =F,2 F,2 |\
+[V:T] C^C =C^C CC =CC |\
+[V:B] ^C,2 C,2 =C,2 C,2 |\
+[V:T] Z |\
+[V:B] ^A,B, A,B, B,B, A,A, & B,,2 B,,2 ^A,,2 A,,2 |\
+[V:T] !p! G^G =G^G GG =GG |\
+[V:B] !p! Z |\
+[V:T] ^FG FG GG FF |\
+[V:B] Z |\
+[V:T] !mf! Bc Bc cc BB |\
+[V:B] !mf! Z |\
+[V:T] Z |\
+[V:B] F,^F, =F,^F, F,F, =F,F, |\
+[V:T] A^A =A^A AA =AA |\
+[V:B] ^A,2 A,2 =A,2 A,2 |\
+[V:T] c^c =c^c cc =cc & ^C2 C2 =C2 C2 |\
+[V:B] Z |\
+[V:T] ^ga ga aa gg & A2 A2 ^G2 G2 |\
+[V:B] Z |\
+[V:T] ^DE DE EE DD |\
+[V:B] E,2 E,2 ^D,2 D,2 |\
+[V:T] !p! Bc Bc cc BB |\
+[V:B] !f! C4 B,4 |\
+[V:T] ^DE DE EE DD |\
+[V:B] E,4 ^D,4 |\
+[V:T] ^FG FG GG FF |\
+[V:B] G,4 ^F,4 |\
+[V:T] F^F =F^F FF =FF |\
+[V:B] ^F,4 =F,4 |\
+[V:T] !mf! Z |\
+[V:B] !mf! F,^F, =F,^F, F,F, =F,F, |\
+[V:T] G^G =G^G GG =GG |\
+[V:B] Z |\
+[V:T] Z |\
+[V:B] C,^C, =C,^C, C,C, =C,C, |\
+[V:T] ^FG FG GG FF |\
+[V:B] Z |\
+[V:T] !p! G^G =G^G GG =GG |\
+[V:B] !f! ^G,4 =G,4 |\
+[V:T] !p! ^ga ga aa gg & !f! A4 ^G4 |\
+[V:B] Z |\
+[V:T] !p! C^C =C^C CC =CC |\
+[V:B] !f! ^C,4 =C,4 |\
+[V:T] !p! d^d =d^d dd =dd & !f! ^D4 =D4 |\
+[V:B] Z |\
+[V:T] !mf! ^d2 e2 d2 e2 & E8 | e2 e2 ^d2 d2 & ^D8 |\
+[V:B] !mf! Z | Z |\
+[V:T] ^F2 G2 F2 G2 | G2 G2 ^F2 F2 |\
+[V:B] G,8 | ^F,8 |\
+[V:T] ^de de ee dd & ^d'/e'/ d'/e'/ e'/e'/ d'/d'/ d'/e'/ d'/e'/ e'/e'/ d'/d'/ & E2 E2 ^D2 D2 |\
+[V:B] E,4 ^D,4 |\
+[V:T] ef ef ff ee & e'/f'/ e'/f'/ f'/f'/ e'/e'/ e'/f'/ e'/f'/ f'/f'/ e'/e'/ & F2 F2 E2 E2 |\
+[V:B] F,4 E,4 |\
+[V:T] ^A/B/ A/B/ B/B/ A/A/ A/B/ A/B/ B/B/ A/A/|\
+[V:B] ^A,B, A,B, B,B, A,A, & B,,2 B,,2 ^A,,2 A,,2 & B,,,4 ^A,,,4 |\
+[V:T] D^D =D^D DD =DD & d/^d/ =d/^d/ d/d/ =d/d/ d/^d/ =d/^d/ d/d/ =d/d/ |\
+[V:B] ^D,2 D,2 =D,2 D,2 & ^D,,4 =D,,4 |\
+[V:T] G2 ^G2 =G2 ^G2 | ^G2 G2 =G2 G2 |\
+[V:B] ^G,8 | G,8 |\
+[V:T] E2 F2 E2 F2 | F2 F2 E2 E2 |\
+[V:B] F8 | E8 |\
+[V:T] Z |\
+[V:B] D,^D, =D,^D, D,D, =D,D, & ^D,,2 D,,2 =D,,2 D,,2 |\
+[V:T] Z |\
+[V:B] F,^F, =F,^F, F,F, =F,F, & ^F,,2 F,,2 =F,,2 F,,2 |\
+[V:T] Z |\
+[V:B] D,^D, =D,^D, D,D, =D,D, & ^D,,2 D,,2 =D,,2 D,,2 |\
+[V:T] f^f =f^f ff =ff & ^F2 F2 =F2 F2 |\
+[V:B] Z |\
+[V:T] !f! F^F =F^F FF =FF |\
+[V:B] !f! ^F,4 =F,4 |\
+[V:T] a^a =a^a aa =aa & ^A4 =A4 |\
+[V:B] Z |\
+[V:T] !fff! ^ab ab bb aa & B4 ^A4 |\
+[V:B] !fff! Z |\
+[V:T] ^fg fg gg ff & G4 ^F4 |\
+[V:B] Z |\
+[V:T] !pp! A^A =A^A AA =AA |\
+[V:B] !pp! Z |\
+[V:T] !ppp! Z |]
+[V:B] !ppp! A,^A, =A,^A, A,A, =A,A, |]
 
 X:5
 T:Piano Postulate no. 5: ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ A ⊇ ℕ)
