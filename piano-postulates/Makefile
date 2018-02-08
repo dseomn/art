@@ -7,7 +7,7 @@ midi:
 	done
 
 svg:
-	abcm2ps -v "$(BASE).abc" -O "$(BASE)-.svg"
+	abcm2ps -1 -j0 -N2 -v "$(BASE).abc" -O "$(BASE)-.svg"
 
 $(BASE).pdf: svg
 	for page in "$(BASE)"-*.svg; do \
