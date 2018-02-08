@@ -104,3 +104,28 @@ for measure in range(64):
     print("[V:T] Z |\\")
     print("[V:B] %s%s %s%s %s%s %s%s |\\" % tuple(note_strs))
 print()
+
+print("#5")
+r = random.Random(5)
+for measure in range(64):
+  note_idx_1 = r.randint(0, len(notes) - 2)
+  note_idx_2 = r.randint(0, len(notes) - 2)
+  note_strs = note_str([
+      notes[note_idx_1],
+      notes[note_idx_1+1],
+      notes[note_idx_2],
+      notes[note_idx_2+1],
+      ])
+  if notes[note_idx_1][2] and notes[note_idx_2][2]:
+    print("[V:T] %s%s %s%s |\\" % tuple(note_strs))
+    print("[V:B] Z |\\")
+  elif notes[note_idx_1][2]:
+    print("[V:T] %s%s z2 |\\" % tuple(note_strs[:2]))
+    print("[V:B] z2 %s%s |\\" % tuple(note_strs[2:]))
+  elif notes[note_idx_2][2]:
+    print("[V:T] z2 %s%s |\\" % tuple(note_strs[2:]))
+    print("[V:B] %s%s z2 |\\" % tuple(note_strs[:2]))
+  else:
+    print("[V:T] Z |\\")
+    print("[V:B] %s%s %s%s |\\" % tuple(note_strs))
+print()
