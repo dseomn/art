@@ -24,7 +24,6 @@ wave: midi
 	done
 
 .mid.wav:
-	#timidity -Ow -o "$@" --output-24bit "$<"
 	fluidsynth -F "$@" -O s24 /usr/share/sounds/sf2/FluidR3_GM.sf2 "$<"
 
 
