@@ -423,15 +423,9 @@ K:C
 [V:B2] !mp! Z      | Z      | Z        |\
 [V:T3] !mp! Z      | Z      | Z        |\
 [V:B3] !mp! Z      | Z      | Z        |\
-[V:T1] Z |\
-[V:B1] Z |\
-[V:T2] Z |\
-[V:B2] Z |\
-[V:T3] Z |\
-[V:B3] Z |\
-[V:T1] !ff! [CEGBdfa] z3 & [DFAcegb] z3 |]
-[V:B1] !ff! [C,,E,,G,,B,,D,F,A,] z3 & [D,,F,,A,,C,E,G,B,] z3 |]
-[V:T2] !ff! [^C^G^d^f^a] z3 |]
-[V:B2] !ff! [^C,,^G,,^D,^F,^A,] z3 |]
-[V:T3] !ff! [^D^F^A^c^g] z3 |]
-[V:B3] !ff! [^D,,^F,,^A,,^C,^G,] z3 |]
+[V:T1] !ff! z2 [CEGBdfa] z & z2 [DFAcegb] z |]
+[V:B1] !ff! z2 [C,,E,,G,,B,,D,F,A,] z & z2 [D,,F,,A,,C,E,G,B,] z |]
+[V:T2] !ff! z2 [^C^G^d^f^a] z |]
+[V:B2] !ff! z2 [^C,,^G,,^D,^F,^A,] z |]
+[V:T3] !ff! z2 [^D^F^A^c^g] z |]
+[V:B3] !ff! z2 [^D,,^F,,^A,,^C,^G,] z |]
