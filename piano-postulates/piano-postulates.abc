@@ -417,12 +417,136 @@ V:T3 clef=treble
 V:B3 clef=bass
 %%score [{T1 B1} {T2 B2} {T3 B3}]
 K:C
-[V:T1] !mp! g^g ga | G^G GA | z2    EF |\
-[V:B1] !mp! Z      | Z      | ^C,D, z2 |\
-[V:T2] !mp! Z      | Z      | Z        |\
-[V:B2] !mp! Z      | Z      | Z        |\
-[V:T3] !mp! Z      | Z      | Z        |\
-[V:B3] !mp! Z      | Z      | Z        |\
+[V:T1] !p! EF ^AB |\
+[V:B1] !p! Z |\
+[V:T1] a^a z2 |\
+[V:B1] z2 ^C,D, |\
+[V:T1] f^f ^DE |\
+[V:B1] Z |\
+[V:T1] Z |\
+[V:B1] ^D,E, ^A,B, |\
+[V:T1] !f! z2 Bc |\
+[V:B1] !f! G,^G, z2 |\
+[V:T1] ^fg ^DE |\
+[V:B1] Z |\
+[V:T1] !mf! c^c ^ab |\
+[V:B1] !mf! Z |\
+[V:T1] z2 ^DE |\
+[V:B1] ^F,G, z2 |\
+[V:T1] !p! C/^C/=C/^C/ CD & z2 ^c/d/c/d/ |\
+[V:B1] !p! C,^C, z2 |\
+[V:T1] d^d F^F & d'/^d'/=d'/^d'/ f/^f/=f/^f/ |\
+[V:B1] Z |\
+[V:T1] z2 c^c |\
+[V:B1] B,C z2 |\
+[V:T1] Z |\
+[V:B1] ^A,B, E,F, |\
+[V:T1] !f! z2 ef |\
+[V:B1] !f! ^G,A, z2 |\
+[V:T1] Z |\
+[V:B1] ^G,A, G,A, |\
+[V:T1] !p! Z | Z |\
+[V:B1] !p! C,2 ^C,2 | C,2 ^C,2 |\
+[V:T1] !f! ^CD CD |\
+[V:B1] !f! Z |\
+[V:T1] !p! Z | Z |\
+[V:B1] !p! ^A,2 B,2 | ^A,2 B,2 |\
+[V:T1] ^FG ^GA |\
+[V:B1] Z |\
+[V:T1] C^C ^ab |\
+[V:B1] Z |\
+[V:T1] ^C/D/C/D/ z2 |\
+[V:B1] z2 B,/C/B,/C/ |\
+[V:T1] C/^C/=C/^C/ c/^c/=c/^c/ |\
+[V:B1] Z |\
+[V:T1] G2 ^G2 | Z |\
+[V:B1] Z | ^C,2 D,2 |\
+[V:T1] B2 c2 | d2 ^d2 |\
+[V:B1] Z | Z |\
+[V:T1] Z |\
+[V:B1] ^A,/B,/A,/B,/ =A,/^A,/=A,/^A,/ |\
+[V:T1] E/F/E/F/ z2 |\
+[V:B1] z2 E,/F,/E,/F,/ |\
+[V:T1] A2 ^A2 | G2 ^G2 |\
+[V:B1] Z | Z |\
+[V:T1] Z | A2 ^A2 |\
+[V:B1] C,2 ^C,2 | Z |\
+[V:T1] z2 G^G |\
+[V:B1] E,F, z2 |\
+[V:T1] ^AB G^G |\
+[V:B1] Z |\
+[V:T1] ^fg ^GA |\
+[V:B1] Z |\
+[V:T1] z2 ^fg |\
+[V:B1] B,C z2 |\
+[V:T1] ^fg z2 & ^F2 G2 |\
+[V:B1] z2 B,C |\
+[V:T1] z2 EF |\
+[V:B1] ^D,E, z2 & ^D,,2 E,,2 |\
+[V:T1] z2 ^AB |\
+[V:B1] ^C,D, z2 |\
+[V:T1] ^cd z2 |\
+[V:B1] z2 ^C,D, |\
+[V:T1] d^d Bc & D2 ^D2 |\
+[V:B1] Z |\
+[V:T1] c^c z2 & C2 ^C2 |\
+[V:B1] z2 C,^C, |\
+[V:T1] ef z2 & E2 F2 |\
+[V:B1] z2 D,^D, |\
+[V:T1] z2 C^C |\
+[V:B1] B,C z2 & B,,2 C,2 |\
+[V:T1] z2 ^D/E/D/E/ |\
+[V:B1] G,/^G,/=G,/^G,/ z2 |\
+[V:T1] f/^f/=f/^f/ ^A/B/A/B/ |\
+[V:B1] Z |\
+[V:T1] ^ga ^AB |\
+[V:B1] Z |\
+[V:T1] a^a EF |\
+[V:B1] Z |\
+[V:T1] f^f z2 |\
+[V:B1] z2 ^F,G, |\
+[V:T1] Bc ^FG |\
+[V:B1] Z |\
+[V:T1] Z | ^d2 e2 |\
+[V:B1] D,2 ^D,2 | Z |\
+[V:T1] Z | ^C2 D2 |\
+[V:B1] F,2 ^F,2 | Z |\
+[V:T1] A^A ^ga |\
+[V:B1] Z |\
+[V:T1] Bc z2 |\
+[V:B1] z2 A,^A, |\
+[V:T1] A2 ^A2 | F^F ^ab |\
+[V:B1] Z | Z |\
+[V:T1] Z | G^G GA |\
+[V:B1] F,2 ^F,2 | Z |\
+[V:T1] G2 ^G2 | Z |\
+[V:B1] Z | B,2 C2 |\
+[V:T1] Z | Z |\
+[V:B1] F,2 ^F,2 | A,2 ^A,2 |\
+[V:T1] G^G ^fg |\
+[V:B1] Z |\
+[V:T1] Z |\
+[V:B1] ^A,B, ^D,E, |\
+[V:T1] z2 ^ab |\
+[V:B1] F,^F, z2 |\
+[V:T1] ^cd z2 |\
+[V:B1] z2 D,^D, |\
+[V:T1] !pp! ^D2 E2 | ^A2 B2 |\
+[V:B1] !pp! Z | Z |\
+[V:T1] E2 F2 | f2 ^f2 |\
+[V:B1] Z | Z |\
+[V:T1] d^d z2 |\
+[V:B1] z2 A,^A, |\
+[V:T1] Z |\
+[V:B1] ^D,E, =D,^D, |\
+[V:T1] g^g A^A |\
+[V:B1] Z |\
+[V:T1] ^CD z2 |\
+[V:B1] z2 ^G,A, |\
+[V:T2] Z77 |\
+[V:B2] Z77 |\
+[V:T3] Z77 |\
+[V:B3] Z77 |\
 [V:T1] !ff! z2 [CEGBdfa] z & z2 [DFAcegb] z |]
 [V:B1] !ff! z2 [C,,E,,G,,B,,D,F,A,] z & z2 [D,,F,,A,,C,E,G,B,] z |]
 [V:T2] !ff! z2 [^C^G^d^f^a] z |]
