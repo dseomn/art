@@ -40,8 +40,42 @@ alphabet = {
   }
 
 messages = [
+  # Primarily flute and/or clarinet. Trumpet and oboe occasionally, but not as
+  # prominent as flute/clarinet. Various combinations of accompaniment.
   '[KA]',
-  'Hello World',
+  '',
+
+  # Introduce trumpet, conversation with oboe. Bassoon/cello/others riffing in
+  # background.
+  '[KA]',
+  'Hello World STOP', # by trumpet
+  'This is music K',
+  'Are you sure this is music QUERY', # by oboe
+  'It sounds like Morse Code K',
+  'Yes K',
+  'Yes QUERY',
+  'Yes what QUERY K',
+  'Yes it is music and yes it is Morse Code K',
+  'Weirdo [AR]',
+  '',
+
+  # Various instruments introducing themselves with [KA], throwing the two
+  # messages back and forth and all around, and each closing with [AR].
+  # Percussion filling gaps between main intruments? Low drone from organ,
+  # bagpipe, or other?
+  '[KA]',
+  'Why K',
+  'Why not K',
+  '[AR]',
+  '',
+
+  # Flute and/or clarinet, with minimal/no accompaniment. Repeat middle
+  # messages in various orders.
+  '[KA]',
+  'Was there any point to all of this QUERY',
+  'Any point QUERY',
+  'Was there QUERY',
+  'NIL [AR]',
   ]
 
 for msg in messages:
