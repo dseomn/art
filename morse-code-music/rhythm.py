@@ -49,6 +49,7 @@ for msg in messages:
 
   space_between_letters = True
   first_letter_of_word = True
+  measure_lengths = [0]
   for c in msg:
     if c == '[':
       assert space_between_letters
@@ -63,23 +64,29 @@ for msg in messages:
       assert space_between_letters
       sys.stdout.write('| z7 | ')
       first_letter_of_word = True
+      measure_lengths += [7, 0]
       continue
 
     if not first_letter_of_word:
       if space_between_letters:
         sys.stdout.write('| z3 | ')
+        measure_lengths += [3, 0]
       else:
         sys.stdout.write('z ')
+        measure_lengths[-1] += 1
 
     first_mark_of_letter = True
     for mark in alphabet[c.casefold()]:
       if not first_mark_of_letter:
         sys.stdout.write('z ')
+        measure_lengths[-1] += 1
 
       if mark == '.':
         sys.stdout.write('C ')
+        measure_lengths[-1] += 1
       elif mark == '-':
         sys.stdout.write('C3 ')
+        measure_lengths[-1] += 3
       else:
         raise ValueError('Invalid mark: ' + mark)
 
@@ -87,4 +94,6 @@ for msg in messages:
 
     first_letter_of_word = False
 
-  sys.stdout.write('|\n\n')
+  sys.stdout.write(
+      '|\n%s |\n\n' %
+          ' | '.join(['z%d' % l for l in measure_lengths if l != 0]))
