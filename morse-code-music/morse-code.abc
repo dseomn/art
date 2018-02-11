@@ -1,5 +1,6 @@
 X:1
 T:Morse Code no. 1: I. “Attention”
+C:David Mandelberg
 M:none
 L:1/16
 Q:"Andante"
@@ -85,6 +86,7 @@ V:Ce
 
 X:2
 T:Morse Code no. 1: II. “Hello world. This is music”
+C:David Mandelberg
 M:none
 L:1/16
 Q:"Allegro"
