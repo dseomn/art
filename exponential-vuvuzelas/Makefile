@@ -62,8 +62,16 @@ step-6:
 	    FRAMERATE=60 \
 	    SEED=1
 
+score:
+	mkdir "$(DATADIR)/score"
+	abcm2ps -j0 -N2 -v "exponential-vuvuzelas.abc" -O "$(DATADIR)/score/page-.svg"
+	for page in "$(DATADIR)/score/page"-*.svg; do \
+	  inkscape --export-pdf="$${page%.svg}.pdf" "$$page" || exit 1; \
+	done
+	pdftk "$(DATADIR)/score/page"-*.pdf cat output "$(DATADIR)/score/exponential-vuvuzelas.pdf"
+
 
 $(DATADIR)/cover-art/vuvuzelas.png: exponential-vuvuzelas.pov
 	povray +A +AM2 +J +H2048 +W4096 +UA +O"$@" exponential-vuvuzelas.pov
 
-.PHONY: all step-3 step-4 step-5 step-6
+.PHONY: all step-3 step-4 step-5 step-6 score
