@@ -40,17 +40,17 @@ alphabet = {
   }
 
 messages = [
-  # Primarily flute and/or clarinet. Trumpet and oboe occasionally, but not as
-  # prominent as flute/clarinet. Various combinations of accompaniment.
+  # Primarily flute and/or clarinet. Trumpet and violin occasionally, but not
+  # as prominent as flute/clarinet. Various combinations of accompaniment.
   '[KA]',
   '',
 
-  # Introduce trumpet, conversation with oboe. Bassoon/cello/others riffing in
-  # background.
+  # Introduce trumpet, conversation with violin. Bassoon/cello/others riffing
+  # in background.
   '[KA]',
   'Hello World STOP', # by trumpet
   'This is music K',
-  'Are you sure this is music QUERY', # by oboe
+  'Are you sure this is music QUERY', # by violin
   'It sounds like Morse Code K',
   'Yes K',
   'Yes QUERY',
