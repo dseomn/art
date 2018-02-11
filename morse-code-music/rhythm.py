@@ -78,6 +78,31 @@ messages = [
   'NIL [AR]',
   ]
 
+def make_rests(length):
+  """Return rests that represent the given length."""
+
+  high_bit = 1
+  while high_bit <= length:
+    high_bit <<= 1
+
+  rests = []
+  while length > 0:
+    while high_bit > length:
+      high_bit >>= 1
+
+    rests.append(high_bit)
+    length -= high_bit
+
+    for dot_num in range(3):
+      high_bit >>= 1
+      if high_bit <= length:
+        rests[-1] += high_bit
+        length -= high_bit
+      else:
+        break
+
+  return ' '.join(['z%d' % rest for rest in rests])
+
 for msg in messages:
   print(msg)
 
@@ -130,4 +155,4 @@ for msg in messages:
 
   sys.stdout.write(
       '|\n%s |\n\n' %
-          ' | '.join(['z%d' % l for l in measure_lengths if l != 0]))
+          ' | '.join([make_rests(l) for l in measure_lengths if l != 0]))
