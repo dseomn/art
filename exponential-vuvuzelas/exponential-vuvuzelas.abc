@@ -5,7 +5,7 @@ M:none
 L:1/1
 K:C
 V:V name="1 vuvuzela" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:2
 T:Exponential Vuvuzelas: Act 1, Crescendo: I. 2 Vuvuzelas
@@ -14,7 +14,7 @@ M:none
 L:1/1
 K:C
 V:V name="2 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:3
 T:Exponential Vuvuzelas: Act 1, Crescendo: II. 4 Vuvuzelas
@@ -23,7 +23,7 @@ M:none
 L:1/1
 K:C
 V:V name="4 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:4
 T:Exponential Vuvuzelas: Act 1, Crescendo: III. 8 Vuvuzelas
@@ -32,7 +32,7 @@ M:none
 L:1/1
 K:C
 V:V name="8 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:5
 T:Exponential Vuvuzelas: Act 1, Crescendo: IV. 16 Vuvuzelas
@@ -41,7 +41,7 @@ M:none
 L:1/1
 K:C
 V:V name="16 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:6
 T:Exponential Vuvuzelas: Act 1, Crescendo: V. 32 Vuvuzelas
@@ -50,7 +50,7 @@ M:none
 L:1/1
 K:C
 V:V name="32 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:7
 T:Exponential Vuvuzelas: Act 1, Crescendo: VI. 64 Vuvuzelas
@@ -59,7 +59,7 @@ M:none
 L:1/1
 K:C
 V:V name="64 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:8
 T:Exponential Vuvuzelas: Act 1, Crescendo: VII. 128 Vuvuzelas
@@ -68,7 +68,7 @@ M:none
 L:1/1
 K:C
 V:V name="128 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:9
 T:Exponential Vuvuzelas: Act 1, Crescendo: VIII. 256 Vuvuzelas
@@ -77,7 +77,7 @@ M:none
 L:1/1
 K:C
 V:V name="256 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:10
 T:Exponential Vuvuzelas: Act 1, Crescendo: IX. 512 Vuvuzelas
@@ -86,7 +86,7 @@ M:none
 L:1/1
 K:C
 V:V name="512 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:11
 T:Exponential Vuvuzelas: Act 1, Crescendo: X. 1024 Vuvuzelas
@@ -95,7 +95,7 @@ M:none
 L:1/1
 K:C
 V:V name="1024 vuvuzelas" clef=none stafflines=1
-"^breath as needed" HB |]
+"^breathe as needed" HB |]
 
 X:12
 T:Exponential Vuvuzelas: Act 2, Diminuendo: I. 1024–0 Vuvuzelas: “Outro”
