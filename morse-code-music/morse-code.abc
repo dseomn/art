@@ -3,19 +3,82 @@ T:Morse Code no. 1: I. “Attention”
 M:none
 L:1/16
 Q:"Andante"
-V:Cl name="Clarinet" subname="Cl"
 V:Fl name="Flute" subname="Fl"
 V:Tp name="Trumpet" subname="Tp"
+V:Vn name="Violin" subname="Vn"
+V:Bs name="Bassoon" subname="Bs" clef=bass
+V:Tb name="Trombone" subname="Tb" clef=bass
+V:Ce name="Cello" subname="Ce" clef=bass
 K:C
-V:Cl
-%%MIDI program 72
 V:Fl
 %%MIDI program 74
 V:Tp
 %%MIDI program 57
-[V:Cl] !mf! e3 z e z e3 z e z e3 | z7 |      c3 z c z c3 z c z c3 | z7 | z15                  | z7 |\
-[V:Fl] z15                       | z7 | !mf! e3 z e z e3 z e z e3 | z7 | c3 z c z c3 z c z c3 | z7 |\
-[V:Tp] z15                       | z7 | z15                       | z7 | z15                  | z7 |\
-[V:Cl] z15                      |]
-[V:Fl] z15                      |]
-[V:Tp] !f! C3 z C z C3 z C z C3 |]
+V:Vn
+%%MIDI program 41
+V:Bs
+%%MIDI program 71
+V:Tb
+%%MIDI program 58
+V:Ce
+%%MIDI program 43
+[V:Fl] !mf! e3 z e z e3 z e z e3 |\
+[V:Tp] z15 |\
+[V:Vn] z15 |\
+[V:Bs] z15 |\
+[V:Tb] z15 |\
+[V:Ce] z15 |\
+[V:Fl] z7 | e3 z e z e3 z e z e3 | z7 | g3 z g z g3 z g z g3 | z7 | c3 z c z c3 z c z c3 |\
+[V:Tp] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Vn] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Bs] !p! z3 C,4- | (C,15 | E,7)- | (E,15 | G,,7) | z15 |\
+[V:Tb] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Ce] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Fl] z7 | e3 z e z g3 z c z c3 | z7 | c3 z c z e3 z c z c3 | z7 | G3 z G z e3 z c z c3 |\
+[V:Tp] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Vn] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Bs] E,7- | (E,15 | C,7)- | (C,15 | G,,7)- | G,,15 |\
+[V:Tb] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Ce] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Fl] z7 | e3 z e z g3 z c z c3 | z7 | c3 z c z e3 z c z c3 | z7 | G3 z e z c3 z G z G3 |\
+[V:Tp] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Vn] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Bs] E,7- | (E,15 | C,7)- | (C,15 | G,,7)- | G,,15 |\
+[V:Tb] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Ce] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Fl] z7 | !p! e3 z e z e3 z e z e3 | z7 | g3 z g z g3 z g z g3 | z7 | c3 z c z c3 z c z c3 |\
+[V:Tp] z7 | !f! E3 z E z E3 z E z E3 | z7 | G3 z G z G3 z G z G3 | z7 | C3 z C z C3 z C z C3 |\
+[V:Vn] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Bs] z7 | (E,15 | G,7)- | (G,15 | C,7)- | C,15 |\
+[V:Tb] !mf! z3 E,4- | (E,15 | G,7)- | (G,15 | C,7)- | C,15 |\
+[V:Ce] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Fl] z7 | c3 z c z c3 z c z c3 | z7 | e3 z e z e3 z e z e3 | z7 | g3 z g z g3 z g z g3 |\
+[V:Tp] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Vn] z7 | !mf! c3 z c z c3 z c z c3 | z7 | e3 z e z e3 z e z e3 | z7 | g3 z g z g3 z g z g3 |\
+[V:Bs] z7 | (C,15 | E,7)- | (E,15 | G,7)- | G,15 |\
+[V:Tb] z7 | z15 | z7 | z15 | z7 | z15 |\
+[V:Ce] !mf! z3 C,4- | (C,15 | E,7)- | (E,15 | G,7)- | G,15 |\
+[V:Fl] z7 | !mp! e3 z e z e3 z e z e3 | z7 | e3 z e z e3 z e z e3 | z7 | G3 z G z e3 z c z c3 |\
+[V:Tp] z7 | !mp! c3 z c z c3 z c z c3 | z7 | c3 z c z c3 z c z c3 | z7 | G3 z G z e3 z c z c3 |\
+[V:Vn] z7 | !mp! g3 z g z g3 z g z g3 | z7 | g3 z g z g3 z g z g3 | z7 | G3 z G z e3 z c z c3 |\
+[V:Bs] !mp! z2 E,3 z2 | E,15 | z2 E,3 z2 | (E,15 | G,,7)- | G,,15 |\
+[V:Tb] !mp! C,3 z4 | C,15 | C,3 z4 | (C,15 | G,,7)- | G,,15 |\
+[V:Ce] !mp! z4 G,3- | G,15 | z4 G,3- | (G,15 | G,,7)- | G,,15 |\
+[V:Fl] z7 | !mf! G3 z G z e3 z c z c3 |\
+[V:Tp] z7 | z15 |\
+[V:Vn] z7 | z15 |\
+[V:Bs] z7 | z15 |\
+[V:Tb] z7 | z15 |\
+[V:Ce] z7 | z15 |\
+[V:Fl] z7 | z15 |\
+[V:Tp] z7 | z15 |\
+[V:Vn] z7 | z15 |\
+[V:Bs] z7 | !mp! G,3 z E z C3 z G, z G,3 |\
+[V:Tb] z7 | z15 |\
+[V:Ce] z7 | z15 |\
+[V:Fl] z7 |]
+[V:Tp] z7 |]
+[V:Vn] z7 |]
+[V:Bs] z7 |]
+[V:Tb] z7 |]
+[V:Ce] z7 |]
