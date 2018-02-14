@@ -267,11 +267,11 @@ V:Fl name="Flute" subname="Fl" clef=treble
 K:C
 V:Fl
 %%MIDI program 74
-[V:Fl] !mf! C3 z C z C3 z C z C3 |\
-[V:Fl] z7 | C z C3 z C3 | z3 | C z C3 | z3 | C z C z C | z7 | C3 | z3 | C z C z C z C | z3 | C | z3 | C z C3 z C | z3 | C | z7 | C z C3 | z3 | C3 z C | z3 | C3 z C z C3 z C3 | z7 | C z C3 z C3 z C | z3 | C3 z C3 z C3 | z3 | C z C | z3 | C3 z C | z3 | C3 | z7 | C3 | z3 | C3 z C3 z C3 | z7 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | C3 z C3 z C3 | z3 | C z C z C3 z C | z7 | C3 | z3 | C z C z C z C | z3 | C z C | z3 | C z C z C | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
-[V:Fl] z7 | C z C3 | z3 | C3 z C | z3 | C3 z C z C3 z C3 | z7 | C z C3 z C3 z C | z3 | C3 z C3 z C3 | z3 | C z C | z3 | C3 z C | z3 | C3 | z7 | C z C3 | z3 | C3 | z7 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
-[V:Fl] z7 | C z C3 z C3 | z3 | C z C3 | z3 | C z C z C | z7 | C3 | z3 | C z C z C z C | z3 | C | z3 | C z C3 z C | z3 | C | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
-[V:Fl] z7 | C z C3 z C | z3 | C | z3 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z3 | C3 z C z C3 z C3 | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
-[V:Fl] z7 | C3 z C3 z C3 | z3 | C z C z C z C | z7 | C z C3 z C3 | z3 | C | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | C z C z C | z3 | C3 | z3 | C3 z C3 z C3 | z3 | C z C3 z C3 z C |\
-[V:Fl] z7 | C3 z C | z3 | C z C | z3 | C z C3 z C z C | z7 | C z C3 z C z C3 z C |\
+[V:Fl] !mf! c'3 z g' z e'3 z f' z g'3 |\
+[V:Fl] z7 | c z c3 z d3 | z3 | d z e3 | z3 | e z d z c | z7 | c3 | z3 | c z d z e z d | z3 | g | z3 | g z c'3 z c' | z3 | c | z7 | g z c'3 | z3 | e'3 z c' | z3 | c'3 z d' z e'3 z c'3 | z7 | e' z f'3 z g'3 z c' | z3 | g3 z c'3 z e'3 | z3 | c' z e' | z3 | c'3 z d' | z3 | e'3 | z7 | c'3 | z3 | g3 z f3 z e3 | z7 | e z g3 | z3 | c' z d'3 z e' z c' | z3 | c' z e'3 z d' z c' | z7 | g3 z c3 z e3 | z3 | e z f z g3 z g | z7 | c'3 | z3 | g z e z d z c | z3 | e z c | z3 | e z d z c | z7 | c3 z d3 z e z f3 | z3 | d z e z f3 | z3 | e | z3 | f z g3 z a | z3 | g3 z a z b3 z c'3 |\
+[V:Fl] z7 | C z C3 | z3 | C3 z C | z3 | C3 z C z C3 z C3 | z7 | C z C3 z C3 z C | z3 | C3 z C3 z C3 | z3 | C z C | z3 | C3 z C | z3 | C3 | z7 | C z C3 | z3 | C3 | z7 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | c3 z d3 z e z f3 | z3 | d z e z f3 | z3 | e | z3 | f z g3 z a | z3 | g3 z a z b3 z c'3 |\
+[V:Fl] z7 | C z C3 z C3 | z3 | C z C3 | z3 | C z C z C | z7 | C3 | z3 | C z C z C z C | z3 | C | z3 | C z C3 z C | z3 | C | z7 | c3 z d3 z e z f3 | z3 | d z e z f3 | z3 | e | z3 | f z g3 z a | z3 | g3 z a z b3 z c'3 |\
+[V:Fl] z7 | C z C3 z C | z3 | C | z3 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z3 | C3 z C z C3 z C3 | z7 | c3 z d3 z e z f3 | z3 | d z e z f3 | z3 | e | z3 | f z g3 z a | z3 | g3 z a z b3 z c'3 |\
+[V:Fl] z7 | C3 z C3 z C3 | z3 | C z C z C z C | z7 | C z C3 z C3 | z3 | C | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | a z g z f | z3 | e3 | z3 | f3 z e3 z d3 | z3 | f z e3 z d3 z c |\
+[V:Fl] z7 | c'3 z g' | z3 | e' z f' | z3 | d' z e'3 z f' z g' | z7 | c z g3 z e z d3 z c |\
 [V:Fl] z7 |]
