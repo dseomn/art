@@ -1,5 +1,5 @@
 BASE = morse-code
-REFS = 1 2
+REFS = 1 2 3
 
 midi:
 	for ref in $(REFS); do \
