@@ -256,3 +256,22 @@ V:OrB
 [V:Bs] z7 | z15 | z7 |]
 [V:OrT] z7 | z15 | z7 |]
 [V:OrB] [C,,G,,C,]7- | [C,,G,,C,]15 | z7 |]
+
+X:4
+T:Morse Code no. 1: IV. “Was there any point to all of this?”
+C:David Mandelberg
+M:none
+L:1/16
+Q:"Moderato"
+V:Fl name="Flute" subname="Fl" clef=treble
+K:C
+V:Fl
+%%MIDI program 74
+[V:Fl] !mf! C3 z C z C3 z C z C3 |\
+[V:Fl] z7 | C z C3 z C3 | z3 | C z C3 | z3 | C z C z C | z7 | C3 | z3 | C z C z C z C | z3 | C | z3 | C z C3 z C | z3 | C | z7 | C z C3 | z3 | C3 z C | z3 | C3 z C z C3 z C3 | z7 | C z C3 z C3 z C | z3 | C3 z C3 z C3 | z3 | C z C | z3 | C3 z C | z3 | C3 | z7 | C3 | z3 | C3 z C3 z C3 | z7 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | C3 z C3 z C3 | z3 | C z C z C3 z C | z7 | C3 | z3 | C z C z C z C | z3 | C z C | z3 | C z C z C | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
+[V:Fl] z7 | C z C3 | z3 | C3 z C | z3 | C3 z C z C3 z C3 | z7 | C z C3 z C3 z C | z3 | C3 z C3 z C3 | z3 | C z C | z3 | C3 z C | z3 | C3 | z7 | C z C3 | z3 | C3 | z7 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
+[V:Fl] z7 | C z C3 z C3 | z3 | C z C3 | z3 | C z C z C | z7 | C3 | z3 | C z C z C z C | z3 | C | z3 | C z C3 z C | z3 | C | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
+[V:Fl] z7 | C z C3 z C | z3 | C | z3 | C z C3 | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z3 | C3 z C z C3 z C3 | z7 | C3 z C3 z C z C3 | z3 | C z C z C3 | z3 | C | z3 | C z C3 z C | z3 | C3 z C z C3 z C3 |\
+[V:Fl] z7 | C3 z C3 z C3 | z3 | C z C z C z C | z7 | C z C3 z C3 | z3 | C | z3 | C z C3 z C z C | z3 | C z C3 z C z C | z7 | C z C z C | z3 | C3 | z3 | C3 z C3 z C3 | z3 | C z C3 z C3 z C |\
+[V:Fl] z7 | C3 z C | z3 | C z C | z3 | C z C3 z C z C | z7 | C z C3 z C z C3 z C |\
+[V:Fl] z7 |]
