@@ -69,12 +69,13 @@ messages = [
   '[AR]',
   '',
 
-  # Flute and/or clarinet, with minimal/no accompaniment. Repeat middle
-  # messages in various orders.
+  # Flute solo.
   '[KA]',
   'Was there any point to all of this QUERY',
-  'Any point QUERY',
+  'Any point at all QUERY',
   'Was there QUERY',
+  'Really QUERY',
+  'Oh well STOP',
   'NIL [AR]',
   ]
 
