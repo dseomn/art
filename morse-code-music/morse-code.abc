@@ -4,9 +4,9 @@ C:David Mandelberg
 M:none
 L:1/16
 Q:"Andante"
-V:Fl name="Flute" subname="Fl"
-V:Tp name="Trumpet" subname="Tp"
-V:Vn name="Violin" subname="Vn"
+V:Fl name="Flute" subname="Fl" clef=treble
+V:Tp name="Trumpet" subname="Tp" clef=treble
+V:Vn name="Violin" subname="Vn" clef=treble
 V:Bs name="Bassoon" subname="Bs" clef=bass
 V:Tb name="Trombone" subname="Tb" clef=bass
 V:Ce name="Cello" subname="Ce" clef=bass
@@ -90,8 +90,8 @@ C:David Mandelberg
 M:none
 L:1/16
 Q:"Allegro"
-V:Tp name="Trumpet" subname="Tp"
-V:Vn name="Violin" subname="Vn"
+V:Tp name="Trumpet" subname="Tp" clef=treble
+V:Vn name="Violin" subname="Vn" clef=treble
 V:Tb name="Trombone" subname="Tb" clef=bass
 V:Ce name="Cello" subname="Ce" clef=bass
 K:C
