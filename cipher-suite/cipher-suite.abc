@@ -1,0 +1,60 @@
+X:1
+T:Cipher Suite no. 1: I. Diffie–Hellman Waltz Agreement
+C:David Mandelberg
+M:3/4
+L:1/4
+Q:"Vivace"
+V:Cl name="Clarinet" subname="Cl" clef=treble
+V:Vn name="Violin" subname="Vn" clef=treble
+V:PT name="Piano" subname="Pi" clef=treble
+V:PB clef=bass
+%%score Cl Vn {PT PB}
+K:C
+V:Cl
+%%MIDI program 72
+V:Vn
+%%MIDI program 41
+V:PT
+%%MIDI program 1
+V:PB
+%%MIDI program 1
+[V:Cl] Z |\
+[V:Vn] Z |\
+[V:PT] !mf! z z .C |\
+[V:PB] !mf! .[C,E,G,] .[C,E,G,] z |\
+[V:Cl] !f! C D E | G F E | C G E | G E C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] !pp! C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] E F G | E D C | E G F | G D C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] C D E | G F E | C G E | G E C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] E F G | E D C | E G F | G D C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] Z4 |\
+[V:Vn] !f! G c c | e d c | G c e | g f e |\
+[V:PT] Z4 |\
+[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] Z4 |\
+[V:Vn] c f g | g e d | e f d | g d c |\
+[V:PT] Z4 |\
+[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] Z4 |\
+[V:Vn] G c c | e d c | G c e | g f e |\
+[V:PT] Z4 |\
+[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] Z4 |\
+[V:Vn] c f g | g e d | e f d | g d c |\
+[V:PT] Z4 |\
+[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:Cl] Z |]
+[V:Vn] Z |]
+[V:PT] Z |]
+[V:PB] Z |]
