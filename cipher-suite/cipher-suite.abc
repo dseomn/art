@@ -18,43 +18,103 @@ V:PT
 %%MIDI program 1
 V:PB
 %%MIDI program 1
-[V:Cl] Z |\
-[V:Vn] Z |\
-[V:PT] !mf! z z .C |\
-[V:PB] !mf! .[C,E,G,] .[C,E,G,] z |\
+[V:Cl] Z4 |\
+[V:Vn] Z4 |\
+[V:PT] !mf! C E G | E G C | G C E | C E G |\
+[V:PB] !mf! [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] !f! C D E | G F E | C G E | G E C |\
 [V:Vn] Z4 |\
 [V:PT] Z4 |\
-[V:PB] !pp! C,3 | C,3 | C,3 | C,3 |\
+[V:PB] !pp! [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] E F G | E D C | E G F | G D C |\
 [V:Vn] Z4 |\
 [V:PT] Z4 |\
-[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:PB] [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] C D E | G F E | C G E | G E C |\
 [V:Vn] Z4 |\
 [V:PT] Z4 |\
-[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:PB] [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] E F G | E D C | E G F | G D C |\
 [V:Vn] Z4 |\
 [V:PT] Z4 |\
-[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:PB] [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] Z4 |\
 [V:Vn] !f! G c c | e d c | G c e | g f e |\
 [V:PT] Z4 |\
-[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:PB] [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] Z4 |\
 [V:Vn] c f g | g e d | e f d | g d c |\
 [V:PT] Z4 |\
-[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:PB] [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] Z4 |\
 [V:Vn] G c c | e d c | G c e | g f e |\
 [V:PT] Z4 |\
-[V:PB] C,3 | C,3 | C,3 | C,3 |\
+[V:PB] [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
 [V:Cl] Z4 |\
 [V:Vn] c f g | g e d | e f d | g d c |\
 [V:PT] Z4 |\
-[V:PB] C,3 | C,3 | C,3 | C,3 |\
-[V:Cl] Z |]
-[V:Vn] Z |]
-[V:PT] Z |]
-[V:PB] Z |]
+[V:PB] [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 | [C,E,G,]3 |\
+[V:Cl] C D E | G F E | C G E | G E C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] !mp! C, E, G, | E, G, C, | G, C, E, | C, E, G, |\
+[V:Cl] E F G | E D C | E G F | G D C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] E, G, C, | G, C, E, | C, E, G, | E, G, C, |\
+[V:Cl] Z4 |\
+[V:Vn] G c c | e d c | G c e | g f e |\
+[V:PT] Z4 |\
+[V:PB] C, E, G, | E, G, C, | G, C, E, | C, E, G, |\
+[V:Cl] Z4 |\
+[V:Vn] c f g | g e d | e f d | g d c |\
+[V:PT] Z4 |\
+[V:PB] E, G, C, | G, C, E, | C, E, G, | E, G, C, |\
+[V:Cl] C D E | G F E | C G E | G E C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] C, E, G, | E, G, C, | G, C, E, | C, E, G, |\
+[V:Cl] E F G | E D C | E G F | G D C |\
+[V:Vn] Z4 |\
+[V:PT] Z4 |\
+[V:PB] E, G, C, | G, C, E, | C, E, G, | E, G, C, |\
+[V:Cl] Z4 |\
+[V:Vn] G c c | e d c | G c e | g f e |\
+[V:PT] Z4 |\
+[V:PB] C, E, G, | E, G, C, | G, C, E, | C, E, G, |\
+[V:Cl] Z4 |\
+[V:Vn] c f g | g e d | e f d | g d c |\
+[V:PT] Z4 |\
+[V:PB] E, G, C, | G, C, E, | C, E, G, | E, G, C, |\
+[V:Cl] C D E | G F E | C G E | G E C |\
+[V:Vn] g c' c' | e' d' c' | g c' e' | g' f' e'  |\
+[V:PT] Z4 |\
+[V:PB] C, E, G, | E, G, C, | G, C, E, | C, E, G, |\
+[V:Cl] E F G | E D C | E G F | G D C |\
+[V:Vn] c' f' g' | g' e' d' | e' f' d' | g' d' c' |\
+[V:PT] Z4 |\
+[V:PB] E, G, C, | G, C, E, | C, E, G, | E, G, C, |\
+[V:Cl] c d e | g f e | c g e | g e c |\
+[V:Vn] G c c | e d c | G c e | g f e  |\
+[V:PT] Z4 |\
+[V:PB] C, E, G, | E, G, C, | G, C, E, | C, E, G, |\
+[V:Cl] e f g | e d c | e g f | g d c |\
+[V:Vn] c f g | g e d | e f d | g d c |\
+[V:PT] Z4 |\
+[V:PB] E, G, C, | G, C, E, | C, E, G, | E, G, C, |\
+[V:Cl] Z2 |\
+[V:Vn] Z2 |\
+[V:PT] !mp! C/E/ G2 | E/G/ C2 |\
+[V:PB] !p! [C,F,G,]3 | [C,E,G,]3 |\
+[V:Cl] C D E | G F E | C G E | G E C |\
+[V:Vn] G c c | e d c | G c e | g f e  |\
+[V:PT] Z4 |\
+[V:PB] !mp! C, E, G, | E, G, C, | G, C, E, | C, E, G, |\
+[V:Cl] E F G | E D C | E G F | G D C |\
+[V:Vn] c f g | g e d | e f d | g d c |\
+[V:PT] Z4 |\
+[V:PB] E, G, C, | G, C, E, | C, E, G, | E, G, C, |\
+[V:Cl] Z3 |]
+[V:Vn] Z3 |]
+[V:PT] C/E/ G2 | G/E/ !mf! C2- | HC2 z |]
+[V:PB] !p! [C,F,G,]3 | [C,E,G,]3- | H[C,E,G,]2 z |]
