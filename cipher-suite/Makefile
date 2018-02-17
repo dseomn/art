@@ -1,5 +1,5 @@
 BASE = cipher-suite
-REFS = 1
+REFS = 1 2
 
 midi:
 	for ref in $(REFS); do \

@@ -118,3 +118,27 @@ V:PB
 [V:Vn] Z3 |]
 [V:PT] C/E/ G2 | G/E/ !mf! C2- | HC2 z |]
 [V:PB] !p! [C,F,G,]3 | [C,E,G,]3- | H[C,E,G,]2 z |]
+
+X:2
+T:Cipher Suite no. 1: II. Pre‐Shared Polska
+C:David Mandelberg
+M:3/4
+L:1/4
+Q:"Vivace"
+V:Cl name="Clarinet" subname="Cl" clef=treble
+V:Vn name="Violin" subname="Vn" clef=treble
+K:C
+V:Cl
+%%MIDI program 72
+V:Vn
+%%MIDI program 41
+[V:Cl] !f! c>d f | f>e d | c>d f | e>d c |
+[V:Vn] !mp! c>d f | f>e d | c>d f | e>d c |
+[V:Cl] e>f g | e>f d | d>e f | f>d c |
+[V:Vn] e>f g | e>f d | d>e f | f>d c |
+[V:Cl] c>d f | f>e d | c>d f | e>d c |
+[V:Vn] c>d f | f>e d | c>d f | e>d c |
+[V:Cl] f>a b | a>b c' | b>a g | f>e c |
+[V:Vn] Z4 |%f>a b | a>b c' | b>a g | f>e c |
+%[V:Cl] |
+%[V:Vn] |
