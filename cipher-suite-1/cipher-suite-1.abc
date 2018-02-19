@@ -6,6 +6,7 @@ L:1/2
 Q:"Andante"
 V:Cl name="Clarinet" subname="Cl" clef=treble
 V:Vn name="Violin" subname="Vn" clef=treble
+%%score Cl Vn
 K:C
 V:Cl
 %%MIDI program 71

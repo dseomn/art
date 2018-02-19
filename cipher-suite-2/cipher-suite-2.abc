@@ -8,7 +8,7 @@ V:Cl name="Clarinet" subname="Cl" clef=treble
 V:Vn name="Violin" subname="Vn" clef=treble
 V:PT name="Piano" subname="Pi" clef=treble
 V:PB clef=bass
-%%score Cl Vn {PT PB}
+%%score Cl Vn {PT | PB}
 K:C
 V:Cl
 %%MIDI program 71

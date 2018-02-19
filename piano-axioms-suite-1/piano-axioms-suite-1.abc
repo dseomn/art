@@ -4,9 +4,9 @@ C:David Mandelberg
 M:1/1
 L:1/1
 Q:"Adagio"
-V:T clef=treble
+V:T name="Piano" subname="Pi" clef=treble
 V:B clef=bass
-%%score {T B}
+%%score {T | B}
 K:C
 [V:T] !fermata! !ffff! Z |]
 [V:B] !fermata! !ffff! Z |]
@@ -17,9 +17,9 @@ C:David Mandelberg
 M:12/8
 L:1/8
 Q:"Allegro"
-V:T clef=treble
+V:T name="Piano" subname="Pi" clef=treble
 V:B clef=bass
-%%score {T B}
+%%score {T | B}
 K:C
 %%MIDI beatstring mmmmmmmmmmmm
 [V:T] Z |\
@@ -51,9 +51,9 @@ C:David Mandelberg
 M:3/4
 L:1/4
 Q:"Presto"
-V:T clef=treble
+V:T name="Piano" subname="Pi" clef=treble
 V:B clef=bass
-%%score {T B}
+%%score {T | B}
 K:C
 [V:T] !mp! ^D E z |\
 [V:B] !mp! Z |\
@@ -243,8 +243,8 @@ K:C
 [V:B] ^G,/A,/ z/ G,/A,/ z/ & ^G,, A,, z |\
 [V:T] c/^c/ z/ =c/^c/ z/ & C ^C z |\
 [V:B] Z |\
-[V:T] c ^c z |]
-[V:B] Z |]
+[V:T] c ^c z |\
+[V:B] Z |\
 [V:T] ^f g z |\
 [V:B] Z |\
 [V:T] Z |\
@@ -261,8 +261,8 @@ K:C
 [V:B] Z |\
 [V:T] Z |\
 [V:B] Z |\
-[V:T] !f! ^F G z & ^f g z & ^f' g' z|\
-[V:B] !f! ^F, G, z |\
+[V:T] !f! ^F G z & ^f g z & ^f' g' z |]
+[V:B] !f! ^F, G, z |]
 
 X:4
 T:Piano Axioms Suite no. 1: IV. ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
@@ -270,9 +270,9 @@ C:David Mandelberg
 M:4/4
 L:1/8
 Q:"Vivace"
-V:T clef=treble
+V:T name="Piano" subname="Pi" clef=treble
 V:B clef=bass
-%%score {T B}
+%%score {T | B}
 K:C
 [V:T] !mf! ^DE DE EE DD |\
 [V:B] !mf! Z |\
@@ -409,13 +409,13 @@ C:David Mandelberg
 M:2/4
 L:1/8
 Q:"Andante"
-V:T1 clef=treble
+V:T1 name="Piano 1" subname="Pi 1" clef=treble
 V:B1 clef=bass
-V:T2 clef=treble
+V:T2 name="Piano 2" subname="Pi 2" clef=treble
 V:B2 clef=bass
-V:T3 clef=treble
+V:T3 name="Piano 3" subname="Pi 3" clef=treble
 V:B3 clef=bass
-%%score [{T1 B1} {T2 B2} {T3 B3}]
+%%score [{T1 | B1} | {T2 | B2} | {T3 | B3}]
 K:C
 [V:T1] !p! EF ^AB |\
 [V:B1] !p! Z |\
