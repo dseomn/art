@@ -1,5 +1,5 @@
 X:1
-T:Piano Postulate no. 1: ∃0(0 ∈ ℕ)
+T:Piano Axioms Suite no. 1: I. ∃0(0 ∈ ℕ)
 C:David Mandelberg
 M:1/1
 L:1/1
@@ -12,7 +12,7 @@ K:C
 [V:B] !fermata! !ffff! Z |]
 
 X:2
-T:Piano Postulate no. 2: ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
+T:Piano Axioms Suite no. 1: II. ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
 C:David Mandelberg
 M:12/8
 L:1/8
@@ -46,7 +46,7 @@ K:C
 [V:B] Z |]
 
 X:3
-T:Piano Postulate no. 3: ∀a(a ∈ ℕ ⇒ S(a) ≠ 0)
+T:Piano Axioms Suite no. 1: III. ∀a(a ∈ ℕ ⇒ S(a) ≠ 0)
 C:David Mandelberg
 M:3/4
 L:1/4
@@ -265,7 +265,7 @@ K:C
 [V:B] !f! ^F, G, z |\
 
 X:4
-T:Piano Postulate no. 4: ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
+T:Piano Axioms Suite no. 1: IV. ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
 C:David Mandelberg
 M:4/4
 L:1/8
@@ -404,7 +404,7 @@ K:C
 [V:B] !ppp! A,^A, =A,^A, A,A, =A,A, |]
 
 X:5
-T:Piano Postulate no. 5: ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ A ⊇ ℕ)
+T:Piano Axioms Suite no. 1: V. ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ A ⊇ ℕ)
 C:David Mandelberg
 M:2/4
 L:1/8
