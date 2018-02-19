@@ -12,17 +12,17 @@ V:Tb name="Trombone" subname="Tb" clef=bass
 V:Ce name="Cello" subname="Ce" clef=bass
 K:C
 V:Fl
-%%MIDI program 74
+%%MIDI program 73
 V:Tp
-%%MIDI program 57
+%%MIDI program 56
 V:Vn
-%%MIDI program 41
+%%MIDI program 40
 V:Bs
-%%MIDI program 71
+%%MIDI program 70
 V:Tb
-%%MIDI program 58
+%%MIDI program 57
 V:Ce
-%%MIDI program 43
+%%MIDI program 42
 [V:Fl] !mf! e3 z e z e3 z e z e3 |\
 [V:Tp] z15 |\
 [V:Vn] z15 |\
@@ -96,13 +96,13 @@ V:Tb name="Trombone" subname="Tb" clef=bass
 V:Ce name="Cello" subname="Ce" clef=bass
 K:C
 V:Tp
-%%MIDI program 57
+%%MIDI program 56
 V:Vn
-%%MIDI program 41
+%%MIDI program 40
 V:Tb
-%%MIDI program 58
+%%MIDI program 57
 V:Ce
-%%MIDI program 43
+%%MIDI program 42
 [V:Tp] !ff! C3 z C z C3 z C z C3 |\
 [V:Vn] z15 |\
 [V:Tb] !mf! C,15 |\
@@ -161,13 +161,13 @@ V:OrB clef=bass
 %%score Fl Bs {OrT OrB}
 K:C
 V:Fl
-%%MIDI program 74
+%%MIDI program 73
 V:Bs
-%%MIDI program 71
+%%MIDI program 70
 V:OrT
-%%MIDI program 20
+%%MIDI program 19
 V:OrB
-%%MIDI program 20
+%%MIDI program 19
 [V:Fl] z7 | z15 |\
 [V:Bs] z7 | z15 |\
 [V:OrT] z7 | !f! C3 z C z E3 z D z C3 |\
@@ -266,7 +266,7 @@ Q:"Moderato"
 V:Fl name="Flute" subname="Fl" clef=treble
 K:C
 V:Fl
-%%MIDI program 74
+%%MIDI program 73
 [V:Fl] !mf! c'3 z g' z e'3 z f' z g'3 |\
 [V:Fl] z7 | c z c3 z e3 | z3 | e z g3 | z3 | g z g z e | z7 | c3 | z3 | c z d z e z d | z3 | g | z3 | g z c'3 z c' | z3 | c | z7 | g z c'3 | z3 | e'3 z c' | z3 | c'3 z d' z e'3 z c'3 | z7 | e' z f'3 z g'3 z c' | z3 | g3 z c'3 z e'3 | z3 | c' z e' | z3 | c'3 z d' | z3 | e'3 | z7 | c'3 | z3 | g3 z f3 z e3 | z7 | e z g3 | z3 | c' z d'3 z e' z c' | z3 | c' z e'3 z d' z c' | z7 | g3 z c3 z e3 | z3 | e z f z g3 z g | z7 | c'3 | z3 | g z e z d z c | z3 | e z c | z3 | e z d z c | z7 | c3 z d3 z e z f3 | z3 | d z e z f3 | z3 | e | z3 | f z g3 z a | z3 | g3 z a z b3 z c'3 |\
 [V:Fl] z7 | e z e3 | z3 | g3 z e | z3 | e3 z f z g3 z c'3 | z7 | c' z e'3 z d'3 z c' | z3 | e'3 z f'3 z g'3 | z3 | f' z g' | z3 | e'3 z c' | z3 | e'3 | z7 | g' z c'3 | z3 | g3 | z7 | c' z g3 | z3 | e z g3 z f z d | z3 | c z g3 z g z c' | z7 | c3 z d3 z e z f3 | z3 | d z e z f3 | z3 | e | z3 | f z g3 z a | z3 | g3 z a z b3 z c'3 |\
