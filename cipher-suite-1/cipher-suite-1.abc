@@ -125,3 +125,39 @@ V:PB
 [V:Vn] [K:Cmaj] c e | e>f | f f | e/f/ g | c e | e>f | f d | e/d/ c | Z2 |]
 [V:PT] [K:Cmaj] C E | E>F | F F | E/F/ G | C E | E>F | F D | E/D/ C- | C2- | C z |]
 [V:PB] [K:Cmaj] [C,E,G,] z | [C,E,G,] z | [C,F,G,] z | [C,E,G,] z | [C,E,G,] z | [C,E,G,] z | [C,F,G,] z | .[C,E,G,] !p! [C,E,G,]- | [C,E,G,]2 | Z |]
+
+X:3
+T:Cipher Suite no. 1: III. Snoa in the SNOW
+C:David Mandelberg
+M:4/4
+L:1/4
+Q:"Moderato"
+V:Cl name="Clarinet" subname="Cl" clef=treble
+V:Vn name="Violin" subname="Vn" clef=treble
+%%score Cl Vn
+K:C
+%%MIDI beatstring fpmp
+V:Cl
+%%MIDI program 71
+V:Vn
+%%MIDI program 40
+[V:Cl] z2 !mp!e>!f!c | d/f/g/f/ d2 | d/f/e/f/ g>e | f/g/d/c/ d e | c/d/ e f/e/ c |
+[V:Vn] Z | z3 (!mp!c | !f! d f e) e | f g d e | c e f c |
+[V:Cl] d/f/g/f/ d c | d/f/e/f/ e d | e/f/g/d/ c e | (3c/d/e/ f (3g/f/e/ c |
+[V:Vn] d g (d c | d e g d) | (e/f/g/d/ c e) | c/e/ f g/e/ c |
+[V:Cl] c2 d f | g (3f/e/d/ g (3f/e/d/ | f d c d | (3f/e/d/ c G c |
+[V:Vn] z (c d f | g d g d | f d c) d | (f c G c) |
+[V:Cl] (3f/e/d/ c (3f/e/d/ c | G c (3d/e/f/ c | d e (3f/g/a/ g | (3f/g/a/ f d c |
+[V:Vn] (f d e c) | (G c d c | d e f g | f2 d c) |
+[V:Cl] z3 (!p!d | !mf! c) f d g | f c' g f | f e c z |
+[V:Vn] !ff! (G c) d/e/f/d/ | (3c/d/e/ f (3d/e/f/ g | f/>g/ c' g f/>e/ | f//e//d/ (e/d/ c G) |
+[V:Cl] e2 f e | f2 c e |  d g f c | f3 c |
+[V:Vn] e//f//g/ e f (3e/f/g/ | f>d c e | (3d/e/f/ g f (3c/d/e/ | f g f/d/ c |
+[V:Cl] !f! G (3c/d/e/ c G | c/d/e/f/ g>f | e/>d/ c (3f/e/d/ c | G c e/>d/ c |
+[V:Vn] z3 (!mp!G | !f! c e g2) | e/>d/ c f c | (G c e/>d/ c) |
+[V:Cl] e/>d/ c G (3c/d/e/ | e/>d/ d e/>f/ d/c/ | (3c/d/e/ d/f/ e/>d/ e | (3e/f/g/ e (3f/e/d/ c |
+[V:Vn] (e c G c | e d e d | c d e2- | e2 f c) |
+[V:Cl] c/f/e/f/ g>d | c/e/d/f/ g f | e (3f/e/d/ f/e/d/c/ | d>e f/d/ c |
+[V:Vn] c f e f | c e d f | e f e d | d e f c |
+[V:Cl] G c/d/ f/g/ e | c/d/e/f/ g2 | (3e/d/c/ d c>G | c/d/e/d/ d c | !mp! G c<c z |]
+[V:Vn] G c f e | c e (g e) | d2 c G | c e d c | !mp! G c2 z |]
