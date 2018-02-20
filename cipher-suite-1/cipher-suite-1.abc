@@ -161,3 +161,55 @@ V:Vn
 [V:Vn] c f e f | c e d f | e f e d | d e f c |
 [V:Cl] G c/d/ f/g/ e | c/d/e/f/ g2 | (3e/d/c/ d c>G | c/d/e/d/ d c | !mp! G c<c z |]
 [V:Vn] G c f e | c e (g e) | d2 c G | c e d c | !mp! G c2 z |]
+
+X:4
+T:Cipher Suite no. 1: IV. Hash‐Based Message Authentication Zweifacher
+C:David Mandelberg
+M:none
+L:1/4
+Q:"Vivace"
+V:Cl name="Clarinet" subname="Cl" clef=treble
+V:Vn name="Violin" subname="Vn" clef=treble
+%%score Cl Vn
+K:C
+V:Cl
+%%MIDI program 71
+V:Vn
+%%MIDI program 40
+% Structure is (PPWWP)²:
+%  1. Initialize inner hash (pivot)
+%  2. XOR with ipad (pivot)
+%  3. Update inner hash with K' XOR ipad (waltz)
+%  4. Update inner hash with message (waltz)
+%  5. Finalize inner hash (pivot)
+%  6. Initialize outer hash (pivot)
+%  7. XOR with opad (pivot)
+%  8. Update outer hash with K' XOR opad (waltz)
+%  9. Update outer hash with inner hash result (waltz)
+%  10. Finalize outer hash (pivot)
+[V:Cl] !mp! (3C/E/G/ |\
+[V:Vn] z |\
+[V:Cl] [M:2/4] !f! c e | d f | [M:3/4] e>f g | d>e f | [M:2/4] e c |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Cl] [M:2/4] f g | e f | [M:3/4] G>c e | d2 c | [M:2/4] d c |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! (3C/E/G/ |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Vn] [M:2/4] !f! c e | d f | [M:3/4] e>f g | d>e f | [M:2/4] e c |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! (3C/E/G/ |
+[V:Vn] [M:2/4] f g | e f | [M:3/4] G>c e | d2 c | [M:2/4] d c |
+[V:Cl] [M:2/4] !f! c e | d f | [M:3/4] e>f g | d>c (3d/e/f/ | [M:2/4] e c |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Cl] [M:2/4] f g | e f | [M:3/4] G>c e | f>g f/e/ | [M:2/4] d c |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! (3C/E/G/ |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Vn] [M:2/4] !f! c e | d f | [M:3/4] e>f g | d>c (3d/e/f/ | [M:2/4] e c |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! G/c//d// |
+[V:Vn] [M:2/4] f g | e f | [M:3/4] G>c e | f>g f/e/ | [M:2/4] d c |
+[V:Cl] [M:2/4] !f! e f | e g | [M:3/4] f>d e | f2 e | [M:2/4] f d |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Cl] [M:2/4] e g | f d | [M:3/4] | c>d e | d>e c | [M:2/4] e c |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! G/c//d// |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Vn] [M:2/4] !f! e f | e g | [M:3/4] f>d e | f2 e | [M:2/4] f d |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Vn] [M:2/4] e g | f d | [M:3/4] | c>d e | d>e c | [M:2/4] e c |
