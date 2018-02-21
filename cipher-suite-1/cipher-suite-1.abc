@@ -187,8 +187,12 @@ V:Vn
 %  8. Update outer hash with K' XOR opad (waltz)
 %  9. Update outer hash with inner hash result (waltz)
 %  10. Finalize outer hash (pivot)
-[V:Cl] !mp! (3C/E/G/ |\
-[V:Vn] z |\
+[V:Cl] !mp! y (3E/F/G/ |\
+[V:Vn] !mp! y (3E/F/G/ |\
+[V:Cl] [M:2/4] !f! c d | e f | [M:3/4] g>f e | d>e d | [M:2/4] c G |
+[V:Vn] [M:2/4] !f! c d | e f | [M:3/4] g>f e | d>e d | [M:2/4] c G |
+[V:Cl] [M:2/4] c e | f g | [M:3/4] f2 d | e2 d | [M:2/4] c !mp! (3C/E/G/ |
+[V:Vn] [M:2/4] c e | f g | [M:3/4] f2 d | e2 d | [M:2/4] c G |
 [V:Cl] [M:2/4] !f! c e | d f | [M:3/4] e>f g | d>e f | [M:2/4] e c |
 [V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
 [V:Cl] [M:2/4] f g | e f | [M:3/4] G>c e | d2 c | [M:2/4] d c |
@@ -207,9 +211,31 @@ V:Vn
 [V:Vn] [M:2/4] f g | e f | [M:3/4] G>c e | f>g f/e/ | [M:2/4] d c |
 [V:Cl] [M:2/4] !f! e f | e g | [M:3/4] f>d e | f2 e | [M:2/4] f d |
 [V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
-[V:Cl] [M:2/4] e g | f d | [M:3/4] | c>d e | d>e c | [M:2/4] e c |
+[V:Cl] [M:2/4] e g | f d | [M:3/4] c>d e | d>e c | [M:2/4] e c |
 [V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! G/c//d// |
 [V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
 [V:Vn] [M:2/4] !f! e f | e g | [M:3/4] f>d e | f2 e | [M:2/4] f d |
 [V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
-[V:Vn] [M:2/4] e g | f d | [M:3/4] | c>d e | d>e c | [M:2/4] e c |
+[V:Vn] [M:2/4] e g | f d | [M:3/4] c>d e | d>e c | [M:2/4] e c/ !mp! C//E// |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Vn] [M:2/4] !f! G c | e g | [M:3/4] f>d e/c/ | d>f e/g/ | [M:2/4] e c |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! (3C/D/E/ |
+[V:Vn] [M:2/4] G c | d e | [M:3/4] f>d e/f/ | f>d e/c/ | [M:2/4] e c |
+[V:Cl] [M:2/4] !f! G c | e g | [M:3/4] f>d e/c/ | d>f e/g/ | [M:2/4] e c |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Cl] [M:2/4] G c | d e | [M:3/4] f>d e/f/ | f>d e/c/ | [M:2/4] e c/ !mp! F//G// |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Cl] [M:2/4] !f! c G | c d | [M:3/4] e>f g | f>e d | [M:2/4] e d |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Cl] [M:2/4] c G | c f | [M:3/4] e>f g | f2 d | [M:2/4] e d |
+[V:Vn] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! (3C/F/G/ |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] Z |
+[V:Vn] [M:2/4] !f! c G | c d | [M:3/4] e>f g | f>e d | [M:2/4] e d |
+[V:Cl] [M:2/4] Z2 | [M:3/4] Z2 | [M:2/4] z !mp! (3E/F/G/ |
+[V:Vn] [M:2/4] c G | c f | [M:3/4] e>f g | f2 d | [M:2/4] e d/ !mp! F//G// |
+[V:Cl] [M:2/4] !f! c d | e f | [M:3/4] g>f e | d>e d | [M:2/4] c G |
+[V:Vn] [M:2/4] !f! c d | e f | [M:3/4] g>f e | d>e d | [M:2/4] c G |
+[V:Cl] [M:2/4] c e | f g | [M:3/4] f2 d | e2 d | [M:2/4] c G |\
+[V:Vn] [M:2/4] c e | f g | [M:3/4] f2 d | e2 d | [M:2/4] c G |\
+[V:Cl] !mp! (3E/D/C/ z |]
+[V:Vn] !mp! (3E/D/C/ z |]
