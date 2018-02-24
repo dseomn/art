@@ -1,0 +1,90 @@
+X:1
+T:Morse Code Suite no. 1 for Solo Vuvuzela: I. “Attention”
+C:David Mandelberg
+M:none
+L:1/16
+Q:"Andante"
+V:Vu name="Vuvuzela" subname="Vu" clef=bass
+%%score Vu
+K:F
+!fff! B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 |]
+
+X:2
+T:Morse Code Suite no. 1 for Solo Vuvuzela: II. “Hello world. This is music”
+C:David Mandelberg
+M:none
+L:1/16
+Q:"Allegro"
+V:Vu name="Vuvuzela" subname="Vu" clef=bass
+%%score Vu
+K:F
+!fff! B,3 z B, z B,3 z B, z B,3 |\
+z7 | B, z B, z B, z B, | z3 | B, | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z3 | B,3 z B,3 z B,3 | z7 | B, z B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B, | z3 | B, z B,3 z B, z B, | z3 | B,3 z B, z B, | z7 | B, z B, z B, | z3 | B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B,3 z B, |\
+z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, z B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B, z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 z B, | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 | z3 | B, z B,3 z B, | z3 | B, | z7 | B,3 z B, z B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B, z B,3 | z7 | B, z B, z B, | z3 | B, z B, z B,3 | z3 | B, z B,3 z B, | z3 | B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, z B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B, z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+z7 | B, z B, | z3 | B,3 | z7 | B, z B, z B, | z3 | B,3 z B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B, | z3 | B, z B, z B, | z7 | B, z B,3 z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 | z3 | B, | z7 | B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B, | z3 | B, z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B, z B,3 | z3 | B,3 | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B,3 | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B, z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 z B, | z7 | B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B, | z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B,3 | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B, | z3 | B, z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, | z3 | B, z B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B, | z3 | B,3 z B,3 z B,3 | z7 | B, z B,3 z B, z B,3 z B, |\
+z7 |]
+
+X:3
+T:Morse Code Suite no. 1 for Solo Vuvuzela: III. “Why? Why not?”
+C:David Mandelberg
+M:none
+L:1/16
+Q:"Vivace"
+V:Vu name="Vuvuzela" subname="Vu" clef=bass
+%%score Vu
+K:F
+!fff! B,3 z B, z B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B,3 z B, z B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 |\
+z7 | B, z B,3 z B, z B,3 z B, |\
+z7 | B, z B,3 z B, z B,3 z B, |\
+z7 | B, z B,3 z B, z B,3 z B, |\
+z7 | B, z B,3 z B, z B,3 z B, |\
+z7 |]
+
+X:4
+T:Morse Code Suite no. 1 for Solo Vuvuzela: IV. “Was there any point to all of this?”
+C:David Mandelberg
+M:none
+L:1/16
+Q:"Moderato"
+V:Vu name="Vuvuzela" subname="Vu" clef=bass
+%%score Vu
+K:F
+!fff! B,3 z B, z B,3 z B, z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B,3 | z3 | B, z B, z B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, | z3 | B, z B,3 z B, | z3 | B, | z7 | B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B, z B,3 z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B, z B, | z3 | B,3 z B, | z3 | B,3 | z7 | B,3 | z3 | B,3 z B,3 z B,3 | z7 | B, z B,3 | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z7 | B,3 z B,3 z B,3 | z3 | B, z B, z B,3 z B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+z7 | B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B, z B,3 z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B, z B, | z3 | B,3 z B, | z3 | B,3 | z7 | B, z B,3 | z3 | B,3 | z7 | B, z B,3 | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+z7 | B, z B,3 z B,3 | z3 | B, z B,3 | z3 | B, z B, z B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, | z3 | B, z B,3 z B, | z3 | B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+z7 | B, z B,3 z B, | z3 | B, | z3 | B, z B,3 | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+z7 | B,3 z B,3 z B,3 | z3 | B, z B, z B, z B, | z7 | B, z B,3 z B,3 | z3 | B, | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z7 | B, z B, z B, | z3 | B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B,3 z B, |\
+z7 | B,3 z B, | z3 | B, z B, | z3 | B, z B,3 z B, z B, | z7 | B, z B,3 z B, z B,3 z B, |\
+z7 |]
