@@ -5,6 +5,7 @@ SRCDIR =
 # files must exist in $(SRCDIR):
 #
 # $(PROJECT).abc: ABC Notation main file
+# $(PROJECT).cover.tex: (optional) Front cover page. See cover-page.cls.
 PROJECT =
 
 # Where to place outputs.
@@ -80,13 +81,42 @@ $(MKFILE): $(SRCDIR)/$(PROJECT).abc
 	mv "$$tmp" "$(MKFILE)"
 
 pdf: $(DSTDIR)/$(PROJECT).pdf
-$(DSTDIR)/$(PROJECT).pdf: $(SRCDIR)/$(PROJECT).abc
+$(DSTDIR)/$(PROJECT).pdf: $(SRCDIR)/$(PROJECT).abc $(DSTDIR)/$(PROJECT).cover.stamp
+	cover= && \
+	if test -f "$(DSTDIR)/$(PROJECT).cover.pdf"; then \
+	  cover="$(DSTDIR)/$(PROJECT).cover.pdf"; \
+	fi && \
 	tmpdir="$$(mktemp -d)" && \
 	abcm2ps -1 -j0 -N2 -v "$(SRCDIR)/$(PROJECT).abc" -O "$$tmpdir/page-.svg" && \
 	for page in "$$tmpdir/page"-*.svg; do \
 	  inkscape --export-pdf="$${page%.svg}.pdf" "$$page" || exit 1; \
 	done && \
-	pdftk "$$tmpdir/page"-*.pdf cat output "$(DSTDIR)/$(PROJECT).pdf" && \
+	pdftk $$cover "$$tmpdir/page"-*.pdf cat output "$(DSTDIR)/$(PROJECT).pdf" && \
 	rm -rf "$$tmpdir"
 
-.PHONY: all midi wave midi-per-voice wave-per-voice pdf
+# Stamp file for $(DSTDIR)/$(PROJECT).cover.pdf, or its non-existence.
+$(DSTDIR)/$(PROJECT).cover.stamp: force-rebuild
+	if test -f "$(SRCDIR)/$(PROJECT).cover.tex"; then \
+	  $(MAKE) "$(DSTDIR)/$(PROJECT).cover.pdf" || exit 1; \
+	elif test -f "$(DSTDIR)/$(PROJECT).cover.pdf"; then \
+	  rm "$(DSTDIR)/$(PROJECT).cover.pdf" && \
+	  touch "$(DSTDIR)/$(PROJECT).cover.stamp" && \
+	  true || exit 1; \
+	elif test ! -f "$(DSTDIR)/$(PROJECT).cover.stamp"; then \
+	  touch "$(DSTDIR)/$(PROJECT).cover.stamp" || exit 1; \
+	fi
+
+# Target for cover.pdf itself, assuming cover.tex exists. Other targets should
+# depend on $(DSTDIR)/$(PROJECT).cover.stamp instead, and test whether or not
+# $(DSTDIR)/$(PROJECT).cover.pdf exists after the stamp is up-to-date.
+$(DSTDIR)/$(PROJECT).cover.pdf: $(SRCDIR)/$(PROJECT).cover.tex cover-page.cls
+	tmpdir="$$(mktemp -d)" && \
+	cp "$(SRCDIR)/$(PROJECT).cover.tex" cover-page.cls "$$tmpdir" && \
+	cd "$$tmpdir" && \
+	xelatex "$(PROJECT).cover.tex" && \
+	cd - && \
+	mv "$$tmpdir/$(PROJECT).cover.pdf" "$(DSTDIR)/$(PROJECT).cover.pdf" && \
+	rm -rf "$$tmpdir"
+	touch "$(DSTDIR)/$(PROJECT).cover.stamp"
+
+.PHONY: all midi wave midi-per-voice wave-per-voice pdf force-rebuild
