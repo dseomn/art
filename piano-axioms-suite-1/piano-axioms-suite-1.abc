@@ -377,7 +377,7 @@ K:C
 [V:T] G2 ^G2 =G2 ^G2 | ^G2 G2 =G2 G2 |\
 [V:B] ^G,8 | G,8 |\
 [V:T] E2 F2 E2 F2 | F2 F2 E2 E2 |\
-[V:B] F8 | E8 |\
+[V:B] F,8 | E,8 |\
 [V:T] Z |\
 [V:B] D,^D, =D,^D, D,D, =D,D, & ^D,,2 D,,2 =D,,2 D,,2 |\
 [V:T] Z |\
