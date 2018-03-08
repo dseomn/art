@@ -7,8 +7,8 @@ V:T name="Piano" subname="Pi" clef=treble
 V:B clef=bass
 %%score {T | B}
 K:C
-[V:T] !fermata! !ffff! Z |]
-[V:B] !fermata! !ffff! Z |]
+[V:T] !fermata! !ffff! Z y |]
+[V:B] !fermata! !ffff! Z y |]
 
 X:2
 T:II. ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
