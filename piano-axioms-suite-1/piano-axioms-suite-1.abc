@@ -1,6 +1,5 @@
 X:1
-T:Piano Axioms Suite no. 1: I. ∃0(0 ∈ ℕ)
-C:David Mandelberg
+T:I. ∃0(0 ∈ ℕ)
 M:1/1
 L:1/1
 Q:"Adagio"
@@ -12,8 +11,7 @@ K:C
 [V:B] !fermata! !ffff! Z |]
 
 X:2
-T:Piano Axioms Suite no. 1: II. ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
-C:David Mandelberg
+T:II. ∀a(a ∈ ℕ ⇒ S(a) ∈ ℕ)
 M:12/8
 L:1/8
 Q:"Allegro"
@@ -46,8 +44,7 @@ K:C
 [V:B] Z |]
 
 X:3
-T:Piano Axioms Suite no. 1: III. ∀a(a ∈ ℕ ⇒ S(a) ≠ 0)
-C:David Mandelberg
+T:III. ∀a(a ∈ ℕ ⇒ S(a) ≠ 0)
 M:3/4
 L:1/4
 Q:"Presto"
@@ -265,8 +262,7 @@ K:C
 [V:B] !f! ^F, G, z |]
 
 X:4
-T:Piano Axioms Suite no. 1: IV. ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
-C:David Mandelberg
+T:IV. ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
 M:4/4
 L:1/8
 Q:"Vivace"
@@ -404,8 +400,7 @@ K:C
 [V:B] !ppp! A,^A, =A,^A, A,A, =A,A, |]
 
 X:5
-T:Piano Axioms Suite no. 1: V. ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ A ⊇ ℕ)
-C:David Mandelberg
+T:V. ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ A ⊇ ℕ)
 M:2/4
 L:1/8
 Q:"Andante"
