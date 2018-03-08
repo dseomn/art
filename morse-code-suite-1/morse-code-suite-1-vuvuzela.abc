@@ -7,14 +7,23 @@ V:Vu name="Vuvuzela" subname="Vu" clef=bass
 %%score Vu
 K:F
 !fff! B,3 z B, z B,3 z B, z B,3 |\
+w: KA |
 z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA | | KA | | KA |
 z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA | | KA | | KA |
 z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA | | KA | | KA |
 z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA | | KA | | KA |
 z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA | | KA | | KA |
 z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 | z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA | | KA | | KA |
 z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA |
 z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA |
 z7 |]
 
 X:2
@@ -26,15 +35,25 @@ V:Vu name="Vuvuzela" subname="Vu" clef=bass
 %%score Vu
 K:F
 !fff! B,3 z B, z B,3 z B, z B,3 |\
+w: KA |
 z7 | B, z B, z B, z B, | z3 | B, | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z3 | B,3 z B,3 z B,3 | z7 | B, z B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B, | z3 | B, z B,3 z B, z B, | z3 | B,3 z B, z B, | z7 | B, z B, z B, | z3 | B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B,3 z B, |\
+w: | H | | E | | L | | L | | O | | W | | O | | R | | L | | D | | S | | T | | O | | P |
 z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, z B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B, z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 z B, | z7 | B,3 z B, z B,3 |\
+w: | T | | H | | I | | S | | I | | S | | M | | U | | S | | I | | C | | K |
 z7 | B, z B,3 | z3 | B, z B,3 z B, | z3 | B, | z7 | B,3 z B, z B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B, z B,3 | z7 | B, z B, z B, | z3 | B, z B, z B,3 | z3 | B, z B,3 z B, | z3 | B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, z B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B, z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+w: | A | | R | | E | | Y | | O | | U | | S | | U | | R | | E | | T | | H | | I | | S | | I | | S | | M | | U | | S | | I | | C | | Q | | U | | E | | R | | Y |
 z7 | B, z B, | z3 | B,3 | z7 | B, z B, z B, | z3 | B,3 z B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B, | z3 | B, z B, z B, | z7 | B, z B,3 z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 | z3 | B, | z7 | B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B, | z3 | B, z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 |\
+w: I | | T | | S | | O | | U | | N | | D | | S | | L | | I | | K | | E | | M | | O | | R | | S | | E | | C | | O | | D | | E | K |
 z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B,3 z B, z B,3 |\
+w: | Y | | E | | S | | K |
 z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+w: | Y | | E | | S | | Q | | U | | E | | R | | Y |
 z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B, z B,3 | z3 | B,3 | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | Y | | E | | S | | W | | H | | A | | T | | Q | | U | | E | | R | | Y | | K |
 z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B,3 | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B, z B, z B,3 | z3 | B, z B, z B, | z3 | B, z B, | z3 | B,3 z B, z B,3 z B, | z7 | B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B, | z7 | B,3 z B, z B,3 z B,3 | z3 | B, | z3 | B, z B, z B, | z7 | B, z B, | z3 | B,3 | z7 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B, | z3 | B, z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 z B, z B, | z3 | B, | z7 | B,3 z B, z B,3 |\
+w: | Y | | E | | S | | I | | T | | I | | S | | M | | U | | S | | I | | C | | A | | N | | D | | Y | | E | | S | | I | | T | | I | | S | |  M | | O | | R | | S | | E | | C | | O | | D | | E | | K |
 z7 | B, z B,3 z B,3 | z3 | B, | z3 | B, z B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B, | z3 | B,3 z B,3 z B,3 | z7 | B, z B,3 z B, z B,3 z B, |\
+w: | W | | E | | I | | R | | D | | O | | AR |
 z7 |]
 
 X:3
@@ -46,26 +65,47 @@ V:Vu name="Vuvuzela" subname="Vu" clef=bass
 %%score Vu
 K:F
 !fff! B,3 z B, z B,3 z B, z B,3 |\
+w: KA |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | K |
 z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | N | | O | | T | | K |
 z7 | B,3 z B, z B,3 z B, z B,3 |\
+w: | KA |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | N | | O | | T | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | N | | O | | T | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | N | | O | | T | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | N | | O | | T | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | N | | O | | T | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B, z B,3 |\
+w: | W | | H | | Y | | K |
 z7 | B, z B,3 z B,3 | z3 | B, z B, z B, z B, | z3 | B,3 z B, z B,3 z B,3 |\
+w: | W | | H | | Y |
 z7 | B, z B,3 z B, z B,3 z B, |\
+w: | AR |
 z7 | B, z B,3 z B, z B,3 z B, |\
+w: | AR |
 z7 | B, z B,3 z B, z B,3 z B, |\
+w: | AR |
 z7 | B, z B,3 z B, z B,3 z B, |\
+w: | AR |
 z7 |]
 
 X:4
@@ -77,10 +117,17 @@ V:Vu name="Vuvuzela" subname="Vu" clef=bass
 %%score Vu
 K:F
 !fff! B,3 z B, z B,3 z B, z B,3 |\
+w: KA |
 z7 | B, z B,3 z B,3 | z3 | B, z B,3 | z3 | B, z B, z B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, | z3 | B, z B,3 z B, | z3 | B, | z7 | B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B, z B,3 z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B, z B, | z3 | B,3 z B, | z3 | B,3 | z7 | B,3 | z3 | B,3 z B,3 z B,3 | z7 | B, z B,3 | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z7 | B,3 z B,3 z B,3 | z3 | B, z B, z B,3 z B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, z B, | z3 | B, z B, z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+w: | W | | A | | S | | T | | H | | E | | R | | E | | A | | N | | Y | | P | | O | | I | | N | | T | | T | | O | | A | | L | | L | | O | | F | | T | | H | | I | | S | | Q | | U | | E | | R | | Y |
 z7 | B, z B,3 | z3 | B,3 z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B, z B,3 z B,3 z B, | z3 | B,3 z B,3 z B,3 | z3 | B, z B, | z3 | B,3 z B, | z3 | B,3 | z7 | B, z B,3 | z3 | B,3 | z7 | B, z B,3 | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+w: | A | | N | | Y | | P | | O | | I | | N | | T | | A | | T | | A | | L | | L | | Q | | U | | E | | R | | Y |
 z7 | B, z B,3 z B,3 | z3 | B, z B,3 | z3 | B, z B, z B, | z7 | B,3 | z3 | B, z B, z B, z B, | z3 | B, | z3 | B, z B,3 z B, | z3 | B, | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+w: | W | | A | | S | | T | | H | | E | | R | | E | | Q | | U | | E | | R | | Y |
 z7 | B, z B,3 z B, | z3 | B, | z3 | B, z B,3 | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z3 | B,3 z B, z B,3 z B,3 | z7 | B,3 z B,3 z B, z B,3 | z3 | B, z B, z B,3 | z3 | B, | z3 | B, z B,3 z B, | z3 | B,3 z B, z B,3 z B,3 |\
+w: | R | | E | | A | | L | | L | | Y | | Q | | U | | E | | R | | Y |
 z7 | B,3 z B,3 z B,3 | z3 | B, z B, z B, z B, | z7 | B, z B,3 z B,3 | z3 | B, | z3 | B, z B,3 z B, z B, | z3 | B, z B,3 z B, z B, | z7 | B, z B, z B, | z3 | B,3 | z3 | B,3 z B,3 z B,3 | z3 | B, z B,3 z B,3 z B, |\
+w: | O | | H | | W | | E | | L | | L | | S | | T | | O | | P |
 z7 | B,3 z B, | z3 | B, z B, | z3 | B, z B,3 z B, z B, | z7 | B, z B,3 z B, z B,3 z B, |\
+w: | N | | I | | L | | AR |
 z7 |]
