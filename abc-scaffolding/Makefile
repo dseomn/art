@@ -68,7 +68,7 @@ $(MKFILE): $(SRCDIR)/$(PROJECT).abc
 	done < "$(SRCDIR)/$(PROJECT).abc" > "$$tmp" && \
 	for voice_num in $$(seq 1 $$voice_count); do \
 	  printf "%s\n" "$(DSTDIR)/$(PROJECT)-V$${voice_num}.abc: $(SRCDIR)/$(PROJECT).abc" && \
-	  printf "\t%s\n" "abc2abc $(SRCDIR)/$(PROJECT).abc -V $$voice_num > $(DSTDIR)/$(PROJECT)-V$${voice_num}.abc" && \
+	  printf "\t%s\n" "abc2abc $(SRCDIR)/$(PROJECT).abc -V $$voice_num | sed 's/^w:|/w: |/' > $(DSTDIR)/$(PROJECT)-V$${voice_num}.abc" && \
 	  true || exit 1; \
 	done >> "$$tmp" && \
 	{ \
