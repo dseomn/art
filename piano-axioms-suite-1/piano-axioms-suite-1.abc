@@ -258,8 +258,8 @@ K:C
 [V:B] Z |\
 [V:T] Z |\
 [V:B] Z |\
-[V:T] !f! ^F G z & ^f g z & ^f' g' z |]
-[V:B] !f! ^F, G, z |]
+[V:T] !f! ^F G z & ^f g z & ^f' g' z |] x16
+[V:B] !f! ^F, G, z |] x16
 
 X:4
 T:IV. ∀a∀b(a ∈ ℕ ∧ b ∈ ℕ ∧ S(a) = S(b) ⇒ a = b)
@@ -396,8 +396,8 @@ K:C
 [V:B] Z |\
 [V:T] !pp! A^A =A^A AA =AA |\
 [V:B] !pp! Z |\
-[V:T] !ppp! Z |]
-[V:B] !ppp! A,^A, =A,^A, A,A, =A,A, |]
+[V:T] !ppp! Z |] x16
+[V:B] !ppp! A,^A, =A,^A, A,A, =A,A, |] x16
 
 X:5
 T:V. ∀A(0 ∈ A ∧ ∀a(a ∈ A ⇒ S(a) ∈ A) ⇒ A ⊇ ℕ)
@@ -542,9 +542,9 @@ K:C
 [V:B2] Z77 |\
 [V:T3] Z77 |\
 [V:B3] Z77 |\
-[V:T1] !ff! z2 [CEGBdfa] z & z2 [DFAcegb] z |]
-[V:B1] !ff! z2 [C,,E,,G,,B,,D,F,A,] z & z2 [D,,F,,A,,C,E,G,B,] z |]
-[V:T2] !ff! z2 [^C^G^d^f^a] z |]
-[V:B2] !ff! z2 [^C,,^G,,^D,^F,^A,] z |]
-[V:T3] !ff! z2 [^D^F^A^c^g] z |]
-[V:B3] !ff! z2 [^D,,^F,,^A,,^C,^G,] z |]
+[V:T1] !ff! z2 [CEGBdfa] z & z2 [DFAcegb] z |] x16
+[V:B1] !ff! z2 [C,,E,,G,,B,,D,F,A,] z & z2 [D,,F,,A,,C,E,G,B,] z |] x16
+[V:T2] !ff! z2 [^C^G^d^f^a] z |] x16
+[V:B2] !ff! z2 [^C,,^G,,^D,^F,^A,] z |] x16
+[V:T3] !ff! z2 [^D^F^A^c^g] z |] x16
+[V:B3] !ff! z2 [^D,,^F,,^A,,^C,^G,] z |] x16

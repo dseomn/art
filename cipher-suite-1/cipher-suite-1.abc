@@ -21,8 +21,8 @@ V:Vn
 [V:Vn] !p! e f/g/ | f d/c/ | d/c/ e | f g | f//d//c/ G | f//d//c/ d | e c | G/c/ c |
 [V:Cl] !mp! G F/D/ | C/D/ E | F G/F/ | G F/E/ | D F/E/ | D/C/ C | E/D/ C | C D/E/ |
 [V:Vn] !mp! G F/D/ | C/D/ E | F G/F/ | G F/E/ | D F/E/ | D/C/ C | E/D/ C | C D/E/ |
-[V:Cl] G F/D/ | C/D/ E | F G/F/ | G F/E/ | D F/E/ | D/C/ E | G/F/ E | E/D/ C- | C z |]
-[V:Vn] G F/D/ | C/D/ E | F G/F/ | G F/E/ | D F/E/ | D/C/ E | G/F/ E | E/D/ C- | C z |]
+[V:Cl] G F/D/ | C/D/ E | F G/F/ | G F/E/ | D F/E/ | D/C/ E | G/F/ E | E/D/ C- | C z |] x16
+[V:Vn] G F/D/ | C/D/ E | F G/F/ | G F/E/ | D F/E/ | D/C/ E | G/F/ E | E/D/ C- | C z |] x16
 
 X:2
 T:II. Password‐Based Key Derivation Function Two‐Step
@@ -119,10 +119,10 @@ V:PB
 [V:Vn] [K:Abmaj] A>d | c2 | e/2d/2 c | (3d/2e/2d/2 c | B>d | c2 | B/2e/4d/4 c | d/4c/4 A3/2 |
 [V:PT] [K:Abmaj] Z8 |
 [V:PB] [K:Abmaj] Z8 |
-[V:Cl] [K:Cmaj] c e | e>f | f f | e/f/ g | c e | e>f | f d | e/d/ c | Z2 |]
-[V:Vn] [K:Cmaj] c e | e>f | f f | e/f/ g | c e | e>f | f d | e/d/ c | Z2 |]
-[V:PT] [K:Cmaj] C E | E>F | F F | E/F/ G | C E | E>F | F D | E/D/ C- | C2- | C z |]
-[V:PB] [K:Cmaj] [C,E,G,] z | [C,E,G,] z | [C,F,G,] z | [C,E,G,] z | [C,E,G,] z | [C,E,G,] z | [C,F,G,] z | .[C,E,G,] !p! [C,E,G,]- | [C,E,G,]2 | Z |]
+[V:Cl] [K:Cmaj] c e | e>f | f f | e/f/ g | c e | e>f | f d | e/d/ c | Z2 |] x16
+[V:Vn] [K:Cmaj] c e | e>f | f f | e/f/ g | c e | e>f | f d | e/d/ c | Z2 |] x16
+[V:PT] [K:Cmaj] C E | E>F | F F | E/F/ G | C E | E>F | F D | E/D/ C- | C2- | C z |] x16
+[V:PB] [K:Cmaj] [C,E,G,] z | [C,E,G,] z | [C,F,G,] z | [C,E,G,] z | [C,E,G,] z | [C,E,G,] z | [C,F,G,] z | .[C,E,G,] !p! [C,E,G,]- | [C,E,G,]2 | Z |] x16
 
 X:3
 T:III. Snoa in the SNOW
@@ -156,8 +156,8 @@ V:Vn
 [V:Vn] (e c G c | e d e d | c d e2- | e2 f c) |
 [V:Cl] c/f/e/f/ g>d | c/e/d/f/ g f | e (3f/e/d/ f/e/d/c/ | d>e f/d/ c |
 [V:Vn] c f e f | c e d f | e f e d | d e f c |
-[V:Cl] G c/d/ f/g/ e | c/d/e/f/ g2 | (3e/d/c/ d c>G | c/d/e/d/ d c | !mp! G c<c z |]
-[V:Vn] G c f e | c e (g e) | d2 c G | c e d c | !mp! G c2 z |]
+[V:Cl] G c/d/ f/g/ e | c/d/e/f/ g2 | (3e/d/c/ d c>G | c/d/e/d/ d c | !mp! G c<c z |] x16
+[V:Vn] G c f e | c e (g e) | d2 c G | c e d c | !mp! G c2 z |] x16
 
 X:4
 T:IV. Hash‐Based Message Authentication Zwiefacher
@@ -233,5 +233,5 @@ V:Vn
 [V:Vn] [M:2/4] !f! c d | e f | [M:3/4] g>f e | d>e d | [M:2/4] c G |
 [V:Cl] [M:2/4] c e | f g | [M:3/4] f2 d | e2 d | [M:2/4] c G |\
 [V:Vn] [M:2/4] c e | f g | [M:3/4] f2 d | e2 d | [M:2/4] c G |\
-[V:Cl] !mp! (3E/D/C/ z |]
-[V:Vn] !mp! (3E/D/C/ z |]
+[V:Cl] !mp! (3E/D/C/ z |] x16
+[V:Vn] !mp! (3E/D/C/ z |] x16
