@@ -118,3 +118,19 @@ V:PB
 [V:Vn] Z3 |]
 [V:PT] C/E/ G2 | G/E/ !mf! C2- | HC2 z |]
 [V:PB] !p! [C,F,G,]3 | [C,E,G,]3- | H[C,E,G,]2 z |]
+
+X:2
+T:Cipher Suite no. 2: II. % TODO: authentication
+C:David Mandelberg
+
+X:3
+T:Cipher Suite no. 2: III. Tango Layer Security Pseudo‐Random Function
+C:David Mandelberg
+
+X:4
+T:Cipher Suite no. 2: IV. Advanced Encryption Schottis
+C:David Mandelberg
+
+X:5
+T:Cipher Suite no. 2: V. % TODO: MAC
+C:David Mandelberg
