@@ -15,6 +15,13 @@ DSTDIR = $(SRCDIR)
 SOUND_FONT = /usr/share/sounds/sf2/FluidR3_GM.sf2
 
 
+# Internal-use variables, to control whether sheet music is generated for paper
+# versus for use in video.
+SHEET_TAG =
+COVER_PAGE_GEO = letter
+ABCM2PS_EXTRA =
+
+
 all: midi wave midi-per-voice wave-per-voice pdf
 
 # Generated makefile that does much of the real work.
@@ -80,43 +87,59 @@ $(MKFILE): $(SRCDIR)/$(PROJECT).abc
 	} >> "$$tmp" && \
 	mv "$$tmp" "$(MKFILE)"
 
-pdf: $(DSTDIR)/$(PROJECT).pdf
-$(DSTDIR)/$(PROJECT).pdf: $(SRCDIR)/$(PROJECT).abc $(DSTDIR)/$(PROJECT).cover.stamp
+pdf: $(DSTDIR)/$(PROJECT)$(SHEET_TAG).pdf
+$(DSTDIR)/$(PROJECT)$(SHEET_TAG).pdf: $(SRCDIR)/$(PROJECT).abc $(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.stamp
 	cover= && \
-	if test -f "$(DSTDIR)/$(PROJECT).cover.pdf"; then \
-	  cover="$(DSTDIR)/$(PROJECT).cover.pdf"; \
+	if test -f "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf"; then \
+	  cover="$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf"; \
 	fi && \
 	tmpdir="$$(mktemp -d)" && \
-	abcm2ps -1 -j0 -N2 -v "$(SRCDIR)/$(PROJECT).abc" -O "$$tmpdir/page-.svg" && \
+	abcm2ps -1 -j0 -N2 -v $(ABCM2PS_EXTRA) "$(SRCDIR)/$(PROJECT).abc" -O "$$tmpdir/page-.svg" && \
 	for page in "$$tmpdir/page"-*.svg; do \
 	  inkscape --export-pdf="$${page%.svg}.pdf" "$$page" || exit 1; \
 	done && \
-	pdftk $$cover "$$tmpdir/page"-*.pdf cat output "$(DSTDIR)/$(PROJECT).pdf" && \
+	pdftk $$cover "$$tmpdir/page"-*.pdf cat output "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).pdf" && \
 	rm -rf "$$tmpdir"
 
-# Stamp file for $(DSTDIR)/$(PROJECT).cover.pdf, or its non-existence.
-$(DSTDIR)/$(PROJECT).cover.stamp: force-rebuild
+# Stamp file for $(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf, or its
+# non-existence.
+$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.stamp: force-rebuild
 	if test -f "$(SRCDIR)/$(PROJECT).cover.tex"; then \
-	  $(MAKE) "$(DSTDIR)/$(PROJECT).cover.pdf" || exit 1; \
-	elif test -f "$(DSTDIR)/$(PROJECT).cover.pdf"; then \
-	  rm "$(DSTDIR)/$(PROJECT).cover.pdf" && \
-	  touch "$(DSTDIR)/$(PROJECT).cover.stamp" && \
+	  $(MAKE) "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf" || exit 1; \
+	elif test -f "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf"; then \
+	  rm "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf" && \
+	  touch "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.stamp" && \
 	  true || exit 1; \
-	elif test ! -f "$(DSTDIR)/$(PROJECT).cover.stamp"; then \
-	  touch "$(DSTDIR)/$(PROJECT).cover.stamp" || exit 1; \
+	elif test ! -f "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.stamp"; then \
+	  touch "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.stamp" || exit 1; \
 	fi
 
 # Target for cover.pdf itself, assuming cover.tex exists. Other targets should
-# depend on $(DSTDIR)/$(PROJECT).cover.stamp instead, and test whether or not
-# $(DSTDIR)/$(PROJECT).cover.pdf exists after the stamp is up-to-date.
-$(DSTDIR)/$(PROJECT).cover.pdf: $(SRCDIR)/$(PROJECT).cover.tex cover-page.cls
+# depend on $(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.stamp instead, and test
+# whether or not $(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf exists after the
+# stamp is up-to-date.
+$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf: $(SRCDIR)/$(PROJECT).cover.tex cover-page.cls cover-page-geo-$(COVER_PAGE_GEO).sty
 	tmpdir="$$(mktemp -d)" && \
 	cp "$(SRCDIR)/$(PROJECT).cover.tex" cover-page.cls "$$tmpdir" && \
+	cp "cover-page-geo-$(COVER_PAGE_GEO).sty" "$$tmpdir/cover-page-geo.sty" && \
 	cd "$$tmpdir" && \
 	xelatex "$(PROJECT).cover.tex" && \
 	cd - && \
-	mv "$$tmpdir/$(PROJECT).cover.pdf" "$(DSTDIR)/$(PROJECT).cover.pdf" && \
+	mv "$$tmpdir/$(PROJECT).cover.pdf" "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.pdf" && \
 	rm -rf "$$tmpdir"
-	touch "$(DSTDIR)/$(PROJECT).cover.stamp"
+	touch "$(DSTDIR)/$(PROJECT)$(SHEET_TAG).cover.stamp"
 
-.PHONY: all midi wave midi-per-voice wave-per-voice pdf force-rebuild
+# Make a PDF of the sheet music, suitable for inclusion as stills in a video
+# (16:9).
+pdf-video:
+	$(MAKE) SHEET_TAG=.video COVER_PAGE_GEO=video ABCM2PS_EXTRA="--pageheight 12in --pagewidth 6.75in --landscape 1" pdf
+
+# Create a directory of images, with one page of sheet music per image. Fail
+# fast if the directory already exists, to avoid needing to delete old stills
+# or risk having stale stills in the high page numbers.
+video-stills: pdf-video
+	mkdir "$(DSTDIR)/$(PROJECT).video-stills"
+	convert -density 960 "$(DSTDIR)/$(PROJECT).video.pdf" -resize '3840x2160>' "$(DSTDIR)/$(PROJECT).video-stills/still-%03d.png"
+
+
+.PHONY: all midi wave midi-per-voice wave-per-voice pdf pdf-video video-stills force-rebuild

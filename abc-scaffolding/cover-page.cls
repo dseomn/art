@@ -2,10 +2,14 @@
 \ProvidesClass{cover-page}
 
 \LoadClass{article}
-\RequirePackage[letterpaper, margin=1in]{geometry}
 \RequirePackage{fontspec}
 \RequirePackage{fancyhdr}
 \RequirePackage{etoolbox}
+
+% Set the geometry from one of the cover-page-geo-*.sty files. The Makefile is
+% responsible for picking the correct file and renaming it to
+% cover-page-geo.sty.
+\RequirePackage{cover-page-geo}
 
 \setmainfont{TeX Gyre Termes}
 
