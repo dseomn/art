@@ -1,0 +1,23 @@
+X:1
+T:Music
+M:13/16
+L:1/16
+Q:"Andante"
+V:PT name="Piano" subname="Pi" clef=treble
+%V:PB clef=bass
+V:Vu name="Vuvuzela" subname="Vu" clef=treble
+%%%score {PT | PB} Vu
+%%score PT Vu
+K:C
+[V:PT] [K:BbLoc] !p! {[de]/[Bg]/[cf]}F3E[CG].[B,CE] F3 LD B,3 & z6 f/f/df (3B/d/B/ B/d/cB |\
+%[V:PB] [K:BbLoc] !p! ([B,,F,]3 [B,,D,E,]4) L[D,F,]3 {/[B,,E,F,]}[B,,D,F,]3 |\
+[V:Vu] [K:F] z4 !fff! LB,4 z B,4 |\
+[V:PT] [K:BbLoc] !ppp! (Bcde (3fd[cB]) {d}[cB]2 .[B,D].[Bf].b z2 |\
+%[V:PB] [K:BbLoc] !ppp! ([B,,C,F,]2 [B,,D,F,]3) ([B,,E,F,A,]4-[B,,E,F,A,] [B,,D,F,]3) |\
+[V:Vu] [K:F] z B,12 |\
+[V:PT] [K:BbLoc] F3 {/B}B3 z F2B def |\
+%[V:PB] [K:BbLoc]
+[V:Vu] [K:F] B, B,12- |\
+[V:PT] [K:BbLoc] fd ec z fd ec .B (3fed {e}B  & ([FD]2 [EC]2 B,) ([FD]2 [EC]2 B,) .B,.B,.B, |]
+%[V:PB] [K:BbLoc]
+[V:Vu] [K:F] B,12 z/ B,/ |]
