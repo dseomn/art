@@ -96,15 +96,15 @@ plane {
 
 // Create a single object from random CSG, *roughly* within the box from
 // <-1, -1, -1> to <1, 1, 1>.
-#macro RandomCSG()
+#macro RandomCSG(AddCount, SubtractCount)
   object {
     difference {
       merge {
-        #for (sub_object_number, 1, 8)
+        #for (sub_object_number, 1, AddCount)
           ShapeForAdding()
         #end
       }
-      #for (sub_object_number, 1, 3)
+      #for (sub_object_number, 1, SubtractCount)
         ShapeForSubtracting()
       #end
     }
@@ -114,7 +114,7 @@ plane {
 
 #for (object_number, 1, 60)
   object {
-    RandomCSG()
+    RandomCSG(8, 3)
     scale 0.3
     translate VRand_In_Box(<-6, -3, -1>, <6, 3, 1>, RdmA)
   }
