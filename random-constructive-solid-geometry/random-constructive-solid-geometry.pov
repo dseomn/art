@@ -3,6 +3,7 @@
 #include "colors.inc"
 #include "rand.inc"
 #include "textures.inc"
+#include "transforms.inc"
 
 global_settings {
   assumed_gamma 1.0
@@ -48,7 +49,7 @@ plane {
       #break
     #end
     scale <pow(2, RRand(-2, 1, RdmA)), pow(2, RRand(-2, 1, RdmA)), pow(2, RRand(-2, 1, RdmA))>
-    rotate VRand_In_Box(<0, 0, 0>, <360, 360, 360>, RdmA)
+    Point_At_Trans(VRand_On_Sphere(RdmA))
     translate VRand_In_Box(<-1, -1, -1>, <1, 1, 1>, RdmA)
   }
 #end
@@ -65,7 +66,7 @@ plane {
         sphere { <0, RRand(-1.5, -1.0, RdmA), 0>, RRand(0.25, 0.75, RdmA) }
       #break
     #end
-    rotate VRand_In_Box(<0, 0, 0>, <360, 360, 360>, RdmA)
+    Point_At_Trans(VRand_On_Sphere(RdmA))
   }
 #end
 
