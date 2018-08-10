@@ -2,8 +2,12 @@
 
 #include "colors.inc"
 #include "rand.inc"
+#include "shapes3.inc"
 #include "textures.inc"
 #include "transforms.inc"
+
+// For creating miniscule gaps that avoid floating point issues.
+#declare Slop = 5e-5;
 
 global_settings {
   assumed_gamma 1.0
@@ -11,23 +15,96 @@ global_settings {
 
 camera {
   right x*16.0/9.0
-  location <0, 0, -10>
-  look_at <0, 0, 0>
-  angle 50
+  location <0, 5, -10>
+  look_at <0, 5, 0>
+  angle 75
 }
 
-light_source { <5, 20, -10>, color rgb 1 }
-
-// Background
+// Base floor.
 plane {
-  -z, -10
+  y, 0
+  texture {
+    pigment {
+      checker color rgb 1, color rgb 0
+    }
+  }
+}
+
+// Walls and ceiling.
+box {
+  <-15, -1, -15>, <15, 10, 15>
+  hollow
   texture {
     pigment {
       color rgb 1
     }
     finish {
-      ambient 1
+      specular 0.5
+      roughness 0.05
     }
+  }
+}
+
+// Lights.
+light_source { <-3, 8, 0>, color rgb 0.3 }
+light_source { < 0, 8, 0>, color rgb 0.3 }
+light_source { < 3, 8, 0>, color rgb 0.3 }
+
+// Shapes of the columns below the interesting shapes.
+#macro SupportColumns(Radius_Delta, Bottom_Delta, Top_Delta)
+  #local height_delta = Top_Delta - Bottom_Delta;
+
+  union {
+    #for (column_idx, 0, 4)
+      #local num_sides = 3 + 2 * column_idx;
+      #local height = 1 + column_idx + height_delta;
+      #local circumcircle_radius = 1 + Radius_Delta;
+      #local position = <-7 + 3.5 * column_idx, 0, 5>;
+
+      #local unit_incircle_diameter = 1 / tan(pi / num_sides);
+      #local unit_circumcircle_diameter = 1 / sin(pi / num_sides);
+      #local incircle_radius = circumcircle_radius * unit_incircle_diameter / unit_circumcircle_diameter;
+
+      object {
+        Column_N(num_sides, incircle_radius, height)
+        translate position + Bottom_Delta * y
+      }
+    #end
+  }
+#end
+
+// Inner columns.
+object {
+  SupportColumns(-Slop, Slop, -Slop)
+  texture {
+    pigment {
+      color rgb 0
+    }
+  }
+}
+
+// Glass on floor and around columns.
+difference {
+  merge {
+    box { <-15 + Slop, Slop, -15 + Slop>, <15 - Slop, 0.05, 15 - Slop> }
+    SupportColumns(0.05, Slop, 0.05)
+  }
+  SupportColumns(Slop, -Slop, Slop)
+
+  texture {
+    pigment {
+      color rgbf <1, 1, 1, 0.8>
+    }
+    finish {
+      specular 1
+      roughness 0.001
+      ambient 0
+      diffuse 0
+      reflection 0.05
+    }
+  }
+  interior {
+    Glass_Interior
   }
 }
 
@@ -112,10 +189,11 @@ plane {
   }
 #end
 
-#for (object_number, 1, 60)
+// The random CSG objects themselves.
+#for (column_idx, 0, 4)
   object {
-    RandomCSG(8, 3)
-    scale 0.3
-    translate VRand_In_Box(<-6, -3, -1>, <6, 3, 1>, RdmA)
+    RandomCSG(3 + 2 * column_idx, column_idx)
+    scale 0.75
+    translate <-7 + 3.5 * column_idx, 3 + column_idx, 5>
   }
 #end
